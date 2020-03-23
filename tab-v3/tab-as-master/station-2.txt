@@ -1,0 +1,69 @@
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# cat gPTP.cfg
+#
+# 802.1AS example configuration containing those attributes which
+# differ from the defaults.  See the file, default.cfg, for the
+# complete list of available options.
+#
+[global]
+gmCapable               1
+priority1               248
+priority2               248
+logAnnounceInterval     0
+logSyncInterval         -3
+syncReceiptTimeout      3
+#neighborPropDelayThresh 800
+min_neighbor_prop_delay -20000000
+assume_two_step         1
+path_trace_enabled      1
+follow_up_info          1
+transportSpecific       0x1
+ptp_dst_mac             01:80:C2:00:00:0E
+network_transport       L2
+delay_mechanism         P2P
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# ./ptp4l -i fm1-mac4 -f ./gPTP.cfg -m
+ptp4l[669.250]: selected /dev/ptp0 as PTP clock
+ptp4l[669.288]: port 1: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[669.288]: port 0: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[672.469]: port 1: new foreign master 00049f.fffe.05e284-1
+ptp4l[672.470]: selected best master clock 00049f.fffe.05e284
+ptp4l[672.470]: port 1: LISTENING to SLAVE on RS_SLAVE
+ptp4l[674.228]: rms    8 max   11 freq  +2110 +/-  16 delay  1313 +/-   0
+ptp4l[675.228]: rms   20 max   25 freq  +2141 +/-  11 delay  1312 +/-   0
+ptp4l[676.228]: rms   18 max   29 freq  +2159 +/-   9 delay  1313 +/-   0
+ptp4l[677.228]: rms   10 max   15 freq  +2161 +/-   6 delay  1312 +/-   0
+ptp4l[678.228]: rms   11 max   20 freq  +2135 +/-   8 delay  1312 +/-   0
+ptp4l[679.229]: rms    5 max   10 freq  +2142 +/-   7 delay  1312 +/-   0
+ptp4l[680.229]: rms    4 max   10 freq  +2145 +/-   6 delay  1312 +/-   0
+ptp4l[681.229]: rms    8 max   15 freq  +2136 +/-   9 delay  1312 +/-   0
+ptp4l[682.229]: rms    8 max   15 freq  +2154 +/-   6 delay  1312 +/-   0
+ptp4l[683.229]: rms    6 max   10 freq  +2155 +/-   7 delay  1312 +/-   0
+ptp4l[684.229]: rms    5 max   10 freq  +2155 +/-   6 delay  1312 +/-   0
+ptp4l[685.230]: rms    9 max   15 freq  +2146 +/-  11 delay  1312 +/-   0
+ptp4l[686.230]: rms   10 max   20 freq  +2136 +/-   9 delay  1312 +/-   0
+ptp4l[687.230]: rms    5 max   10 freq  +2141 +/-   7 delay  1312 +/-   0
+ptp4l[688.230]: rms    6 max   10 freq  +2148 +/-   8 delay  1312 +/-   0
+ptp4l[689.230]: rms    5 max   10 freq  +2144 +/-   7 delay  1312 +/-   0
+ptp4l[690.231]: rms    6 max   14 freq  +2150 +/-   8 delay  1313 +/-   0
+ptp4l[691.231]: rms    8 max   13 freq  +2149 +/-  11 delay  1314 +/-   0
+ptp4l[692.231]: rms    6 max   12 freq  +2143 +/-   7 delay  1314 +/-   0
+ptp4l[693.231]: rms    6 max   13 freq  +2151 +/-   8 delay  1314 +/-   0
+ptp4l[694.231]: rms    4 max    7 freq  +2143 +/-   4 delay  1314 +/-   0
+ptp4l[695.231]: rms    7 max   13 freq  +2148 +/-   9 delay  1314 +/-   0
+ptp4l[696.232]: rms    7 max   14 freq  +2152 +/-   8 delay  1313 +/-   0
+ptp4l[697.232]: rms    6 max   11 freq  +2150 +/-   8 delay  1313 +/-   0
+ptp4l[698.232]: rms   10 max   15 freq  +2156 +/-  12 delay  1312 +/-   0
+ptp4l[699.232]: rms    7 max   13 freq  +2155 +/-   9 delay  1310 +/-   0
+ptp4l[700.232]: rms    5 max    8 freq  +2151 +/-   6 delay  1309 +/-   0
+ptp4l[701.233]: rms    8 max   12 freq  +2144 +/-   9 delay  1309 +/-   0
+ptp4l[702.233]: rms    5 max    8 freq  +2153 +/-   5 delay  1309 +/-   0
+ptp4l[703.233]: rms    8 max   12 freq  +2156 +/-  10 delay  1310 +/-   0
+ptp4l[704.233]: rms    5 max    8 freq  +2150 +/-   7 delay  1310 +/-   0
+ptp4l[705.233]: rms    9 max   15 freq  +2138 +/-   8 delay  1312 +/-   0
+ptp4l[706.234]: rms    7 max   15 freq  +2151 +/-   9 delay  1312 +/-   0
+ptp4l[707.234]: rms    8 max   12 freq  +2163 +/-   4 delay  1310 +/-   0
+ptp4l[708.234]: rms    9 max   18 freq  +2146 +/-  10 delay  1310 +/-   0
+ptp4l[709.234]: rms    6 max   12 freq  +2152 +/-   8 delay  1310 +/-   0
+ptp4l[710.234]: rms    6 max    8 freq  +2146 +/-   7 delay  1310 +/-   0
+ptp4l[711.235]: rms    6 max   12 freq  +2155 +/-   6 delay  1310 +/-   0
+ptp4l[712.235]: rms    5 max    8 freq  +2152 +/-   7 delay  1310 +/-   0
+^Croot@ls1043ardb:~/ptp4l-tab/usr/local/sbin#

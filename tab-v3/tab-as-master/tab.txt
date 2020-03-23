@@ -1,0 +1,40 @@
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# cat gPTP.cfg
+#
+# 802.1AS example configuration containing those attributes which
+# differ from the defaults.  See the file, default.cfg, for the
+# complete list of available options.
+#
+[global]
+gmCapable               1
+priority1               247
+priority2               248
+logAnnounceInterval     0
+logSyncInterval         -3
+syncReceiptTimeout      3
+#neighborPropDelayThresh 800
+min_neighbor_prop_delay -20000000
+assume_two_step         1
+path_trace_enabled      1
+follow_up_info          1
+transportSpecific       0x1
+ptp_dst_mac             01:80:C2:00:00:0E
+network_transport       L2
+delay_mechanism         P2P
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin#
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# ./ptp4l -i fm1-mac3 -i fm1-mac4 -f ./gPTP.cfg -m
+ptp4l[355.306]: selected /dev/ptp1 as PTP clock
+ptp4l[355.344]: port 1: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[355.376]: port 2: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[355.376]: port 0: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[358.664]: port 2: LISTENING to MASTER on ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES
+ptp4l[358.664]: selected local clock 00049f.fffe.05e284 as best master
+ptp4l[358.664]: port 2: assuming the grand master role
+ptp4l[358.742]: port 1: LISTENING to MASTER on ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES
+ptp4l[358.743]: selected local clock 00049f.fffe.05e284 as best master
+ptp4l[358.743]: port 1: assuming the grand master role
+ptp4l[358.743]: port 2: assuming the grand master role
+ptp4l[387.327]: port 2: new foreign master 00049f.fffe.05e2cb-1
+ptp4l[387.327]: selected best master clock 00049f.fffe.05e2cb
+ptp4l[387.327]: port 1: assuming the grand master role
+ptp4l[387.327]: port 2: assuming the grand master role
+^Croot@ls1043ardb:~/ptp4l-tab/usr/local/sbin#

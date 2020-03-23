@@ -1,0 +1,1647 @@
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# cat gPTP.cfg
+#
+# 802.1AS example configuration containing those attributes which
+# differ from the defaults.  See the file, default.cfg, for the
+# complete list of available options.
+#
+[global]
+gmCapable               1
+priority1               247
+priority2               248
+logAnnounceInterval     0
+logSyncInterval         -3
+syncReceiptTimeout      3
+#neighborPropDelayThresh 800
+min_neighbor_prop_delay -20000000
+assume_two_step         1
+path_trace_enabled      1
+follow_up_info          1
+transportSpecific       0x1
+ptp_dst_mac             01:80:C2:00:00:0E
+network_transport       L2
+delay_mechanism         P2P
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# ./ptp4l -i fm1-mac3 -i fm1-mac4 -f ./gPTP.cfg -m -l 7
+ptp4l[826.370]: config item (null).assume_two_step is 1
+ptp4l[826.370]: config item (null).check_fup_sync is 0
+ptp4l[826.370]: config item (null).tx_timestamp_timeout is 1
+ptp4l[826.370]: config item (null).hwts_filter is 0
+ptp4l[826.370]: config item (null).clock_servo is 0
+ptp4l[826.370]: config item (null).clock_type is 32768
+ptp4l[826.370]: config item (null).clock_servo is 0
+ptp4l[826.370]: config item (null).clockClass is 248
+ptp4l[826.370]: config item (null).clockAccuracy is 254
+ptp4l[826.370]: config item (null).offsetScaledLogVariance is 65535
+ptp4l[826.370]: config item (null).productDescription is ';;'
+ptp4l[826.370]: config item (null).revisionData is ';;'
+ptp4l[826.370]: config item (null).userDescription is ''
+ptp4l[826.370]: config item (null).manufacturerIdentity is '00:00:00'
+ptp4l[826.370]: config item (null).domainNumber is 0
+ptp4l[826.370]: config item (null).slaveOnly is 0
+ptp4l[826.370]: config item (null).gmCapable is 1
+ptp4l[826.370]: config item (null).gmCapable is 1
+ptp4l[826.370]: config item (null).G.8275.defaultDS.localPriority is 128
+ptp4l[826.370]: config item (null).maxStepsRemoved is 255
+ptp4l[826.370]: config item (null).time_stamping is 1
+ptp4l[826.370]: config item (null).twoStepFlag is 1
+ptp4l[826.370]: config item (null).twoStepFlag is 1
+ptp4l[826.370]: config item (null).time_stamping is 1
+ptp4l[826.370]: config item (null).priority1 is 247
+ptp4l[826.370]: config item (null).priority2 is 248
+ptp4l[826.371]: interface index 4 is up
+ptp4l[826.371]: interface index 5 is up
+ptp4l[826.371]: config item (null).free_running is 0
+ptp4l[826.371]: selected /dev/ptp1 as PTP clock
+ptp4l[826.371]: config item (null).clockIdentity is '000000.0000.000000'
+ptp4l[826.371]: config item (null).uds_address is '/var/run/ptp4l'
+ptp4l[826.371]: section item /var/run/ptp4l.announceReceiptTimeout now 0
+ptp4l[826.371]: section item /var/run/ptp4l.delay_mechanism now 0
+ptp4l[826.371]: section item /var/run/ptp4l.network_transport now 0
+ptp4l[826.371]: section item /var/run/ptp4l.delay_filter_length now 1
+ptp4l[826.371]: config item (null).free_running is 0
+ptp4l[826.371]: config item (null).freq_est_interval is 1
+ptp4l[826.371]: config item (null).gmCapable is 1
+ptp4l[826.371]: config item (null).kernel_leap is 1
+ptp4l[826.371]: config item (null).utc_offset is 37
+ptp4l[826.371]: config item (null).timeSource is 160
+ptp4l[826.371]: config item (null).pi_proportional_const is 0.000000
+ptp4l[826.371]: config item (null).pi_integral_const is 0.000000
+ptp4l[826.371]: config item (null).pi_proportional_scale is 0.000000
+ptp4l[826.371]: config item (null).pi_proportional_exponent is -0.300000
+ptp4l[826.371]: config item (null).pi_proportional_norm_max is 0.700000
+ptp4l[826.371]: config item (null).pi_integral_scale is 0.000000
+ptp4l[826.371]: config item (null).pi_integral_exponent is 0.400000
+ptp4l[826.371]: config item (null).pi_integral_norm_max is 0.300000
+ptp4l[826.371]: config item (null).step_threshold is 0.000000
+ptp4l[826.371]: config item (null).first_step_threshold is 0.000020
+ptp4l[826.371]: config item (null).max_frequency is 900000000
+ptp4l[826.371]: config item (null).servo_offset_threshold is 0
+ptp4l[826.372]: config item (null).servo_num_offset_values is 10
+ptp4l[826.372]: config item (null).dataset_comparison is 0
+ptp4l[826.372]: config item (null).tsproc_mode is 0
+ptp4l[826.372]: config item (null).delay_filter is 1
+ptp4l[826.372]: config item (null).delay_filter_length is 10
+ptp4l[826.372]: config item (null).initial_delay is 0
+ptp4l[826.372]: config item (null).summary_interval is 0
+ptp4l[826.372]: config item (null).sanity_freq_limit is 200000000
+ptp4l[826.372]: PI servo: sync interval 1.000 kp 0.700 ki 0.300000
+ptp4l[826.372]: config item /var/run/ptp4l.boundary_clock_jbod is 0
+ptp4l[826.372]: config item /var/run/ptp4l.network_transport is 0
+ptp4l[826.372]: config item /var/run/ptp4l.masterOnly is 0
+ptp4l[826.372]: config item /var/run/ptp4l.BMCA is 0
+ptp4l[826.372]: config item /var/run/ptp4l.delayAsymmetry is 0
+ptp4l[826.372]: config item /var/run/ptp4l.follow_up_info is 1
+ptp4l[826.705]: config item /var/run/ptp4l.freq_est_interval is 1
+ptp4l[826.705]: config item /var/run/ptp4l.net_sync_monitor is 0
+ptp4l[826.705]: config item /var/run/ptp4l.path_trace_enabled is 1
+ptp4l[826.705]: config item /var/run/ptp4l.tc_spanning_tree is 0
+ptp4l[826.705]: config item /var/run/ptp4l.ingressLatency is 0
+ptp4l[826.705]: config item /var/run/ptp4l.egressLatency is 0
+ptp4l[826.705]: config item /var/run/ptp4l.delay_mechanism is 0
+ptp4l[826.705]: config item /var/run/ptp4l.asCapable is 1
+ptp4l[826.705]: config item /var/run/ptp4l.hybrid_e2e is 0
+ptp4l[826.705]: config item /var/run/ptp4l.fault_badpeernet_interval is 16
+ptp4l[826.705]: config item /var/run/ptp4l.fault_reset_interval is 4
+ptp4l[826.705]: config item /var/run/ptp4l.tsproc_mode is 0
+ptp4l[826.705]: config item /var/run/ptp4l.delay_filter is 1
+ptp4l[826.705]: config item /var/run/ptp4l.delay_filter_length is 1
+ptp4l[826.705]: config item fm1-mac3.boundary_clock_jbod is 0
+ptp4l[826.705]: config item fm1-mac3.network_transport is 3
+ptp4l[826.705]: config item fm1-mac3.masterOnly is 0
+ptp4l[826.705]: config item fm1-mac3.BMCA is 0
+ptp4l[826.705]: config item fm1-mac3.delayAsymmetry is 0
+ptp4l[826.705]: config item fm1-mac3.follow_up_info is 1
+ptp4l[826.705]: config item fm1-mac3.freq_est_interval is 1
+ptp4l[826.705]: config item fm1-mac3.net_sync_monitor is 0
+ptp4l[826.705]: config item fm1-mac3.path_trace_enabled is 1
+ptp4l[826.705]: config item fm1-mac3.tc_spanning_tree is 0
+ptp4l[826.705]: config item fm1-mac3.ingressLatency is 0
+ptp4l[826.705]: config item fm1-mac3.egressLatency is 0
+ptp4l[826.705]: config item fm1-mac3.delay_mechanism is 2
+ptp4l[826.705]: config item fm1-mac3.asCapable is 1
+ptp4l[826.705]: config item fm1-mac3.unicast_master_table is 0
+ptp4l[826.705]: config item fm1-mac3.unicast_listen is 0
+ptp4l[826.705]: config item fm1-mac3.hybrid_e2e is 0
+ptp4l[826.705]: config item fm1-mac3.fault_badpeernet_interval is 16
+ptp4l[826.705]: config item fm1-mac3.fault_reset_interval is 4
+ptp4l[826.705]: config item fm1-mac3.tsproc_mode is 0
+ptp4l[826.705]: config item fm1-mac3.delay_filter is 1
+ptp4l[826.705]: config item fm1-mac3.delay_filter_length is 10
+ptp4l[826.705]: config item fm1-mac4.boundary_clock_jbod is 0
+ptp4l[826.705]: config item fm1-mac4.network_transport is 3
+ptp4l[826.705]: config item fm1-mac4.masterOnly is 0
+ptp4l[826.705]: config item fm1-mac4.BMCA is 0
+ptp4l[826.705]: config item fm1-mac4.delayAsymmetry is 0
+ptp4l[826.705]: config item fm1-mac4.follow_up_info is 1
+ptp4l[826.706]: config item fm1-mac4.freq_est_interval is 1
+ptp4l[826.706]: config item fm1-mac4.net_sync_monitor is 0
+ptp4l[826.706]: config item fm1-mac4.path_trace_enabled is 1
+ptp4l[826.706]: config item fm1-mac4.tc_spanning_tree is 0
+ptp4l[826.706]: config item fm1-mac4.ingressLatency is 0
+ptp4l[826.706]: config item fm1-mac4.egressLatency is 0
+ptp4l[826.706]: config item fm1-mac4.delay_mechanism is 2
+ptp4l[826.706]: config item fm1-mac4.asCapable is 1
+ptp4l[826.706]: config item fm1-mac4.unicast_master_table is 0
+ptp4l[826.706]: config item fm1-mac4.unicast_listen is 0
+ptp4l[826.706]: config item fm1-mac4.hybrid_e2e is 0
+ptp4l[826.706]: config item fm1-mac4.fault_badpeernet_interval is 16
+ptp4l[826.706]: config item fm1-mac4.fault_reset_interval is 4
+ptp4l[826.706]: config item fm1-mac4.tsproc_mode is 0
+ptp4l[826.706]: config item fm1-mac4.delay_filter is 1
+ptp4l[826.706]: config item fm1-mac4.delay_filter_length is 10
+ptp4l[826.706]: config item fm1-mac3.logMinDelayReqInterval is 0
+ptp4l[826.706]: config item fm1-mac3.logAnnounceInterval is 0
+ptp4l[826.706]: config item fm1-mac3.inhibit_announce is 0
+ptp4l[826.706]: config item fm1-mac3.ignore_source_id is 0
+ptp4l[826.706]: config item fm1-mac3.announceReceiptTimeout is 3
+ptp4l[826.706]: config item fm1-mac3.syncReceiptTimeout is 3
+ptp4l[827.039]: config item fm1-mac3.transportSpecific is 1
+ptp4l[827.039]: config item fm1-mac3.ignore_transport_specific is 0
+ptp4l[827.039]: config item fm1-mac3.G.8275.portDS.localPriority is 128
+ptp4l[827.039]: config item fm1-mac3.logSyncInterval is -3
+ptp4l[827.039]: config item fm1-mac3.operLogSyncInterval is 0
+ptp4l[827.039]: config item fm1-mac3.logMinPdelayReqInterval is 0
+ptp4l[827.039]: config item fm1-mac3.operLogPdelayReqInterval is 0
+ptp4l[827.039]: config item fm1-mac3.neighborPropDelayThresh is 20000000
+ptp4l[827.039]: config item fm1-mac3.min_neighbor_prop_delay is -20000000
+ptp4l[827.039]: config item fm1-mac3.asCapable is 1
+ptp4l[827.039]: config item fm1-mac3.inhibit_delay_req is 0
+ptp4l[827.039]: config item fm1-mac3.ptp_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[827.039]: config item fm1-mac3.p2p_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[827.040]: config item global.socket_priority is 0
+ptp4l[827.080]: port 1: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[827.080]: config item fm1-mac4.logMinDelayReqInterval is 0
+ptp4l[827.080]: config item fm1-mac4.logAnnounceInterval is 0
+ptp4l[827.080]: config item fm1-mac4.inhibit_announce is 0
+ptp4l[827.080]: config item fm1-mac4.ignore_source_id is 0
+ptp4l[827.080]: config item fm1-mac4.announceReceiptTimeout is 3
+ptp4l[827.080]: config item fm1-mac4.syncReceiptTimeout is 3
+ptp4l[827.080]: config item fm1-mac4.transportSpecific is 1
+ptp4l[827.080]: config item fm1-mac4.ignore_transport_specific is 0
+ptp4l[827.080]: config item fm1-mac4.G.8275.portDS.localPriority is 128
+ptp4l[827.080]: config item fm1-mac4.logSyncInterval is -3
+ptp4l[827.080]: config item fm1-mac4.operLogSyncInterval is 0
+ptp4l[827.080]: config item fm1-mac4.logMinPdelayReqInterval is 0
+ptp4l[827.080]: config item fm1-mac4.operLogPdelayReqInterval is 0
+ptp4l[827.080]: config item fm1-mac4.neighborPropDelayThresh is 20000000
+ptp4l[827.080]: config item fm1-mac4.min_neighbor_prop_delay is -20000000
+ptp4l[827.080]: config item fm1-mac4.asCapable is 1
+ptp4l[827.080]: config item fm1-mac4.inhibit_delay_req is 0
+ptp4l[827.080]: config item fm1-mac4.ptp_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[827.080]: config item fm1-mac4.p2p_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[827.080]: config item global.socket_priority is 0
+ptp4l[827.120]: port 2: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[827.120]: config item /var/run/ptp4l.logMinDelayReqInterval is 0
+ptp4l[827.120]: config item /var/run/ptp4l.logAnnounceInterval is 0
+ptp4l[827.120]: config item /var/run/ptp4l.inhibit_announce is 0
+ptp4l[827.120]: config item /var/run/ptp4l.ignore_source_id is 0
+ptp4l[827.120]: config item /var/run/ptp4l.announceReceiptTimeout is 0
+ptp4l[827.120]: config item /var/run/ptp4l.syncReceiptTimeout is 3
+ptp4l[827.120]: config item /var/run/ptp4l.transportSpecific is 1
+ptp4l[827.120]: config item /var/run/ptp4l.ignore_transport_specific is 0
+ptp4l[827.120]: config item /var/run/ptp4l.G.8275.portDS.localPriority is 128
+ptp4l[827.120]: config item /var/run/ptp4l.logSyncInterval is -3
+ptp4l[827.120]: config item /var/run/ptp4l.operLogSyncInterval is 0
+ptp4l[827.120]: config item /var/run/ptp4l.logMinPdelayReqInterval is 0
+ptp4l[827.120]: config item /var/run/ptp4l.operLogPdelayReqInterval is 0
+ptp4l[827.120]: config item /var/run/ptp4l.neighborPropDelayThresh is 20000000
+ptp4l[827.120]: config item /var/run/ptp4l.min_neighbor_prop_delay is -20000000
+ptp4l[827.120]: config item /var/run/ptp4l.asCapable is 1
+ptp4l[827.120]: config item /var/run/ptp4l.inhibit_delay_req is 0
+ptp4l[827.120]: config item (null).uds_address is '/var/run/ptp4l'
+ptp4l[827.120]: port 0: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[827.120]: port 1: received link status notification
+ptp4l[827.120]: interface index 4 is up
+ptp4l[827.120]: port 2: received link status notification
+ptp4l[827.120]: interface index 5 is up
+ptp4l[828.080]: port 1: delay timeout
+ptp4l[828.120]: port 2: delay timeout
+ptp4l[829.080]: port 1: delay timeout
+ptp4l[829.120]: port 2: delay timeout
+ptp4l[830.080]: port 1: delay timeout
+ptp4l[830.120]: port 2: delay timeout
+ptp4l[830.163]: port 1: announce timeout
+ptp4l[830.163]: port 1: LISTENING to MASTER on ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES
+ptp4l[830.163]: selected local clock 00049f.fffe.05e284 as best master
+ptp4l[830.163]: port 1: assuming the grand master role
+ptp4l[830.164]: port 1: master tx announce timeout
+ptp4l[830.288]: port 1: master sync timeout
+ptp4l[830.365]: port 2: announce timeout
+ptp4l[830.365]: port 2: LISTENING to MASTER on ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES
+ptp4l[830.365]: selected local clock 00049f.fffe.05e284 as best master
+ptp4l[830.365]: port 1: assuming the grand master role
+ptp4l[830.365]: port 2: assuming the grand master role
+ptp4l[830.366]: port 2: master tx announce timeout
+ptp4l[830.413]: port 1: master sync timeout
+ptp4l[830.490]: port 2: master sync timeout
+ptp4l[830.539]: port 1: master sync timeout
+ptp4l[830.615]: port 2: master sync timeout
+ptp4l[830.664]: port 1: master sync timeout
+ptp4l[830.740]: port 2: master sync timeout
+ptp4l[830.789]: port 1: master sync timeout
+ptp4l[830.865]: port 2: master sync timeout
+ptp4l[830.914]: port 1: master sync timeout
+ptp4l[830.990]: port 2: master sync timeout
+ptp4l[831.039]: port 1: master sync timeout
+ptp4l[831.080]: port 1: delay timeout
+ptp4l[831.115]: port 2: master sync timeout
+ptp4l[831.120]: port 2: delay timeout
+ptp4l[831.164]: port 1: master sync timeout
+ptp4l[831.164]: port 1: master tx announce timeout
+ptp4l[831.240]: port 2: master sync timeout
+ptp4l[831.289]: port 1: master sync timeout
+ptp4l[831.365]: port 2: master sync timeout
+ptp4l[831.366]: port 2: master tx announce timeout
+ptp4l[831.414]: port 1: master sync timeout
+ptp4l[831.490]: port 2: master sync timeout
+ptp4l[831.539]: port 1: master sync timeout
+ptp4l[831.615]: port 2: master sync timeout
+ptp4l[831.664]: port 1: master sync timeout
+ptp4l[831.740]: port 2: master sync timeout
+ptp4l[831.789]: port 1: master sync timeout
+ptp4l[831.865]: port 2: master sync timeout
+ptp4l[831.914]: port 1: master sync timeout
+ptp4l[831.990]: port 2: master sync timeout
+ptp4l[832.039]: port 1: master sync timeout
+ptp4l[832.080]: port 1: delay timeout
+ptp4l[832.116]: port 2: master sync timeout
+ptp4l[832.120]: port 2: delay timeout
+ptp4l[832.164]: port 1: master sync timeout
+ptp4l[832.164]: port 1: master tx announce timeout
+ptp4l[832.241]: port 2: master sync timeout
+ptp4l[832.289]: port 1: master sync timeout
+ptp4l[832.366]: port 2: master sync timeout
+ptp4l[832.366]: port 2: master tx announce timeout
+ptp4l[832.414]: port 1: master sync timeout
+ptp4l[832.491]: port 2: master sync timeout
+ptp4l[832.539]: port 1: master sync timeout
+ptp4l[832.616]: port 2: master sync timeout
+ptp4l[832.664]: port 1: master sync timeout
+ptp4l[832.741]: port 2: master sync timeout
+ptp4l[832.789]: port 1: master sync timeout
+ptp4l[832.866]: port 2: master sync timeout
+ptp4l[832.914]: port 1: master sync timeout
+ptp4l[832.991]: port 2: master sync timeout
+ptp4l[833.040]: port 1: master sync timeout
+ptp4l[833.080]: port 1: delay timeout
+ptp4l[833.116]: port 2: master sync timeout
+ptp4l[833.120]: port 2: delay timeout
+ptp4l[833.165]: port 1: master tx announce timeout
+ptp4l[833.165]: port 1: master sync timeout
+ptp4l[833.241]: port 2: master sync timeout
+ptp4l[833.290]: port 1: master sync timeout
+ptp4l[833.366]: port 2: master tx announce timeout
+ptp4l[833.366]: port 2: master sync timeout
+ptp4l[833.415]: port 1: master sync timeout
+ptp4l[833.491]: port 2: master sync timeout
+ptp4l[833.540]: port 1: master sync timeout
+ptp4l[833.616]: port 2: master sync timeout
+ptp4l[833.665]: port 1: master sync timeout
+ptp4l[833.741]: port 2: master sync timeout
+ptp4l[833.790]: port 1: master sync timeout
+ptp4l[833.866]: port 2: master sync timeout
+ptp4l[833.915]: port 1: master sync timeout
+ptp4l[833.991]: port 2: master sync timeout
+ptp4l[834.040]: port 1: master sync timeout
+ptp4l[834.080]: port 1: delay timeout
+ptp4l[834.116]: port 2: master sync timeout
+ptp4l[834.120]: port 2: delay timeout
+ptp4l[834.165]: port 1: master tx announce timeout
+ptp4l[834.165]: port 1: master sync timeout
+ptp4l[834.241]: port 2: master sync timeout
+ptp4l[834.290]: port 1: master sync timeout
+ptp4l[834.366]: port 2: master tx announce timeout
+ptp4l[834.366]: port 2: master sync timeout
+ptp4l[834.415]: port 1: master sync timeout
+ptp4l[834.491]: port 2: master sync timeout
+ptp4l[834.540]: port 1: master sync timeout
+ptp4l[834.616]: port 2: master sync timeout
+ptp4l[834.665]: port 1: master sync timeout
+ptp4l[834.742]: port 2: master sync timeout
+ptp4l[834.790]: port 1: master sync timeout
+ptp4l[834.867]: port 2: master sync timeout
+ptp4l[834.915]: port 1: master sync timeout
+ptp4l[834.992]: port 2: master sync timeout
+ptp4l[835.040]: port 1: master sync timeout
+ptp4l[835.080]: port 1: delay timeout
+ptp4l[835.117]: port 2: master sync timeout
+ptp4l[835.120]: port 2: delay timeout
+ptp4l[835.165]: port 1: master tx announce timeout
+ptp4l[835.165]: port 1: master sync timeout
+ptp4l[835.242]: port 2: master sync timeout
+ptp4l[835.290]: port 1: master sync timeout
+ptp4l[835.366]: port 2: master tx announce timeout
+ptp4l[835.367]: port 2: master sync timeout
+ptp4l[835.415]: port 1: master sync timeout
+ptp4l[835.492]: port 2: master sync timeout
+ptp4l[835.540]: port 1: master sync timeout
+ptp4l[835.617]: port 2: master sync timeout
+ptp4l[835.666]: port 1: master sync timeout
+ptp4l[835.742]: port 2: master sync timeout
+ptp4l[835.791]: port 1: master sync timeout
+ptp4l[835.867]: port 2: master sync timeout
+ptp4l[835.916]: port 1: master sync timeout
+ptp4l[835.992]: port 2: master sync timeout
+ptp4l[836.041]: port 1: master sync timeout
+ptp4l[836.080]: port 1: delay timeout
+ptp4l[836.117]: port 2: master sync timeout
+ptp4l[836.120]: port 2: delay timeout
+ptp4l[836.165]: port 1: master tx announce timeout
+ptp4l[836.166]: port 1: master sync timeout
+ptp4l[836.242]: port 2: master sync timeout
+ptp4l[836.291]: port 1: master sync timeout
+ptp4l[836.366]: port 2: master tx announce timeout
+ptp4l[836.367]: port 2: master sync timeout
+ptp4l[836.416]: port 1: master sync timeout
+ptp4l[836.492]: port 2: master sync timeout
+ptp4l[836.541]: port 1: master sync timeout
+ptp4l[836.617]: port 2: master sync timeout
+ptp4l[836.666]: port 1: master sync timeout
+ptp4l[836.742]: port 2: master sync timeout
+ptp4l[836.791]: port 1: master sync timeout
+ptp4l[836.867]: port 2: master sync timeout
+ptp4l[836.916]: port 1: master sync timeout
+ptp4l[836.992]: port 2: master sync timeout
+ptp4l[837.041]: port 1: master sync timeout
+ptp4l[837.080]: port 1: delay timeout
+ptp4l[837.117]: port 2: master sync timeout
+ptp4l[837.120]: port 2: delay timeout
+ptp4l[837.165]: port 1: master tx announce timeout
+ptp4l[837.166]: port 1: master sync timeout
+ptp4l[837.242]: port 2: master sync timeout
+ptp4l[837.291]: port 1: master sync timeout
+ptp4l[837.366]: port 2: master tx announce timeout
+ptp4l[837.368]: port 2: master sync timeout
+ptp4l[837.416]: port 1: master sync timeout
+ptp4l[837.493]: port 2: master sync timeout
+ptp4l[837.541]: port 1: master sync timeout
+ptp4l[837.618]: port 2: master sync timeout
+ptp4l[837.666]: port 1: master sync timeout
+ptp4l[837.743]: port 2: master sync timeout
+ptp4l[837.791]: port 1: master sync timeout
+ptp4l[837.868]: port 2: master sync timeout
+ptp4l[837.916]: port 1: master sync timeout
+ptp4l[837.993]: port 2: master sync timeout
+ptp4l[838.041]: port 1: master sync timeout
+ptp4l[838.080]: port 1: delay timeout
+ptp4l[838.118]: port 2: master sync timeout
+ptp4l[838.120]: port 2: delay timeout
+ptp4l[838.165]: port 1: master tx announce timeout
+ptp4l[838.166]: port 1: master sync timeout
+ptp4l[838.243]: port 2: master sync timeout
+ptp4l[838.292]: port 1: master sync timeout
+ptp4l[838.366]: port 2: master tx announce timeout
+ptp4l[838.368]: port 2: master sync timeout
+ptp4l[838.417]: port 1: master sync timeout
+ptp4l[838.493]: port 2: master sync timeout
+ptp4l[838.542]: port 1: master sync timeout
+ptp4l[838.618]: port 2: master sync timeout
+ptp4l[838.667]: port 1: master sync timeout
+ptp4l[838.743]: port 2: master sync timeout
+ptp4l[838.792]: port 1: master sync timeout
+ptp4l[838.868]: port 2: master sync timeout
+ptp4l[838.917]: port 1: master sync timeout
+ptp4l[838.993]: port 2: master sync timeout
+ptp4l[839.042]: port 1: master sync timeout
+ptp4l[839.080]: port 1: delay timeout
+ptp4l[839.118]: port 2: master sync timeout
+ptp4l[839.120]: port 2: delay timeout
+ptp4l[839.165]: port 1: master tx announce timeout
+ptp4l[839.167]: port 1: master sync timeout
+ptp4l[839.243]: port 2: master sync timeout
+ptp4l[839.292]: port 1: master sync timeout
+ptp4l[839.366]: port 2: master tx announce timeout
+ptp4l[839.368]: port 2: master sync timeout
+ptp4l[839.417]: port 1: master sync timeout
+ptp4l[839.493]: port 2: master sync timeout
+ptp4l[839.542]: port 1: master sync timeout
+ptp4l[839.618]: port 2: master sync timeout
+ptp4l[839.667]: port 1: master sync timeout
+ptp4l[839.743]: port 2: master sync timeout
+ptp4l[839.792]: port 1: master sync timeout
+ptp4l[839.868]: port 2: master sync timeout
+ptp4l[839.917]: port 1: master sync timeout
+ptp4l[839.994]: port 2: master sync timeout
+ptp4l[840.042]: port 1: master sync timeout
+ptp4l[840.080]: port 1: delay timeout
+ptp4l[840.119]: port 2: master sync timeout
+ptp4l[840.120]: port 2: delay timeout
+ptp4l[840.165]: port 1: master tx announce timeout
+ptp4l[840.167]: port 1: master sync timeout
+ptp4l[840.244]: port 2: master sync timeout
+ptp4l[840.292]: port 1: master sync timeout
+ptp4l[840.366]: port 2: master tx announce timeout
+ptp4l[840.369]: port 2: master sync timeout
+ptp4l[840.417]: port 1: master sync timeout
+ptp4l[840.494]: port 2: master sync timeout
+ptp4l[840.542]: port 1: master sync timeout
+ptp4l[840.619]: port 2: master sync timeout
+ptp4l[840.667]: port 1: master sync timeout
+ptp4l[840.744]: port 2: master sync timeout
+ptp4l[840.792]: port 1: master sync timeout
+ptp4l[840.869]: port 2: master sync timeout
+ptp4l[840.918]: port 1: master sync timeout
+ptp4l[840.994]: port 2: master sync timeout
+ptp4l[841.043]: port 1: master sync timeout
+ptp4l[841.080]: port 1: delay timeout
+ptp4l[841.119]: port 2: master sync timeout
+ptp4l[841.120]: port 2: delay timeout
+ptp4l[841.165]: port 1: master tx announce timeout
+ptp4l[841.168]: port 1: master sync timeout
+ptp4l[841.244]: port 2: master sync timeout
+ptp4l[841.293]: port 1: master sync timeout
+ptp4l[841.366]: port 2: master tx announce timeout
+ptp4l[841.369]: port 2: master sync timeout
+ptp4l[841.418]: port 1: master sync timeout
+ptp4l[841.494]: port 2: master sync timeout
+ptp4l[841.543]: port 1: master sync timeout
+ptp4l[841.619]: port 2: master sync timeout
+ptp4l[841.668]: port 1: master sync timeout
+ptp4l[841.744]: port 2: master sync timeout
+ptp4l[841.793]: port 1: master sync timeout
+ptp4l[841.869]: port 2: master sync timeout
+ptp4l[841.918]: port 1: master sync timeout
+ptp4l[841.994]: port 2: master sync timeout
+ptp4l[842.043]: port 1: master sync timeout
+ptp4l[842.080]: port 1: delay timeout
+ptp4l[842.119]: port 2: master sync timeout
+ptp4l[842.120]: port 2: delay timeout
+ptp4l[842.165]: port 1: master tx announce timeout
+ptp4l[842.168]: port 1: master sync timeout
+ptp4l[842.244]: port 2: master sync timeout
+ptp4l[842.293]: port 1: master sync timeout
+ptp4l[842.366]: port 2: master tx announce timeout
+ptp4l[842.369]: port 2: master sync timeout
+ptp4l[842.418]: port 1: master sync timeout
+ptp4l[842.495]: port 2: master sync timeout
+ptp4l[842.543]: port 1: master sync timeout
+ptp4l[842.620]: port 2: master sync timeout
+ptp4l[842.668]: port 1: master sync timeout
+ptp4l[842.745]: port 2: master sync timeout
+ptp4l[842.793]: port 1: master sync timeout
+ptp4l[842.870]: port 2: master sync timeout
+ptp4l[842.918]: port 1: master sync timeout
+ptp4l[842.995]: port 2: master sync timeout
+ptp4l[843.043]: port 1: master sync timeout
+ptp4l[843.080]: port 1: delay timeout
+ptp4l[843.120]: port 2: master sync timeout
+ptp4l[843.120]: port 2: delay timeout
+ptp4l[843.165]: port 1: master tx announce timeout
+ptp4l[843.168]: port 1: master sync timeout
+ptp4l[843.245]: port 2: master sync timeout
+ptp4l[843.293]: port 1: master sync timeout
+ptp4l[843.366]: port 2: master tx announce timeout
+ptp4l[843.370]: port 2: master sync timeout
+ptp4l[843.418]: port 1: master sync timeout
+ptp4l[843.495]: port 2: master sync timeout
+ptp4l[843.544]: port 1: master sync timeout
+ptp4l[843.620]: port 2: master sync timeout
+ptp4l[843.669]: port 1: master sync timeout
+ptp4l[843.745]: port 2: master sync timeout
+ptp4l[843.794]: port 1: master sync timeout
+ptp4l[843.870]: port 2: master sync timeout
+ptp4l[843.919]: port 1: master sync timeout
+ptp4l[843.995]: port 2: master sync timeout
+ptp4l[844.044]: port 1: master sync timeout
+ptp4l[844.080]: port 1: delay timeout
+ptp4l[844.120]: port 2: master sync timeout
+ptp4l[844.120]: port 2: delay timeout
+ptp4l[844.165]: port 1: master tx announce timeout
+ptp4l[844.169]: port 1: master sync timeout
+ptp4l[844.245]: port 2: master sync timeout
+ptp4l[844.294]: port 1: master sync timeout
+ptp4l[844.367]: port 2: master tx announce timeout
+ptp4l[844.370]: port 2: master sync timeout
+ptp4l[844.419]: port 1: master sync timeout
+ptp4l[844.495]: port 2: master sync timeout
+ptp4l[844.544]: port 1: master sync timeout
+ptp4l[844.620]: port 2: master sync timeout
+ptp4l[844.669]: port 1: master sync timeout
+ptp4l[844.745]: port 2: master sync timeout
+ptp4l[844.794]: port 1: master sync timeout
+ptp4l[844.870]: port 2: master sync timeout
+ptp4l[844.919]: port 1: master sync timeout
+ptp4l[844.995]: port 2: master sync timeout
+ptp4l[845.044]: port 1: master sync timeout
+ptp4l[845.081]: port 1: delay timeout
+ptp4l[845.120]: port 2: delay timeout
+ptp4l[845.121]: port 2: master sync timeout
+ptp4l[845.165]: port 1: master tx announce timeout
+ptp4l[845.169]: port 1: master sync timeout
+ptp4l[845.246]: port 2: master sync timeout
+ptp4l[845.294]: port 1: master sync timeout
+ptp4l[845.367]: port 2: master tx announce timeout
+ptp4l[845.371]: port 2: master sync timeout
+ptp4l[845.419]: port 1: master sync timeout
+ptp4l[845.496]: port 2: master sync timeout
+ptp4l[845.544]: port 1: master sync timeout
+ptp4l[845.621]: port 2: master sync timeout
+ptp4l[845.669]: port 1: master sync timeout
+ptp4l[845.746]: port 2: master sync timeout
+ptp4l[845.794]: port 1: master sync timeout
+ptp4l[845.871]: port 2: master sync timeout
+ptp4l[845.919]: port 1: master sync timeout
+ptp4l[845.996]: port 2: master sync timeout
+ptp4l[846.044]: port 1: master sync timeout
+ptp4l[846.081]: port 1: delay timeout
+ptp4l[846.120]: port 2: delay timeout
+ptp4l[846.121]: port 2: peer port id set to 00049f.fffe.05e2cb-1
+ptp4l[846.121]: delay   filtered       1317   raw       1317
+ptp4l[846.121]: port 2: master sync timeout
+ptp4l[846.165]: port 1: master tx announce timeout
+ptp4l[846.170]: port 1: master sync timeout
+ptp4l[846.246]: port 2: master sync timeout
+ptp4l[846.295]: port 1: master sync timeout
+ptp4l[846.367]: port 2: master tx announce timeout
+ptp4l[846.371]: port 2: master sync timeout
+ptp4l[846.420]: port 1: master sync timeout
+ptp4l[846.496]: port 2: master sync timeout
+ptp4l[846.545]: port 1: master sync timeout
+ptp4l[846.621]: port 2: master sync timeout
+ptp4l[846.670]: port 1: master sync timeout
+ptp4l[846.746]: port 2: master sync timeout
+ptp4l[846.795]: port 1: master sync timeout
+ptp4l[846.871]: port 2: master sync timeout
+ptp4l[846.920]: port 1: master sync timeout
+ptp4l[846.996]: port 2: master sync timeout
+ptp4l[847.045]: port 1: master sync timeout
+ptp4l[847.081]: port 1: delay timeout
+ptp4l[847.120]: port 2: delay timeout
+ptp4l[847.121]: delay   filtered       1321   raw       1325
+ptp4l[847.121]: port 2: master sync timeout
+ptp4l[847.165]: port 1: master tx announce timeout
+ptp4l[847.170]: port 1: master sync timeout
+ptp4l[847.246]: port 2: master sync timeout
+ptp4l[847.295]: port 1: master sync timeout
+ptp4l[847.367]: port 2: master tx announce timeout
+ptp4l[847.371]: port 2: master sync timeout
+ptp4l[847.420]: port 1: master sync timeout
+ptp4l[847.496]: port 2: master sync timeout
+ptp4l[847.545]: port 1: master sync timeout
+ptp4l[847.621]: port 2: master sync timeout
+ptp4l[847.670]: port 1: master sync timeout
+ptp4l[847.746]: port 2: master sync timeout
+ptp4l[847.795]: port 1: master sync timeout
+ptp4l[847.872]: port 2: master sync timeout
+ptp4l[847.920]: port 1: master sync timeout
+ptp4l[847.997]: port 2: master sync timeout
+ptp4l[848.045]: port 1: master sync timeout
+ptp4l[848.081]: port 1: delay timeout
+ptp4l[848.121]: port 2: delay timeout
+ptp4l[848.121]: delay   filtered       1325   raw       1327
+ptp4l[848.122]: port 2: master sync timeout
+ptp4l[848.122]: port 2: setting asCapable
+ptp4l[848.165]: port 1: master tx announce timeout
+ptp4l[848.170]: port 1: master sync timeout
+ptp4l[848.247]: port 2: master sync timeout
+ptp4l[848.295]: port 1: master sync timeout
+ptp4l[848.367]: port 2: master tx announce timeout
+ptp4l[848.372]: port 2: master sync timeout
+ptp4l[848.420]: port 1: master sync timeout
+ptp4l[848.497]: port 2: master sync timeout
+ptp4l[848.545]: port 1: master sync timeout
+ptp4l[848.622]: port 2: master sync timeout
+ptp4l[848.670]: port 1: master sync timeout
+ptp4l[848.747]: port 2: master sync timeout
+ptp4l[848.796]: port 1: master sync timeout
+ptp4l[848.872]: port 2: master sync timeout
+ptp4l[848.921]: port 1: master sync timeout
+ptp4l[848.997]: port 2: master sync timeout
+ptp4l[849.046]: port 1: master sync timeout
+ptp4l[849.081]: port 1: delay timeout
+ptp4l[849.121]: port 2: delay timeout
+ptp4l[849.121]: delay   filtered       1321   raw       1310
+ptp4l[849.122]: port 2: master sync timeout
+ptp4l[849.165]: port 1: master tx announce timeout
+ptp4l[849.171]: port 1: master sync timeout
+ptp4l[849.247]: port 2: master sync timeout
+ptp4l[849.296]: port 1: master sync timeout
+ptp4l[849.367]: port 2: master tx announce timeout
+ptp4l[849.372]: port 2: master sync timeout
+ptp4l[849.421]: port 1: master sync timeout
+ptp4l[849.497]: port 2: master sync timeout
+ptp4l[849.546]: port 1: master sync timeout
+ptp4l[849.622]: port 2: master sync timeout
+ptp4l[849.671]: port 1: master sync timeout
+ptp4l[849.747]: port 2: master sync timeout
+ptp4l[849.796]: port 1: master sync timeout
+ptp4l[849.872]: port 2: master sync timeout
+ptp4l[849.921]: port 1: master sync timeout
+ptp4l[849.997]: port 2: master sync timeout
+ptp4l[850.046]: port 1: master sync timeout
+ptp4l[850.081]: port 1: delay timeout
+ptp4l[850.121]: port 2: delay timeout
+ptp4l[850.121]: delay   filtered       1322   raw       1322
+ptp4l[850.122]: port 2: master sync timeout
+ptp4l[850.165]: port 1: master tx announce timeout
+ptp4l[850.171]: port 1: master sync timeout
+ptp4l[850.247]: port 2: master sync timeout
+ptp4l[850.296]: port 1: master sync timeout
+ptp4l[850.367]: port 2: master tx announce timeout
+ptp4l[850.372]: port 2: master sync timeout
+ptp4l[850.421]: port 1: master sync timeout
+ptp4l[850.498]: port 2: master sync timeout
+ptp4l[850.546]: port 1: master sync timeout
+ptp4l[850.623]: port 2: master sync timeout
+ptp4l[850.671]: port 1: master sync timeout
+ptp4l[850.748]: port 2: master sync timeout
+ptp4l[850.797]: port 1: master sync timeout
+ptp4l[850.873]: port 2: master sync timeout
+ptp4l[850.922]: port 1: master sync timeout
+ptp4l[850.998]: port 2: master sync timeout
+ptp4l[851.047]: port 1: master sync timeout
+ptp4l[851.081]: port 1: delay timeout
+ptp4l[851.121]: port 2: delay timeout
+ptp4l[851.121]: delay   filtered       1319   raw       1314
+ptp4l[851.123]: port 2: master sync timeout
+ptp4l[851.165]: port 1: master tx announce timeout
+ptp4l[851.172]: port 1: master sync timeout
+ptp4l[851.248]: port 2: master sync timeout
+ptp4l[851.297]: port 1: master sync timeout
+ptp4l[851.367]: port 2: master tx announce timeout
+ptp4l[851.373]: port 2: master sync timeout
+ptp4l[851.422]: port 1: master sync timeout
+ptp4l[851.498]: port 2: master sync timeout
+ptp4l[851.547]: port 1: master sync timeout
+ptp4l[851.623]: port 2: master sync timeout
+ptp4l[851.672]: port 1: master sync timeout
+ptp4l[851.748]: port 2: master sync timeout
+ptp4l[851.797]: port 1: master sync timeout
+ptp4l[851.873]: port 2: master sync timeout
+ptp4l[851.922]: port 1: master sync timeout
+ptp4l[851.998]: port 2: master sync timeout
+ptp4l[852.047]: port 1: master sync timeout
+ptp4l[852.081]: port 1: delay timeout
+ptp4l[852.121]: port 2: delay timeout
+ptp4l[852.121]: delay   filtered       1322   raw       1322
+ptp4l[852.123]: port 2: master sync timeout
+ptp4l[852.165]: port 1: master tx announce timeout
+ptp4l[852.172]: port 1: master sync timeout
+ptp4l[852.248]: port 2: master sync timeout
+ptp4l[852.297]: port 1: master sync timeout
+ptp4l[852.367]: port 2: master tx announce timeout
+ptp4l[852.373]: port 2: master sync timeout
+ptp4l[852.422]: port 1: master sync timeout
+ptp4l[852.498]: port 2: master sync timeout
+ptp4l[852.547]: port 1: master sync timeout
+ptp4l[852.623]: port 2: master sync timeout
+ptp4l[852.672]: port 1: master sync timeout
+ptp4l[852.748]: port 2: master sync timeout
+ptp4l[852.797]: port 1: master sync timeout
+ptp4l[852.873]: port 2: master sync timeout
+ptp4l[852.922]: port 1: master sync timeout
+ptp4l[852.998]: port 2: master sync timeout
+ptp4l[853.047]: port 1: master sync timeout
+ptp4l[853.081]: port 1: delay timeout
+ptp4l[853.121]: port 2: delay timeout
+ptp4l[853.121]: delay   filtered       1320   raw       1319
+ptp4l[853.124]: port 2: master sync timeout
+ptp4l[853.166]: port 1: master tx announce timeout
+ptp4l[853.172]: port 1: master sync timeout
+ptp4l[853.249]: port 2: master sync timeout
+ptp4l[853.297]: port 1: master sync timeout
+ptp4l[853.367]: port 2: master tx announce timeout
+ptp4l[853.374]: port 2: master sync timeout
+ptp4l[853.423]: port 1: master sync timeout
+ptp4l[853.499]: port 2: master sync timeout
+ptp4l[853.548]: port 1: master sync timeout
+ptp4l[853.624]: port 2: master sync timeout
+ptp4l[853.673]: port 1: master sync timeout
+ptp4l[853.749]: port 2: master sync timeout
+ptp4l[853.798]: port 1: master sync timeout
+ptp4l[853.874]: port 2: master sync timeout
+ptp4l[853.923]: port 1: master sync timeout
+ptp4l[853.999]: port 2: master sync timeout
+ptp4l[854.048]: port 1: master sync timeout
+ptp4l[854.081]: port 1: delay timeout
+ptp4l[854.121]: port 2: delay timeout
+ptp4l[854.121]: delay   filtered       1320   raw       1320
+ptp4l[854.124]: port 2: master sync timeout
+ptp4l[854.166]: port 1: master tx announce timeout
+ptp4l[854.173]: port 1: master sync timeout
+ptp4l[854.249]: port 2: master sync timeout
+ptp4l[854.298]: port 1: master sync timeout
+ptp4l[854.367]: port 2: master tx announce timeout
+ptp4l[854.374]: port 2: master sync timeout
+ptp4l[854.423]: port 1: master sync timeout
+ptp4l[854.499]: port 2: master sync timeout
+ptp4l[854.548]: port 1: master sync timeout
+ptp4l[854.624]: port 2: master sync timeout
+ptp4l[854.673]: port 1: master sync timeout
+ptp4l[854.749]: port 2: master sync timeout
+ptp4l[854.798]: port 1: master sync timeout
+ptp4l[854.874]: port 2: master sync timeout
+ptp4l[854.923]: port 1: master sync timeout
+ptp4l[854.999]: port 2: master sync timeout
+ptp4l[855.048]: port 1: master sync timeout
+ptp4l[855.081]: port 1: delay timeout
+ptp4l[855.121]: port 2: delay timeout
+ptp4l[855.121]: delay   filtered       1319   raw       1317
+ptp4l[855.124]: port 2: master sync timeout
+ptp4l[855.166]: port 1: master tx announce timeout
+ptp4l[855.173]: port 1: master sync timeout
+ptp4l[855.249]: port 2: master sync timeout
+ptp4l[855.298]: port 1: master sync timeout
+ptp4l[855.367]: port 2: master tx announce timeout
+ptp4l[855.374]: port 2: master sync timeout
+ptp4l[855.423]: port 1: master sync timeout
+ptp4l[855.499]: port 2: master sync timeout
+ptp4l[855.548]: port 1: master sync timeout
+ptp4l[855.624]: port 2: master sync timeout
+ptp4l[855.673]: port 1: master sync timeout
+ptp4l[855.750]: port 2: master sync timeout
+ptp4l[855.798]: port 1: master sync timeout
+ptp4l[855.875]: port 2: master sync timeout
+ptp4l[855.924]: port 1: master sync timeout
+ptp4l[856.000]: port 2: master sync timeout
+ptp4l[856.049]: port 1: master sync timeout
+ptp4l[856.081]: port 1: delay timeout
+ptp4l[856.121]: port 2: delay timeout
+ptp4l[856.121]: delay   filtered       1321   raw       1322
+ptp4l[856.125]: port 2: master sync timeout
+ptp4l[856.166]: port 1: master tx announce timeout
+ptp4l[856.174]: port 1: master sync timeout
+ptp4l[856.250]: port 2: master sync timeout
+ptp4l[856.299]: port 1: master sync timeout
+ptp4l[856.367]: port 2: master tx announce timeout
+ptp4l[856.375]: port 2: master sync timeout
+ptp4l[856.424]: port 1: master sync timeout
+ptp4l[856.500]: port 2: master sync timeout
+ptp4l[856.549]: port 1: master sync timeout
+ptp4l[856.625]: port 2: master sync timeout
+ptp4l[856.674]: port 1: master sync timeout
+ptp4l[856.750]: port 2: master sync timeout
+ptp4l[856.799]: port 1: master sync timeout
+ptp4l[856.875]: port 2: master sync timeout
+ptp4l[856.924]: port 1: master sync timeout
+ptp4l[857.000]: port 2: master sync timeout
+ptp4l[857.049]: port 1: master sync timeout
+ptp4l[857.081]: port 1: delay timeout
+ptp4l[857.121]: port 2: delay timeout
+ptp4l[857.121]: delay   filtered       1321   raw       1325
+ptp4l[857.125]: port 2: master sync timeout
+ptp4l[857.166]: port 1: master tx announce timeout
+ptp4l[857.174]: port 1: master sync timeout
+ptp4l[857.250]: port 2: master sync timeout
+ptp4l[857.299]: port 1: master sync timeout
+ptp4l[857.367]: port 2: master tx announce timeout
+ptp4l[857.375]: port 2: master sync timeout
+ptp4l[857.424]: port 1: master sync timeout
+ptp4l[857.500]: port 2: master sync timeout
+ptp4l[857.549]: port 1: master sync timeout
+ptp4l[857.625]: port 2: master sync timeout
+ptp4l[857.674]: port 1: master sync timeout
+ptp4l[857.750]: port 2: master sync timeout
+ptp4l[857.799]: port 1: master sync timeout
+ptp4l[857.875]: port 2: master sync timeout
+ptp4l[857.924]: port 1: master sync timeout
+ptp4l[858.000]: port 2: master sync timeout
+ptp4l[858.049]: port 1: master sync timeout
+ptp4l[858.081]: port 1: delay timeout
+ptp4l[858.121]: port 2: delay timeout
+ptp4l[858.121]: delay   filtered       1321   raw       1322
+ptp4l[858.125]: port 2: master sync timeout
+ptp4l[858.166]: port 1: master tx announce timeout
+ptp4l[858.174]: port 1: master sync timeout
+ptp4l[858.250]: port 2: master sync timeout
+ptp4l[858.299]: port 1: master sync timeout
+ptp4l[858.367]: port 2: master tx announce timeout
+ptp4l[858.376]: port 2: master sync timeout
+ptp4l[858.424]: port 1: master sync timeout
+ptp4l[858.501]: port 2: master sync timeout
+ptp4l[858.550]: port 1: master sync timeout
+ptp4l[858.626]: port 2: master sync timeout
+ptp4l[858.675]: port 1: master sync timeout
+ptp4l[858.751]: port 2: master sync timeout
+ptp4l[858.800]: port 1: master sync timeout
+ptp4l[858.876]: port 2: master sync timeout
+ptp4l[858.925]: port 1: master sync timeout
+ptp4l[859.001]: port 2: master sync timeout
+ptp4l[859.050]: port 1: master sync timeout
+ptp4l[859.081]: port 1: delay timeout
+ptp4l[859.121]: port 2: delay timeout
+ptp4l[859.121]: delay   filtered       1321   raw       1319
+ptp4l[859.126]: port 2: master sync timeout
+ptp4l[859.166]: port 1: master tx announce timeout
+ptp4l[859.175]: port 1: master sync timeout
+ptp4l[859.251]: port 2: master sync timeout
+ptp4l[859.300]: port 1: master sync timeout
+ptp4l[859.367]: port 2: master tx announce timeout
+ptp4l[859.376]: port 2: master sync timeout
+ptp4l[859.425]: port 1: master sync timeout
+ptp4l[859.501]: port 2: master sync timeout
+ptp4l[859.550]: port 1: master sync timeout
+ptp4l[859.626]: port 2: master sync timeout
+ptp4l[859.675]: port 1: master sync timeout
+ptp4l[859.751]: port 2: master sync timeout
+ptp4l[859.800]: port 1: master sync timeout
+ptp4l[859.876]: port 2: master sync timeout
+ptp4l[859.925]: port 1: master sync timeout
+ptp4l[860.001]: port 2: master sync timeout
+ptp4l[860.050]: port 1: master sync timeout
+ptp4l[860.081]: port 1: delay timeout
+ptp4l[860.121]: port 2: delay timeout
+ptp4l[860.121]: delay   filtered       1321   raw       1322
+ptp4l[860.126]: port 2: master sync timeout
+ptp4l[860.166]: port 1: master tx announce timeout
+ptp4l[860.175]: port 1: master sync timeout
+ptp4l[860.251]: port 2: master sync timeout
+ptp4l[860.300]: port 1: master sync timeout
+ptp4l[860.367]: port 2: master tx announce timeout
+ptp4l[860.376]: port 2: master sync timeout
+ptp4l[860.425]: port 1: master sync timeout
+ptp4l[860.501]: port 2: master sync timeout
+ptp4l[860.550]: port 1: master sync timeout
+ptp4l[860.626]: port 2: master sync timeout
+ptp4l[860.675]: port 1: master sync timeout
+ptp4l[860.751]: port 2: master sync timeout
+ptp4l[860.800]: port 1: master sync timeout
+ptp4l[860.877]: port 2: master sync timeout
+ptp4l[860.925]: port 1: master sync timeout
+ptp4l[861.002]: port 2: master sync timeout
+ptp4l[861.051]: port 1: master sync timeout
+ptp4l[861.081]: port 1: delay timeout
+ptp4l[861.121]: port 2: delay timeout
+ptp4l[861.121]: delay   filtered       1321   raw       1315
+ptp4l[861.127]: port 2: master sync timeout
+ptp4l[861.166]: port 1: master tx announce timeout
+ptp4l[861.176]: port 1: master sync timeout
+ptp4l[861.252]: port 2: master sync timeout
+ptp4l[861.301]: port 1: master sync timeout
+ptp4l[861.367]: port 2: master tx announce timeout
+ptp4l[861.377]: port 2: master sync timeout
+ptp4l[861.426]: port 1: master sync timeout
+ptp4l[861.502]: port 2: master sync timeout
+ptp4l[861.551]: port 1: master sync timeout
+ptp4l[861.627]: port 2: master sync timeout
+ptp4l[861.676]: port 1: master sync timeout
+ptp4l[861.752]: port 2: master sync timeout
+ptp4l[861.801]: port 1: master sync timeout
+ptp4l[861.877]: port 2: master sync timeout
+ptp4l[861.926]: port 1: master sync timeout
+ptp4l[862.002]: port 2: master sync timeout
+ptp4l[862.051]: port 1: master sync timeout
+ptp4l[862.081]: port 1: delay timeout
+ptp4l[862.121]: port 2: delay timeout
+ptp4l[862.122]: delay   filtered       1321   raw       1322
+ptp4l[862.127]: port 2: master sync timeout
+ptp4l[862.166]: port 1: master tx announce timeout
+ptp4l[862.176]: port 1: master sync timeout
+ptp4l[862.252]: port 2: master sync timeout
+ptp4l[862.301]: port 1: master sync timeout
+ptp4l[862.367]: port 2: master tx announce timeout
+ptp4l[862.377]: port 2: master sync timeout
+ptp4l[862.426]: port 1: master sync timeout
+ptp4l[862.502]: port 2: master sync timeout
+ptp4l[862.551]: port 1: master sync timeout
+ptp4l[862.627]: port 2: master sync timeout
+ptp4l[862.676]: port 1: master sync timeout
+ptp4l[862.752]: port 2: master sync timeout
+ptp4l[862.801]: port 1: master sync timeout
+ptp4l[862.877]: port 2: master sync timeout
+ptp4l[862.926]: port 1: master sync timeout
+ptp4l[863.002]: port 2: master sync timeout
+ptp4l[863.051]: port 1: master sync timeout
+ptp4l[863.081]: port 1: delay timeout
+ptp4l[863.121]: port 2: delay timeout
+ptp4l[863.122]: delay   filtered       1321   raw       1320
+ptp4l[863.127]: port 2: master sync timeout
+ptp4l[863.166]: port 1: master tx announce timeout
+ptp4l[863.176]: port 1: master sync timeout
+ptp4l[863.252]: port 2: master sync timeout
+ptp4l[863.301]: port 1: master sync timeout
+ptp4l[863.367]: port 2: master tx announce timeout
+ptp4l[863.377]: port 2: master sync timeout
+ptp4l[863.426]: port 1: master sync timeout
+ptp4l[863.502]: port 2: master sync timeout
+ptp4l[863.551]: port 1: master sync timeout
+ptp4l[863.628]: port 2: master sync timeout
+ptp4l[863.677]: port 1: master sync timeout
+ptp4l[863.753]: port 2: master sync timeout
+ptp4l[863.802]: port 1: master sync timeout
+ptp4l[863.878]: port 2: master sync timeout
+ptp4l[863.927]: port 1: master sync timeout
+ptp4l[864.003]: port 2: master sync timeout
+ptp4l[864.052]: port 1: master sync timeout
+ptp4l[864.081]: port 1: delay timeout
+ptp4l[864.121]: port 2: delay timeout
+ptp4l[864.122]: delay   filtered       1321   raw       1320
+ptp4l[864.128]: port 2: master sync timeout
+ptp4l[864.166]: port 1: master tx announce timeout
+ptp4l[864.177]: port 1: master sync timeout
+ptp4l[864.253]: port 2: master sync timeout
+ptp4l[864.302]: port 1: master sync timeout
+ptp4l[864.368]: port 2: master tx announce timeout
+ptp4l[864.378]: port 2: master sync timeout
+ptp4l[864.427]: port 1: master sync timeout
+ptp4l[864.503]: port 2: master sync timeout
+ptp4l[864.552]: port 1: master sync timeout
+ptp4l[864.628]: port 2: master sync timeout
+ptp4l[864.677]: port 1: master sync timeout
+ptp4l[864.753]: port 2: master sync timeout
+ptp4l[864.802]: port 1: master sync timeout
+ptp4l[864.878]: port 2: master sync timeout
+ptp4l[864.927]: port 1: master sync timeout
+ptp4l[865.003]: port 2: master sync timeout
+ptp4l[865.052]: port 1: master sync timeout
+ptp4l[865.082]: port 1: delay timeout
+ptp4l[865.121]: port 2: delay timeout
+ptp4l[865.122]: delay   filtered       1321   raw       1320
+ptp4l[865.128]: port 2: master sync timeout
+ptp4l[865.143]: port 1: peer port id set to 00049f.fffe.05e0d3-1
+ptp4l[865.143]: delay   filtered       1312   raw       1312
+ptp4l[865.166]: port 1: master tx announce timeout
+ptp4l[865.177]: port 1: master sync timeout
+ptp4l[865.253]: port 2: master sync timeout
+ptp4l[865.302]: port 1: master sync timeout
+ptp4l[865.368]: port 2: master tx announce timeout
+ptp4l[865.378]: port 2: master sync timeout
+ptp4l[865.427]: port 1: master sync timeout
+ptp4l[865.503]: port 2: master sync timeout
+ptp4l[865.552]: port 1: master sync timeout
+ptp4l[865.628]: port 2: master sync timeout
+ptp4l[865.677]: port 1: master sync timeout
+ptp4l[865.753]: port 2: master sync timeout
+ptp4l[865.802]: port 1: master sync timeout
+ptp4l[865.878]: port 2: master sync timeout
+ptp4l[865.927]: port 1: master sync timeout
+ptp4l[866.003]: port 2: master sync timeout
+ptp4l[866.052]: port 1: master sync timeout
+ptp4l[866.082]: port 1: delay timeout
+ptp4l[866.082]: delay   filtered       1314   raw       1317
+ptp4l[866.121]: port 2: delay timeout
+ptp4l[866.122]: delay   filtered       1320   raw       1315
+ptp4l[866.129]: port 2: master sync timeout
+ptp4l[866.166]: port 1: master tx announce timeout
+ptp4l[866.178]: port 1: master sync timeout
+ptp4l[866.254]: port 2: master sync timeout
+ptp4l[866.303]: port 1: master sync timeout
+ptp4l[866.368]: port 2: master tx announce timeout
+ptp4l[866.379]: port 2: master sync timeout
+ptp4l[866.428]: port 1: master sync timeout
+ptp4l[866.504]: port 2: master sync timeout
+ptp4l[866.553]: port 1: master sync timeout
+ptp4l[866.629]: port 2: master sync timeout
+ptp4l[866.678]: port 1: master sync timeout
+ptp4l[866.754]: port 2: master sync timeout
+ptp4l[866.803]: port 1: master sync timeout
+ptp4l[866.879]: port 2: master sync timeout
+ptp4l[866.928]: port 1: master sync timeout
+ptp4l[867.004]: port 2: master sync timeout
+ptp4l[867.053]: port 1: master sync timeout
+ptp4l[867.082]: port 1: delay timeout
+ptp4l[867.082]: delay   filtered       1312   raw       1302
+ptp4l[867.121]: port 2: delay timeout
+ptp4l[867.122]: delay   filtered       1320   raw       1320
+ptp4l[867.129]: port 2: master sync timeout
+ptp4l[867.166]: port 1: master tx announce timeout
+ptp4l[867.166]: port 1: setting asCapable
+ptp4l[867.178]: port 1: master sync timeout
+ptp4l[867.254]: port 2: master sync timeout
+ptp4l[867.303]: port 1: master sync timeout
+ptp4l[867.368]: port 2: master tx announce timeout
+ptp4l[867.379]: port 2: master sync timeout
+ptp4l[867.428]: port 1: master sync timeout
+ptp4l[867.504]: port 2: master sync timeout
+ptp4l[867.553]: port 1: master sync timeout
+ptp4l[867.629]: port 2: master sync timeout
+ptp4l[867.678]: port 1: master sync timeout
+ptp4l[867.754]: port 2: master sync timeout
+ptp4l[867.803]: port 1: master sync timeout
+ptp4l[867.879]: port 2: master sync timeout
+ptp4l[867.928]: port 1: master sync timeout
+ptp4l[867.973]: port 1: new foreign master 00049f.fffe.05e0d3-1
+ptp4l[867.973]: selected best master clock 00049f.fffe.05e0d3
+ptp4l[867.973]: port 1: assuming the grand master role
+ptp4l[867.973]: port 2: assuming the grand master role
+ptp4l[868.004]: port 2: master sync timeout
+ptp4l[868.053]: port 1: master sync timeout
+ptp4l[868.082]: port 1: delay timeout
+ptp4l[868.082]: delay   filtered       1311   raw       1310
+ptp4l[868.122]: port 2: delay timeout
+ptp4l[868.122]: delay   filtered       1320   raw       1315
+ptp4l[868.129]: port 2: master sync timeout
+ptp4l[868.166]: port 1: master tx announce timeout
+ptp4l[868.178]: port 1: master sync timeout
+ptp4l[868.254]: port 2: master sync timeout
+ptp4l[868.303]: port 1: master sync timeout
+ptp4l[868.368]: port 2: master tx announce timeout
+ptp4l[868.379]: port 2: master sync timeout
+ptp4l[868.428]: port 1: master sync timeout
+ptp4l[868.504]: port 2: master sync timeout
+ptp4l[868.553]: port 1: master sync timeout
+ptp4l[868.629]: port 2: master sync timeout
+ptp4l[868.679]: port 1: master sync timeout
+ptp4l[868.755]: port 2: master sync timeout
+ptp4l[868.804]: port 1: master sync timeout
+ptp4l[868.880]: port 2: master sync timeout
+ptp4l[868.929]: port 1: master sync timeout
+ptp4l[869.005]: port 2: master sync timeout
+ptp4l[869.054]: port 1: master sync timeout
+ptp4l[869.082]: port 1: delay timeout
+ptp4l[869.082]: delay   filtered       1310   raw       1310
+ptp4l[869.122]: port 2: delay timeout
+ptp4l[869.122]: delay   filtered       1320   raw       1322
+ptp4l[869.130]: port 2: master sync timeout
+ptp4l[869.166]: port 1: master tx announce timeout
+ptp4l[869.179]: port 1: master sync timeout
+ptp4l[869.255]: port 2: master sync timeout
+ptp4l[869.304]: port 1: master sync timeout
+ptp4l[869.368]: port 2: master tx announce timeout
+ptp4l[869.380]: port 2: master sync timeout
+ptp4l[869.429]: port 1: master sync timeout
+ptp4l[869.505]: port 2: master sync timeout
+ptp4l[869.554]: port 1: master sync timeout
+ptp4l[869.630]: port 2: master sync timeout
+ptp4l[869.679]: port 1: master sync timeout
+ptp4l[869.755]: port 2: master sync timeout
+ptp4l[869.804]: port 1: master sync timeout
+ptp4l[869.880]: port 2: master sync timeout
+ptp4l[869.929]: port 1: master sync timeout
+ptp4l[870.005]: port 2: master sync timeout
+ptp4l[870.054]: port 1: master sync timeout
+ptp4l[870.082]: port 1: delay timeout
+ptp4l[870.082]: delay   filtered       1310   raw       1310
+ptp4l[870.122]: port 2: delay timeout
+ptp4l[870.122]: delay   filtered       1320   raw       1314
+ptp4l[870.130]: port 2: master sync timeout
+ptp4l[870.166]: port 1: master tx announce timeout
+ptp4l[870.179]: port 1: master sync timeout
+ptp4l[870.255]: port 2: master sync timeout
+ptp4l[870.304]: port 1: master sync timeout
+ptp4l[870.368]: port 2: master tx announce timeout
+ptp4l[870.380]: port 2: master sync timeout
+ptp4l[870.429]: port 1: master sync timeout
+ptp4l[870.505]: port 2: master sync timeout
+ptp4l[870.554]: port 1: master sync timeout
+ptp4l[870.630]: port 2: master sync timeout
+ptp4l[870.679]: port 1: master sync timeout
+ptp4l[870.755]: port 2: master sync timeout
+ptp4l[870.804]: port 1: master sync timeout
+ptp4l[870.880]: port 2: master sync timeout
+ptp4l[870.929]: port 1: master sync timeout
+ptp4l[871.005]: port 2: master sync timeout
+ptp4l[871.054]: port 1: master sync timeout
+ptp4l[871.082]: port 1: delay timeout
+ptp4l[871.082]: delay   filtered       1310   raw       1311
+ptp4l[871.122]: port 2: delay timeout
+ptp4l[871.122]: delay   filtered       1320   raw       1322
+ptp4l[871.130]: port 2: master sync timeout
+ptp4l[871.166]: port 1: master tx announce timeout
+ptp4l[871.180]: port 1: master sync timeout
+ptp4l[871.255]: port 2: master sync timeout
+ptp4l[871.305]: port 1: master sync timeout
+ptp4l[871.368]: port 2: master tx announce timeout
+ptp4l[871.381]: port 2: master sync timeout
+ptp4l[871.430]: port 1: master sync timeout
+ptp4l[871.506]: port 2: master sync timeout
+ptp4l[871.555]: port 1: master sync timeout
+ptp4l[871.631]: port 2: master sync timeout
+ptp4l[871.680]: port 1: master sync timeout
+ptp4l[871.756]: port 2: master sync timeout
+ptp4l[871.805]: port 1: master sync timeout
+ptp4l[871.881]: port 2: master sync timeout
+ptp4l[871.930]: port 1: master sync timeout
+ptp4l[872.006]: port 2: master sync timeout
+ptp4l[872.055]: port 1: master sync timeout
+ptp4l[872.082]: port 1: delay timeout
+ptp4l[872.082]: delay   filtered       1310   raw       1316
+ptp4l[872.122]: port 2: delay timeout
+ptp4l[872.122]: delay   filtered       1320   raw       1317
+ptp4l[872.131]: port 2: master sync timeout
+ptp4l[872.166]: port 1: master tx announce timeout
+ptp4l[872.180]: port 1: master sync timeout
+ptp4l[872.256]: port 2: master sync timeout
+ptp4l[872.305]: port 1: master sync timeout
+ptp4l[872.368]: port 2: master tx announce timeout
+ptp4l[872.381]: port 2: master sync timeout
+ptp4l[872.430]: port 1: master sync timeout
+ptp4l[872.506]: port 2: master sync timeout
+ptp4l[872.555]: port 1: master sync timeout
+ptp4l[872.631]: port 2: master sync timeout
+ptp4l[872.680]: port 1: master sync timeout
+ptp4l[872.756]: port 2: master sync timeout
+ptp4l[872.805]: port 1: master sync timeout
+ptp4l[872.881]: port 2: master sync timeout
+ptp4l[872.930]: port 1: master sync timeout
+ptp4l[873.006]: port 2: master sync timeout
+ptp4l[873.055]: port 1: master sync timeout
+ptp4l[873.082]: port 1: delay timeout
+ptp4l[873.082]: delay   filtered       1311   raw       1317
+ptp4l[873.122]: port 2: delay timeout
+ptp4l[873.122]: delay   filtered       1320   raw       1327
+ptp4l[873.131]: port 2: master sync timeout
+ptp4l[873.167]: port 1: master tx announce timeout
+ptp4l[873.180]: port 1: master sync timeout
+ptp4l[873.256]: port 2: master sync timeout
+ptp4l[873.305]: port 1: master sync timeout
+ptp4l[873.368]: port 2: master tx announce timeout
+ptp4l[873.381]: port 2: master sync timeout
+ptp4l[873.430]: port 1: master sync timeout
+ptp4l[873.506]: port 2: master sync timeout
+ptp4l[873.555]: port 1: master sync timeout
+ptp4l[873.631]: port 2: master sync timeout
+ptp4l[873.681]: port 1: master sync timeout
+ptp4l[873.756]: port 2: master sync timeout
+ptp4l[873.806]: port 1: master sync timeout
+ptp4l[873.882]: port 2: master sync timeout
+ptp4l[873.931]: port 1: master sync timeout
+ptp4l[874.007]: port 2: master sync timeout
+ptp4l[874.056]: port 1: master sync timeout
+ptp4l[874.082]: port 1: delay timeout
+ptp4l[874.082]: delay   filtered       1310   raw       1310
+ptp4l[874.122]: port 2: delay timeout
+ptp4l[874.122]: delay   filtered       1318   raw       1314
+ptp4l[874.132]: port 2: master sync timeout
+ptp4l[874.167]: port 1: master tx announce timeout
+ptp4l[874.181]: port 1: master sync timeout
+ptp4l[874.257]: port 2: master sync timeout
+ptp4l[874.306]: port 1: master sync timeout
+ptp4l[874.368]: port 2: master tx announce timeout
+ptp4l[874.382]: port 2: master sync timeout
+ptp4l[874.431]: port 1: master sync timeout
+ptp4l[874.507]: port 2: master sync timeout
+ptp4l[874.556]: port 1: master sync timeout
+ptp4l[874.632]: port 2: master sync timeout
+ptp4l[874.681]: port 1: master sync timeout
+ptp4l[874.757]: port 2: master sync timeout
+ptp4l[874.806]: port 1: master sync timeout
+ptp4l[874.882]: port 2: master sync timeout
+ptp4l[874.931]: port 1: master sync timeout
+ptp4l[875.007]: port 2: master sync timeout
+ptp4l[875.056]: port 1: master sync timeout
+ptp4l[875.082]: port 1: delay timeout
+ptp4l[875.082]: delay   filtered       1310   raw       1310
+ptp4l[875.122]: port 2: delay timeout
+ptp4l[875.122]: delay   filtered       1318   raw       1319
+ptp4l[875.132]: port 2: master sync timeout
+ptp4l[875.167]: port 1: master tx announce timeout
+ptp4l[875.181]: port 1: master sync timeout
+ptp4l[875.257]: port 2: master sync timeout
+ptp4l[875.306]: port 1: master sync timeout
+ptp4l[875.368]: port 2: master tx announce timeout
+ptp4l[875.382]: port 2: master sync timeout
+ptp4l[875.431]: port 1: master sync timeout
+ptp4l[875.507]: port 2: master sync timeout
+ptp4l[875.556]: port 1: master sync timeout
+ptp4l[875.632]: port 2: master sync timeout
+ptp4l[875.681]: port 1: master sync timeout
+ptp4l[875.757]: port 2: master sync timeout
+ptp4l[875.806]: port 1: master sync timeout
+ptp4l[875.882]: port 2: master sync timeout
+ptp4l[875.931]: port 1: master sync timeout
+ptp4l[876.007]: port 2: master sync timeout
+ptp4l[876.056]: port 1: master sync timeout
+ptp4l[876.082]: port 1: delay timeout
+ptp4l[876.082]: delay   filtered       1310   raw       1305
+ptp4l[876.122]: port 2: delay timeout
+ptp4l[876.122]: delay   filtered       1319   raw       1319
+ptp4l[876.132]: port 2: master sync timeout
+ptp4l[876.167]: port 1: master tx announce timeout
+ptp4l[876.182]: port 1: master sync timeout
+ptp4l[876.257]: port 2: master sync timeout
+ptp4l[876.307]: port 1: master sync timeout
+ptp4l[876.368]: port 2: master tx announce timeout
+ptp4l[876.383]: port 2: master sync timeout
+ptp4l[876.432]: port 1: master sync timeout
+ptp4l[876.508]: port 2: master sync timeout
+ptp4l[876.557]: port 1: master sync timeout
+ptp4l[876.633]: port 2: master sync timeout
+ptp4l[876.682]: port 1: master sync timeout
+ptp4l[876.758]: port 2: master sync timeout
+ptp4l[876.807]: port 1: master sync timeout
+ptp4l[876.883]: port 2: master sync timeout
+ptp4l[876.932]: port 1: master sync timeout
+ptp4l[877.008]: port 2: master sync timeout
+ptp4l[877.057]: port 1: master sync timeout
+ptp4l[877.082]: port 1: delay timeout
+ptp4l[877.082]: delay   filtered       1310   raw       1312
+ptp4l[877.122]: port 2: delay timeout
+ptp4l[877.122]: delay   filtered       1319   raw       1322
+ptp4l[877.133]: port 2: master sync timeout
+ptp4l[877.167]: port 1: master tx announce timeout
+ptp4l[877.182]: port 1: master sync timeout
+ptp4l[877.258]: port 2: master sync timeout
+ptp4l[877.307]: port 1: master sync timeout
+ptp4l[877.368]: port 2: master tx announce timeout
+ptp4l[877.383]: port 2: master sync timeout
+ptp4l[877.432]: port 1: master sync timeout
+ptp4l[877.508]: port 2: master sync timeout
+ptp4l[877.557]: port 1: master sync timeout
+ptp4l[877.633]: port 2: master sync timeout
+ptp4l[877.682]: port 1: master sync timeout
+ptp4l[877.758]: port 2: master sync timeout
+ptp4l[877.807]: port 1: master sync timeout
+ptp4l[877.883]: port 2: master sync timeout
+ptp4l[877.932]: port 1: master sync timeout
+ptp4l[878.008]: port 2: master sync timeout
+ptp4l[878.057]: port 1: master sync timeout
+ptp4l[878.082]: port 1: delay timeout
+ptp4l[878.082]: delay   filtered       1310   raw       1309
+ptp4l[878.122]: port 2: delay timeout
+ptp4l[878.122]: delay   filtered       1320   raw       1322
+ptp4l[878.133]: port 2: master sync timeout
+ptp4l[878.167]: port 1: master tx announce timeout
+ptp4l[878.182]: port 1: master sync timeout
+ptp4l[878.258]: port 2: master sync timeout
+ptp4l[878.307]: port 1: master sync timeout
+ptp4l[878.368]: port 2: master tx announce timeout
+ptp4l[878.383]: port 2: master sync timeout
+ptp4l[878.432]: port 1: master sync timeout
+ptp4l[878.508]: port 2: master sync timeout
+ptp4l[878.557]: port 1: master sync timeout
+ptp4l[878.633]: port 2: master sync timeout
+ptp4l[878.682]: port 1: master sync timeout
+ptp4l[878.758]: port 2: master sync timeout
+ptp4l[878.808]: port 1: master sync timeout
+ptp4l[878.883]: port 2: master sync timeout
+ptp4l[878.933]: port 1: master sync timeout
+ptp4l[879.009]: port 2: master sync timeout
+ptp4l[879.058]: port 1: master sync timeout
+ptp4l[879.082]: port 1: delay timeout
+ptp4l[879.083]: delay   filtered       1310   raw       1314
+ptp4l[879.122]: port 2: delay timeout
+ptp4l[879.122]: delay   filtered       1320   raw       1322
+ptp4l[879.134]: port 2: master sync timeout
+ptp4l[879.167]: port 1: master tx announce timeout
+ptp4l[879.183]: port 1: master sync timeout
+ptp4l[879.259]: port 2: master sync timeout
+ptp4l[879.308]: port 1: master sync timeout
+ptp4l[879.368]: port 2: master tx announce timeout
+ptp4l[879.384]: port 2: master sync timeout
+ptp4l[879.433]: port 1: master sync timeout
+ptp4l[879.509]: port 2: master sync timeout
+ptp4l[879.558]: port 1: master sync timeout
+ptp4l[879.634]: port 2: master sync timeout
+ptp4l[879.683]: port 1: master sync timeout
+ptp4l[879.759]: port 2: master sync timeout
+ptp4l[879.808]: port 1: master sync timeout
+ptp4l[879.884]: port 2: master sync timeout
+ptp4l[879.933]: port 1: master sync timeout
+ptp4l[880.009]: port 2: master sync timeout
+ptp4l[880.058]: port 1: master sync timeout
+ptp4l[880.082]: port 1: delay timeout
+ptp4l[880.083]: delay   filtered       1310   raw       1304
+ptp4l[880.122]: port 2: delay timeout
+ptp4l[880.122]: delay   filtered       1322   raw       1322
+ptp4l[880.134]: port 2: master sync timeout
+ptp4l[880.167]: port 1: master tx announce timeout
+ptp4l[880.183]: port 1: master sync timeout
+ptp4l[880.259]: port 2: master sync timeout
+ptp4l[880.308]: port 1: master sync timeout
+ptp4l[880.368]: port 2: master tx announce timeout
+ptp4l[880.384]: port 2: master sync timeout
+ptp4l[880.433]: port 1: master sync timeout
+ptp4l[880.509]: port 2: master sync timeout
+ptp4l[880.558]: port 1: master sync timeout
+ptp4l[880.634]: port 2: master sync timeout
+ptp4l[880.683]: port 1: master sync timeout
+ptp4l[880.759]: port 2: master sync timeout
+ptp4l[880.808]: port 1: master sync timeout
+ptp4l[880.884]: port 2: master sync timeout
+ptp4l[880.933]: port 1: master sync timeout
+ptp4l[881.009]: port 2: master sync timeout
+ptp4l[881.058]: port 1: master sync timeout
+ptp4l[881.082]: port 1: delay timeout
+ptp4l[881.083]: delay   filtered       1310   raw       1307
+ptp4l[881.122]: port 2: delay timeout
+ptp4l[881.122]: delay   filtered       1320   raw       1317
+ptp4l[881.134]: port 2: master sync timeout
+ptp4l[881.167]: port 1: master tx announce timeout
+ptp4l[881.183]: port 1: master sync timeout
+ptp4l[881.259]: port 2: master sync timeout
+ptp4l[881.309]: port 1: master sync timeout
+ptp4l[881.368]: port 2: master tx announce timeout
+ptp4l[881.384]: port 2: master sync timeout
+ptp4l[881.434]: port 1: master sync timeout
+ptp4l[881.510]: port 2: master sync timeout
+ptp4l[881.559]: port 1: master sync timeout
+ptp4l[881.635]: port 2: master sync timeout
+ptp4l[881.684]: port 1: master sync timeout
+ptp4l[881.760]: port 2: master sync timeout
+ptp4l[881.809]: port 1: master sync timeout
+ptp4l[881.885]: port 2: master sync timeout
+ptp4l[881.934]: port 1: master sync timeout
+ptp4l[882.010]: port 2: master sync timeout
+ptp4l[882.059]: port 1: master sync timeout
+ptp4l[882.082]: port 1: delay timeout
+ptp4l[882.083]: delay   filtered       1310   raw       1312
+ptp4l[882.122]: port 2: delay timeout
+ptp4l[882.123]: delay   filtered       1321   raw       1320
+ptp4l[882.135]: port 2: master sync timeout
+ptp4l[882.167]: port 1: master tx announce timeout
+ptp4l[882.184]: port 1: master sync timeout
+ptp4l[882.260]: port 2: master sync timeout
+ptp4l[882.309]: port 1: master sync timeout
+ptp4l[882.368]: port 2: master tx announce timeout
+ptp4l[882.385]: port 2: master sync timeout
+ptp4l[882.434]: port 1: master sync timeout
+ptp4l[882.510]: port 2: master sync timeout
+ptp4l[882.559]: port 1: master sync timeout
+ptp4l[882.635]: port 2: master sync timeout
+ptp4l[882.684]: port 1: master sync timeout
+ptp4l[882.760]: port 2: master sync timeout
+ptp4l[882.809]: port 1: master sync timeout
+ptp4l[882.885]: port 2: master sync timeout
+ptp4l[882.934]: port 1: master sync timeout
+ptp4l[883.010]: port 2: master sync timeout
+ptp4l[883.059]: port 1: master sync timeout
+ptp4l[883.082]: port 1: delay timeout
+ptp4l[883.083]: delay   filtered       1309   raw       1305
+ptp4l[883.122]: port 2: delay timeout
+ptp4l[883.123]: delay   filtered       1321   raw       1322
+ptp4l[883.135]: port 2: master sync timeout
+ptp4l[883.167]: port 1: master tx announce timeout
+ptp4l[883.184]: port 1: master sync timeout
+ptp4l[883.260]: port 2: master sync timeout
+ptp4l[883.309]: port 1: master sync timeout
+ptp4l[883.368]: port 2: master tx announce timeout
+ptp4l[883.385]: port 2: master sync timeout
+ptp4l[883.434]: port 1: master sync timeout
+ptp4l[883.510]: port 2: master sync timeout
+ptp4l[883.559]: port 1: master sync timeout
+ptp4l[883.635]: port 2: master sync timeout
+ptp4l[883.685]: port 1: master sync timeout
+ptp4l[883.760]: port 2: master sync timeout
+ptp4l[883.810]: port 1: master sync timeout
+ptp4l[883.885]: port 2: master sync timeout
+ptp4l[883.935]: port 1: master sync timeout
+ptp4l[884.011]: port 2: master sync timeout
+ptp4l[884.060]: port 1: master sync timeout
+ptp4l[884.082]: port 1: delay timeout
+ptp4l[884.083]: delay   filtered       1309   raw       1317
+ptp4l[884.122]: port 2: delay timeout
+ptp4l[884.123]: delay   filtered       1322   raw       1324
+ptp4l[884.136]: port 2: master sync timeout
+ptp4l[884.167]: port 1: master tx announce timeout
+ptp4l[884.185]: port 1: master sync timeout
+ptp4l[884.261]: port 2: master sync timeout
+ptp4l[884.310]: port 1: master sync timeout
+ptp4l[884.369]: port 2: master tx announce timeout
+ptp4l[884.386]: port 2: master sync timeout
+ptp4l[884.435]: port 1: master sync timeout
+ptp4l[884.511]: port 2: master sync timeout
+ptp4l[884.560]: port 1: master sync timeout
+ptp4l[884.636]: port 2: master sync timeout
+ptp4l[884.685]: port 1: master sync timeout
+ptp4l[884.761]: port 2: master sync timeout
+ptp4l[884.810]: port 1: master sync timeout
+ptp4l[884.886]: port 2: master sync timeout
+ptp4l[884.935]: port 1: master sync timeout
+ptp4l[885.011]: port 2: master sync timeout
+ptp4l[885.060]: port 1: master sync timeout
+ptp4l[885.082]: port 1: delay timeout
+ptp4l[885.083]: delay   filtered       1308   raw       1304
+ptp4l[885.122]: port 2: delay timeout
+ptp4l[885.123]: delay   filtered       1322   raw       1322
+ptp4l[885.136]: port 2: master sync timeout
+ptp4l[885.167]: port 1: master tx announce timeout
+ptp4l[885.185]: port 1: master sync timeout
+ptp4l[885.261]: port 2: master sync timeout
+ptp4l[885.310]: port 1: master sync timeout
+ptp4l[885.369]: port 2: master tx announce timeout
+ptp4l[885.386]: port 2: master sync timeout
+ptp4l[885.435]: port 1: master sync timeout
+ptp4l[885.511]: port 2: master sync timeout
+ptp4l[885.560]: port 1: master sync timeout
+ptp4l[885.636]: port 2: master sync timeout
+ptp4l[885.685]: port 1: master sync timeout
+ptp4l[885.761]: port 2: master sync timeout
+ptp4l[885.810]: port 1: master sync timeout
+ptp4l[885.886]: port 2: master sync timeout
+ptp4l[885.935]: port 1: master sync timeout
+ptp4l[886.011]: port 2: master sync timeout
+ptp4l[886.060]: port 1: master sync timeout
+ptp4l[886.083]: port 1: delay timeout
+ptp4l[886.083]: delay   filtered       1310   raw       1312
+ptp4l[886.122]: port 2: delay timeout
+ptp4l[886.123]: delay   filtered       1322   raw       1317
+ptp4l[886.136]: port 2: master sync timeout
+ptp4l[886.167]: port 1: master tx announce timeout
+ptp4l[886.185]: port 1: master sync timeout
+ptp4l[886.261]: port 2: master sync timeout
+ptp4l[886.311]: port 1: master sync timeout
+ptp4l[886.369]: port 2: master tx announce timeout
+ptp4l[886.386]: port 2: master sync timeout
+ptp4l[886.436]: port 1: master sync timeout
+ptp4l[886.512]: port 2: master sync timeout
+ptp4l[886.561]: port 1: master sync timeout
+ptp4l[886.637]: port 2: master sync timeout
+ptp4l[886.686]: port 1: master sync timeout
+ptp4l[886.762]: port 2: master sync timeout
+ptp4l[886.811]: port 1: master sync timeout
+ptp4l[886.887]: port 2: master sync timeout
+ptp4l[886.936]: port 1: master sync timeout
+ptp4l[887.012]: port 2: master sync timeout
+ptp4l[887.061]: port 1: master sync timeout
+ptp4l[887.083]: port 1: delay timeout
+ptp4l[887.083]: delay   filtered       1308   raw       1307
+ptp4l[887.122]: port 2: delay timeout
+ptp4l[887.123]: delay   filtered       1322   raw       1317
+ptp4l[887.137]: port 2: master sync timeout
+ptp4l[887.167]: port 1: master tx announce timeout
+ptp4l[887.186]: port 1: master sync timeout
+ptp4l[887.262]: port 2: master sync timeout
+ptp4l[887.311]: port 1: master sync timeout
+ptp4l[887.369]: port 2: master tx announce timeout
+ptp4l[887.387]: port 2: master sync timeout
+ptp4l[887.436]: port 1: master sync timeout
+ptp4l[887.512]: port 2: master sync timeout
+ptp4l[887.561]: port 1: master sync timeout
+ptp4l[887.637]: port 2: master sync timeout
+ptp4l[887.686]: port 1: master sync timeout
+ptp4l[887.762]: port 2: master sync timeout
+ptp4l[887.811]: port 1: master sync timeout
+ptp4l[887.887]: port 2: master sync timeout
+ptp4l[887.936]: port 1: master sync timeout
+ptp4l[888.012]: port 2: master sync timeout
+ptp4l[888.061]: port 1: master sync timeout
+ptp4l[888.083]: port 1: delay timeout
+ptp4l[888.083]: delay   filtered       1309   raw       1315
+ptp4l[888.122]: port 2: delay timeout
+ptp4l[888.123]: delay   filtered       1321   raw       1320
+ptp4l[888.137]: port 2: master sync timeout
+ptp4l[888.167]: port 1: master tx announce timeout
+ptp4l[888.186]: port 1: master sync timeout
+ptp4l[888.262]: port 2: master sync timeout
+ptp4l[888.311]: port 1: master sync timeout
+ptp4l[888.369]: port 2: master tx announce timeout
+ptp4l[888.387]: port 2: master sync timeout
+ptp4l[888.436]: port 1: master sync timeout
+ptp4l[888.512]: port 2: master sync timeout
+ptp4l[888.561]: port 1: master sync timeout
+ptp4l[888.637]: port 2: master sync timeout
+ptp4l[888.687]: port 1: master sync timeout
+ptp4l[888.762]: port 2: master sync timeout
+ptp4l[888.812]: port 1: master sync timeout
+ptp4l[888.887]: port 2: master sync timeout
+ptp4l[888.937]: port 1: master sync timeout
+ptp4l[889.013]: port 2: master sync timeout
+ptp4l[889.062]: port 1: master sync timeout
+ptp4l[889.083]: port 1: delay timeout
+ptp4l[889.083]: delay   filtered       1308   raw       1309
+ptp4l[889.123]: port 2: delay timeout
+ptp4l[889.123]: delay   filtered       1320   raw       1320
+ptp4l[889.138]: port 2: master sync timeout
+ptp4l[889.167]: port 1: master tx announce timeout
+ptp4l[889.187]: port 1: master sync timeout
+ptp4l[889.263]: port 2: master sync timeout
+ptp4l[889.312]: port 1: master sync timeout
+ptp4l[889.369]: port 2: master tx announce timeout
+ptp4l[889.388]: port 2: master sync timeout
+ptp4l[889.437]: port 1: master sync timeout
+ptp4l[889.513]: port 2: master sync timeout
+ptp4l[889.562]: port 1: master sync timeout
+ptp4l[889.638]: port 2: master sync timeout
+ptp4l[889.687]: port 1: master sync timeout
+ptp4l[889.763]: port 2: master sync timeout
+ptp4l[889.812]: port 1: master sync timeout
+ptp4l[889.888]: port 2: master sync timeout
+ptp4l[889.937]: port 1: master sync timeout
+ptp4l[890.013]: port 2: master sync timeout
+ptp4l[890.062]: port 1: master sync timeout
+ptp4l[890.083]: port 1: delay timeout
+ptp4l[890.083]: delay   filtered       1310   raw       1312
+ptp4l[890.123]: port 2: delay timeout
+ptp4l[890.123]: delay   filtered       1320   raw       1319
+ptp4l[890.138]: port 2: master sync timeout
+ptp4l[890.167]: port 1: master tx announce timeout
+ptp4l[890.187]: port 1: master sync timeout
+ptp4l[890.263]: port 2: master sync timeout
+ptp4l[890.312]: port 1: master sync timeout
+ptp4l[890.369]: port 2: master tx announce timeout
+ptp4l[890.388]: port 2: master sync timeout
+ptp4l[890.437]: port 1: master sync timeout
+ptp4l[890.513]: port 2: master sync timeout
+ptp4l[890.562]: port 1: master sync timeout
+ptp4l[890.638]: port 2: master sync timeout
+ptp4l[890.687]: port 1: master sync timeout
+ptp4l[890.763]: port 2: master sync timeout
+ptp4l[890.812]: port 1: master sync timeout
+ptp4l[890.888]: port 2: master sync timeout
+ptp4l[890.937]: port 1: master sync timeout
+ptp4l[891.013]: port 2: master sync timeout
+ptp4l[891.062]: port 1: master sync timeout
+ptp4l[891.083]: port 1: delay timeout
+ptp4l[891.083]: delay   filtered       1310   raw       1307
+ptp4l[891.123]: port 2: delay timeout
+ptp4l[891.123]: delay   filtered       1320   raw       1322
+ptp4l[891.138]: port 2: master sync timeout
+ptp4l[891.167]: port 1: master tx announce timeout
+ptp4l[891.188]: port 1: master sync timeout
+ptp4l[891.263]: port 2: master sync timeout
+ptp4l[891.313]: port 1: master sync timeout
+ptp4l[891.369]: port 2: master tx announce timeout
+ptp4l[891.388]: port 2: master sync timeout
+ptp4l[891.438]: port 1: master sync timeout
+ptp4l[891.513]: port 2: master sync timeout
+ptp4l[891.563]: port 1: master sync timeout
+ptp4l[891.639]: port 2: master sync timeout
+ptp4l[891.688]: port 1: master sync timeout
+ptp4l[891.764]: port 2: master sync timeout
+ptp4l[891.813]: port 1: master sync timeout
+ptp4l[891.889]: port 2: master sync timeout
+ptp4l[891.938]: port 1: master sync timeout
+ptp4l[892.014]: port 2: master sync timeout
+ptp4l[892.063]: port 1: master sync timeout
+ptp4l[892.083]: port 1: delay timeout
+ptp4l[892.123]: port 2: delay timeout
+ptp4l[892.123]: delay   filtered       1320   raw       1317
+ptp4l[892.139]: port 2: master sync timeout
+ptp4l[892.167]: port 1: master tx announce timeout
+ptp4l[892.188]: port 1: master sync timeout
+ptp4l[892.264]: port 2: master sync timeout
+ptp4l[892.313]: port 1: master sync timeout
+ptp4l[892.369]: port 2: master tx announce timeout
+ptp4l[892.389]: port 2: master sync timeout
+ptp4l[892.438]: port 1: master sync timeout
+ptp4l[892.514]: port 2: master sync timeout
+ptp4l[892.563]: port 1: master sync timeout
+ptp4l[892.639]: port 2: master sync timeout
+ptp4l[892.688]: port 1: master sync timeout
+ptp4l[892.764]: port 2: master sync timeout
+ptp4l[892.813]: port 1: master sync timeout
+ptp4l[892.889]: port 2: master sync timeout
+ptp4l[892.938]: port 1: master sync timeout
+ptp4l[893.014]: port 2: master sync timeout
+ptp4l[893.063]: port 1: master sync timeout
+ptp4l[893.083]: port 1: delay timeout
+ptp4l[893.123]: port 2: delay timeout
+ptp4l[893.123]: delay   filtered       1319   raw       1319
+ptp4l[893.139]: port 2: master sync timeout
+ptp4l[893.167]: port 1: master tx announce timeout
+ptp4l[893.188]: port 1: master sync timeout
+ptp4l[893.264]: port 2: master sync timeout
+ptp4l[893.313]: port 1: master sync timeout
+ptp4l[893.369]: port 2: master tx announce timeout
+ptp4l[893.389]: port 2: master sync timeout
+ptp4l[893.438]: port 1: master sync timeout
+ptp4l[893.514]: port 2: master sync timeout
+ptp4l[893.563]: port 1: master sync timeout
+ptp4l[893.639]: port 2: master sync timeout
+ptp4l[893.689]: port 1: master sync timeout
+ptp4l[893.764]: port 2: master sync timeout
+ptp4l[893.814]: port 1: master sync timeout
+ptp4l[893.889]: port 2: master sync timeout
+ptp4l[893.939]: port 1: master sync timeout
+ptp4l[894.014]: port 2: master sync timeout
+ptp4l[894.064]: port 1: master sync timeout
+ptp4l[894.083]: port 1: delay timeout
+ptp4l[894.123]: port 2: delay timeout
+ptp4l[894.123]: delay   filtered       1319   raw       1315
+ptp4l[894.140]: port 2: master sync timeout
+ptp4l[894.168]: port 1: master tx announce timeout
+ptp4l[894.189]: port 1: master sync timeout
+ptp4l[894.265]: port 2: master sync timeout
+ptp4l[894.314]: port 1: master sync timeout
+ptp4l[894.369]: port 2: master tx announce timeout
+ptp4l[894.390]: port 2: master sync timeout
+ptp4l[894.439]: port 1: master sync timeout
+ptp4l[894.515]: port 2: master sync timeout
+ptp4l[894.564]: port 1: master sync timeout
+ptp4l[894.640]: port 2: master sync timeout
+ptp4l[894.689]: port 1: master sync timeout
+ptp4l[894.765]: port 2: master sync timeout
+ptp4l[894.814]: port 1: master sync timeout
+ptp4l[894.890]: port 2: master sync timeout
+ptp4l[894.939]: port 1: master sync timeout
+ptp4l[895.015]: port 2: master sync timeout
+ptp4l[895.064]: port 1: master sync timeout
+ptp4l[895.083]: port 1: delay timeout
+ptp4l[895.123]: port 2: delay timeout
+ptp4l[895.140]: port 2: master sync timeout
+ptp4l[895.168]: port 1: master tx announce timeout
+ptp4l[895.189]: port 1: master sync timeout
+ptp4l[895.265]: port 2: master sync timeout
+ptp4l[895.314]: port 1: master sync timeout
+ptp4l[895.369]: port 2: master tx announce timeout
+ptp4l[895.390]: port 2: master sync timeout
+ptp4l[895.439]: port 1: master sync timeout
+ptp4l[895.515]: port 2: master sync timeout
+ptp4l[895.564]: port 1: master sync timeout
+ptp4l[895.640]: port 2: master sync timeout
+ptp4l[895.689]: port 1: master sync timeout
+ptp4l[895.765]: port 2: master sync timeout
+ptp4l[895.814]: port 1: master sync timeout
+ptp4l[895.890]: port 2: master sync timeout
+ptp4l[895.939]: port 1: master sync timeout
+ptp4l[896.015]: port 2: master sync timeout
+ptp4l[896.064]: port 1: master sync timeout
+ptp4l[896.083]: port 1: delay timeout
+ptp4l[896.123]: port 2: delay timeout
+ptp4l[896.140]: port 2: master sync timeout
+ptp4l[896.168]: port 1: master tx announce timeout
+ptp4l[896.168]: port 1: missed 4 peer delay resp, resetting asCapable
+ptp4l[896.190]: port 1: master sync timeout
+ptp4l[896.265]: port 2: master sync timeout
+ptp4l[896.315]: port 1: master sync timeout
+ptp4l[896.369]: port 2: master tx announce timeout
+ptp4l[896.390]: port 2: master sync timeout
+ptp4l[896.440]: port 1: master sync timeout
+ptp4l[896.515]: port 2: master sync timeout
+ptp4l[896.565]: port 1: master sync timeout
+ptp4l[896.641]: port 2: master sync timeout
+ptp4l[896.690]: port 1: master sync timeout
+ptp4l[896.766]: port 2: master sync timeout
+ptp4l[896.815]: port 1: master sync timeout
+ptp4l[896.891]: port 2: master sync timeout
+^Croot@ls1043ardb:~/ptp4l-tab/usr/local/sbin#

@@ -1,0 +1,2765 @@
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# cat gPTP.cfg
+#
+# 802.1AS example configuration containing those attributes which
+# differ from the defaults.  See the file, default.cfg, for the
+# complete list of available options.
+#
+[global]
+gmCapable               1
+priority1               249
+priority2               248
+logAnnounceInterval     0
+logSyncInterval         -3
+syncReceiptTimeout      3
+#neighborPropDelayThresh 800
+min_neighbor_prop_delay -20000000
+assume_two_step         1
+path_trace_enabled      1
+follow_up_info          1
+transportSpecific       0x1
+ptp_dst_mac             01:80:C2:00:00:0E
+network_transport       L2
+delay_mechanism         P2P
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# ./ptp4l -i fm1-mac3 -i fm1-mac4 -f ./gPTP.cfg -m -l 7
+ptp4l[1529.690]: config item (null).assume_two_step is 1
+ptp4l[1529.690]: config item (null).check_fup_sync is 0
+ptp4l[1529.690]: config item (null).tx_timestamp_timeout is 1
+ptp4l[1529.690]: config item (null).hwts_filter is 0
+ptp4l[1529.690]: config item (null).clock_servo is 0
+ptp4l[1529.690]: config item (null).clock_type is 32768
+ptp4l[1529.690]: config item (null).clock_servo is 0
+ptp4l[1529.690]: config item (null).clockClass is 248
+ptp4l[1529.690]: config item (null).clockAccuracy is 254
+ptp4l[1529.690]: config item (null).offsetScaledLogVariance is 65535
+ptp4l[1529.690]: config item (null).productDescription is ';;'
+ptp4l[1529.690]: config item (null).revisionData is ';;'
+ptp4l[1529.690]: config item (null).userDescription is ''
+ptp4l[1529.690]: config item (null).manufacturerIdentity is '00:00:00'
+ptp4l[1529.690]: config item (null).domainNumber is 0
+ptp4l[1529.690]: config item (null).slaveOnly is 0
+ptp4l[1529.690]: config item (null).gmCapable is 1
+ptp4l[1529.690]: config item (null).gmCapable is 1
+ptp4l[1529.690]: config item (null).G.8275.defaultDS.localPriority is 128
+ptp4l[1529.690]: config item (null).maxStepsRemoved is 255
+ptp4l[1529.690]: config item (null).time_stamping is 1
+ptp4l[1529.690]: config item (null).twoStepFlag is 1
+ptp4l[1529.690]: config item (null).twoStepFlag is 1
+ptp4l[1529.690]: config item (null).time_stamping is 1
+ptp4l[1529.690]: config item (null).priority1 is 249
+ptp4l[1529.690]: config item (null).priority2 is 248
+ptp4l[1529.690]: interface index 4 is up
+ptp4l[1529.691]: interface index 5 is up
+ptp4l[1529.691]: config item (null).free_running is 0
+ptp4l[1529.691]: selected /dev/ptp1 as PTP clock
+ptp4l[1529.691]: config item (null).clockIdentity is '000000.0000.000000'
+ptp4l[1529.691]: config item (null).uds_address is '/var/run/ptp4l'
+ptp4l[1529.691]: section item /var/run/ptp4l.announceReceiptTimeout now 0
+ptp4l[1529.691]: section item /var/run/ptp4l.delay_mechanism now 0
+ptp4l[1529.691]: section item /var/run/ptp4l.network_transport now 0
+ptp4l[1529.691]: section item /var/run/ptp4l.delay_filter_length now 1
+ptp4l[1529.691]: config item (null).free_running is 0
+ptp4l[1529.691]: config item (null).freq_est_interval is 1
+ptp4l[1529.691]: config item (null).gmCapable is 1
+ptp4l[1529.691]: config item (null).kernel_leap is 1
+ptp4l[1529.691]: config item (null).utc_offset is 37
+ptp4l[1529.691]: config item (null).timeSource is 160
+ptp4l[1529.691]: config item (null).pi_proportional_const is 0.000000
+ptp4l[1529.691]: config item (null).pi_integral_const is 0.000000
+ptp4l[1529.691]: config item (null).pi_proportional_scale is 0.000000
+ptp4l[1529.691]: config item (null).pi_proportional_exponent is -0.300000
+ptp4l[1529.691]: config item (null).pi_proportional_norm_max is 0.700000
+ptp4l[1529.691]: config item (null).pi_integral_scale is 0.000000
+ptp4l[1529.691]: config item (null).pi_integral_exponent is 0.400000
+ptp4l[1529.691]: config item (null).pi_integral_norm_max is 0.300000
+ptp4l[1529.691]: config item (null).step_threshold is 0.000000
+ptp4l[1529.691]: config item (null).first_step_threshold is 0.000020
+ptp4l[1529.691]: config item (null).max_frequency is 900000000
+ptp4l[1529.691]: config item (null).servo_offset_threshold is 0
+ptp4l[1529.691]: config item (null).servo_num_offset_values is 10
+ptp4l[1529.691]: config item (null).dataset_comparison is 0
+ptp4l[1529.691]: config item (null).tsproc_mode is 0
+ptp4l[1529.691]: config item (null).delay_filter is 1
+ptp4l[1529.691]: config item (null).delay_filter_length is 10
+ptp4l[1529.691]: config item (null).initial_delay is 0
+ptp4l[1529.691]: config item (null).summary_interval is 0
+ptp4l[1529.691]: config item (null).sanity_freq_limit is 200000000
+ptp4l[1529.691]: PI servo: sync interval 1.000 kp 0.700 ki 0.300000
+ptp4l[1529.691]: config item /var/run/ptp4l.boundary_clock_jbod is 0
+ptp4l[1529.691]: config item /var/run/ptp4l.network_transport is 0
+ptp4l[1529.691]: config item /var/run/ptp4l.masterOnly is 0
+ptp4l[1529.691]: config item /var/run/ptp4l.BMCA is 0
+ptp4l[1529.691]: config item /var/run/ptp4l.delayAsymmetry is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.follow_up_info is 1
+ptp4l[1530.024]: config item /var/run/ptp4l.freq_est_interval is 1
+ptp4l[1530.024]: config item /var/run/ptp4l.net_sync_monitor is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.path_trace_enabled is 1
+ptp4l[1530.024]: config item /var/run/ptp4l.tc_spanning_tree is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.ingressLatency is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.egressLatency is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.delay_mechanism is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.asCapable is 1
+ptp4l[1530.024]: config item /var/run/ptp4l.hybrid_e2e is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.fault_badpeernet_interval is 16
+ptp4l[1530.024]: config item /var/run/ptp4l.fault_reset_interval is 4
+ptp4l[1530.024]: config item /var/run/ptp4l.tsproc_mode is 0
+ptp4l[1530.024]: config item /var/run/ptp4l.delay_filter is 1
+ptp4l[1530.025]: config item /var/run/ptp4l.delay_filter_length is 1
+ptp4l[1530.025]: config item fm1-mac3.boundary_clock_jbod is 0
+ptp4l[1530.025]: config item fm1-mac3.network_transport is 3
+ptp4l[1530.025]: config item fm1-mac3.masterOnly is 0
+ptp4l[1530.025]: config item fm1-mac3.BMCA is 0
+ptp4l[1530.025]: config item fm1-mac3.delayAsymmetry is 0
+ptp4l[1530.025]: config item fm1-mac3.follow_up_info is 1
+ptp4l[1530.025]: config item fm1-mac3.freq_est_interval is 1
+ptp4l[1530.025]: config item fm1-mac3.net_sync_monitor is 0
+ptp4l[1530.025]: config item fm1-mac3.path_trace_enabled is 1
+ptp4l[1530.025]: config item fm1-mac3.tc_spanning_tree is 0
+ptp4l[1530.025]: config item fm1-mac3.ingressLatency is 0
+ptp4l[1530.025]: config item fm1-mac3.egressLatency is 0
+ptp4l[1530.025]: config item fm1-mac3.delay_mechanism is 2
+ptp4l[1530.025]: config item fm1-mac3.asCapable is 1
+ptp4l[1530.025]: config item fm1-mac3.unicast_master_table is 0
+ptp4l[1530.025]: config item fm1-mac3.unicast_listen is 0
+ptp4l[1530.025]: config item fm1-mac3.hybrid_e2e is 0
+ptp4l[1530.025]: config item fm1-mac3.fault_badpeernet_interval is 16
+ptp4l[1530.025]: config item fm1-mac3.fault_reset_interval is 4
+ptp4l[1530.025]: config item fm1-mac3.tsproc_mode is 0
+ptp4l[1530.025]: config item fm1-mac3.delay_filter is 1
+ptp4l[1530.025]: config item fm1-mac3.delay_filter_length is 10
+ptp4l[1530.025]: config item fm1-mac4.boundary_clock_jbod is 0
+ptp4l[1530.025]: config item fm1-mac4.network_transport is 3
+ptp4l[1530.025]: config item fm1-mac4.masterOnly is 0
+ptp4l[1530.025]: config item fm1-mac4.BMCA is 0
+ptp4l[1530.025]: config item fm1-mac4.delayAsymmetry is 0
+ptp4l[1530.025]: config item fm1-mac4.follow_up_info is 1
+ptp4l[1530.025]: config item fm1-mac4.freq_est_interval is 1
+ptp4l[1530.025]: config item fm1-mac4.net_sync_monitor is 0
+ptp4l[1530.025]: config item fm1-mac4.path_trace_enabled is 1
+ptp4l[1530.025]: config item fm1-mac4.tc_spanning_tree is 0
+ptp4l[1530.025]: config item fm1-mac4.ingressLatency is 0
+ptp4l[1530.025]: config item fm1-mac4.egressLatency is 0
+ptp4l[1530.025]: config item fm1-mac4.delay_mechanism is 2
+ptp4l[1530.025]: config item fm1-mac4.asCapable is 1
+ptp4l[1530.025]: config item fm1-mac4.unicast_master_table is 0
+ptp4l[1530.025]: config item fm1-mac4.unicast_listen is 0
+ptp4l[1530.026]: config item fm1-mac4.hybrid_e2e is 0
+ptp4l[1530.026]: config item fm1-mac4.fault_badpeernet_interval is 16
+ptp4l[1530.026]: config item fm1-mac4.fault_reset_interval is 4
+ptp4l[1530.026]: config item fm1-mac4.tsproc_mode is 0
+ptp4l[1530.026]: config item fm1-mac4.delay_filter is 1
+ptp4l[1530.026]: config item fm1-mac4.delay_filter_length is 10
+ptp4l[1530.026]: config item fm1-mac3.logMinDelayReqInterval is 0
+ptp4l[1530.026]: config item fm1-mac3.logAnnounceInterval is 0
+ptp4l[1530.026]: config item fm1-mac3.inhibit_announce is 0
+ptp4l[1530.026]: config item fm1-mac3.ignore_source_id is 0
+ptp4l[1530.359]: config item fm1-mac3.announceReceiptTimeout is 3
+ptp4l[1530.359]: config item fm1-mac3.syncReceiptTimeout is 3
+ptp4l[1530.359]: config item fm1-mac3.transportSpecific is 1
+ptp4l[1530.359]: config item fm1-mac3.ignore_transport_specific is 0
+ptp4l[1530.359]: config item fm1-mac3.G.8275.portDS.localPriority is 128
+ptp4l[1530.359]: config item fm1-mac3.logSyncInterval is -3
+ptp4l[1530.359]: config item fm1-mac3.operLogSyncInterval is 0
+ptp4l[1530.359]: config item fm1-mac3.logMinPdelayReqInterval is 0
+ptp4l[1530.359]: config item fm1-mac3.operLogPdelayReqInterval is 0
+ptp4l[1530.359]: config item fm1-mac3.neighborPropDelayThresh is 20000000
+ptp4l[1530.359]: config item fm1-mac3.min_neighbor_prop_delay is -20000000
+ptp4l[1530.359]: config item fm1-mac3.asCapable is 1
+ptp4l[1530.359]: config item fm1-mac3.inhibit_delay_req is 0
+ptp4l[1530.359]: config item fm1-mac3.ptp_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[1530.359]: config item fm1-mac3.p2p_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[1530.359]: config item global.socket_priority is 0
+ptp4l[1530.388]: port 1: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[1530.388]: config item fm1-mac4.logMinDelayReqInterval is 0
+ptp4l[1530.388]: config item fm1-mac4.logAnnounceInterval is 0
+ptp4l[1530.388]: config item fm1-mac4.inhibit_announce is 0
+ptp4l[1530.388]: config item fm1-mac4.ignore_source_id is 0
+ptp4l[1530.388]: config item fm1-mac4.announceReceiptTimeout is 3
+ptp4l[1530.388]: config item fm1-mac4.syncReceiptTimeout is 3
+ptp4l[1530.388]: config item fm1-mac4.transportSpecific is 1
+ptp4l[1530.388]: config item fm1-mac4.ignore_transport_specific is 0
+ptp4l[1530.388]: config item fm1-mac4.G.8275.portDS.localPriority is 128
+ptp4l[1530.388]: config item fm1-mac4.logSyncInterval is -3
+ptp4l[1530.388]: config item fm1-mac4.operLogSyncInterval is 0
+ptp4l[1530.388]: config item fm1-mac4.logMinPdelayReqInterval is 0
+ptp4l[1530.388]: config item fm1-mac4.operLogPdelayReqInterval is 0
+ptp4l[1530.388]: config item fm1-mac4.neighborPropDelayThresh is 20000000
+ptp4l[1530.388]: config item fm1-mac4.min_neighbor_prop_delay is -20000000
+ptp4l[1530.388]: config item fm1-mac4.asCapable is 1
+ptp4l[1530.388]: config item fm1-mac4.inhibit_delay_req is 0
+ptp4l[1530.388]: config item fm1-mac4.ptp_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[1530.388]: config item fm1-mac4.p2p_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[1530.388]: config item global.socket_priority is 0
+ptp4l[1530.420]: port 2: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[1530.420]: config item /var/run/ptp4l.logMinDelayReqInterval is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.logAnnounceInterval is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.inhibit_announce is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.ignore_source_id is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.announceReceiptTimeout is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.syncReceiptTimeout is 3
+ptp4l[1530.420]: config item /var/run/ptp4l.transportSpecific is 1
+ptp4l[1530.420]: config item /var/run/ptp4l.ignore_transport_specific is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.G.8275.portDS.localPriority is 128
+ptp4l[1530.420]: config item /var/run/ptp4l.logSyncInterval is -3
+ptp4l[1530.420]: config item /var/run/ptp4l.operLogSyncInterval is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.logMinPdelayReqInterval is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.operLogPdelayReqInterval is 0
+ptp4l[1530.420]: config item /var/run/ptp4l.neighborPropDelayThresh is 20000000
+ptp4l[1530.420]: config item /var/run/ptp4l.min_neighbor_prop_delay is -20000000
+ptp4l[1530.420]: config item /var/run/ptp4l.asCapable is 1
+ptp4l[1530.420]: config item /var/run/ptp4l.inhibit_delay_req is 0
+ptp4l[1530.420]: config item (null).uds_address is '/var/run/ptp4l'
+ptp4l[1530.420]: port 0: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[1530.420]: port 1: received link status notification
+ptp4l[1530.420]: interface index 4 is up
+ptp4l[1530.420]: port 2: received link status notification
+ptp4l[1530.420]: interface index 5 is up
+ptp4l[1531.078]: port 1: peer port id set to 00049f.fffe.05e0d3-1
+ptp4l[1531.388]: port 1: delay timeout
+ptp4l[1531.388]: delay   filtered       1317   raw       1317
+ptp4l[1531.420]: port 2: delay timeout
+ptp4l[1532.388]: port 1: delay timeout
+ptp4l[1532.388]: delay   filtered       1313   raw       1310
+ptp4l[1532.420]: port 2: delay timeout
+ptp4l[1533.388]: port 1: delay timeout
+ptp4l[1533.388]: delay   filtered       1310   raw       1307
+ptp4l[1533.396]: port 1: setting asCapable
+ptp4l[1533.420]: port 2: delay timeout
+ptp4l[1534.008]: port 2: announce timeout
+ptp4l[1534.008]: port 2: LISTENING to MASTER on ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES
+ptp4l[1534.008]: selected local clock 00049f.fffe.05e284 as best master
+ptp4l[1534.008]: port 2: assuming the grand master role
+ptp4l[1534.009]: port 2: master tx announce timeout
+ptp4l[1534.133]: port 2: master sync timeout
+ptp4l[1534.258]: port 2: master sync timeout
+ptp4l[1534.266]: port 1: new foreign master 00049f.fffe.05e0d3-1
+ptp4l[1534.266]: selected best master clock 00049f.fffe.05e0d3
+ptp4l[1534.266]: port 1: LISTENING to SLAVE on RS_SLAVE
+ptp4l[1534.271]: PI servo: sync interval 0.125 kp 1.306 ki 0.130583
+ptp4l[1534.384]: port 2: master sync timeout
+ptp4l[1534.388]: port 1: delay timeout
+ptp4l[1534.388]: delay   filtered       1313   raw       1317
+ptp4l[1534.420]: port 2: delay timeout
+ptp4l[1534.509]: port 2: master sync timeout
+ptp4l[1534.634]: port 2: master sync timeout
+ptp4l[1534.759]: port 2: master sync timeout
+ptp4l[1534.884]: port 2: master sync timeout
+ptp4l[1535.009]: port 2: master sync timeout
+ptp4l[1535.009]: port 2: master tx announce timeout
+ptp4l[1535.134]: port 2: master sync timeout
+ptp4l[1535.259]: port 2: master sync timeout
+ptp4l[1535.271]: rms 5214 max 6900 freq  -5843 +/- 3593 delay  1313 +/-   0
+ptp4l[1535.384]: port 2: master sync timeout
+ptp4l[1535.388]: port 1: delay timeout
+ptp4l[1535.388]: delay   filtered       1310   raw       1309
+ptp4l[1535.420]: port 2: delay timeout
+ptp4l[1535.509]: port 2: master sync timeout
+ptp4l[1535.634]: port 2: master sync timeout
+ptp4l[1535.759]: port 2: master sync timeout
+ptp4l[1535.884]: port 2: master sync timeout
+ptp4l[1536.009]: port 2: master sync timeout
+ptp4l[1536.009]: port 2: master tx announce timeout
+ptp4l[1536.134]: port 2: master sync timeout
+ptp4l[1536.259]: port 2: master sync timeout
+ptp4l[1536.272]: rms  954 max 1463 freq  -2726 +/- 1298 delay  1310 +/-   0
+ptp4l[1536.384]: port 2: master sync timeout
+ptp4l[1536.388]: port 1: delay timeout
+ptp4l[1536.388]: delay   filtered       1313   raw       1317
+ptp4l[1536.420]: port 2: delay timeout
+ptp4l[1536.509]: port 2: master sync timeout
+ptp4l[1536.634]: port 2: master sync timeout
+ptp4l[1536.759]: port 2: master sync timeout
+ptp4l[1536.885]: port 2: master sync timeout
+ptp4l[1537.010]: port 2: master tx announce timeout
+ptp4l[1537.010]: port 2: master sync timeout
+ptp4l[1537.135]: port 2: master sync timeout
+ptp4l[1537.260]: port 2: master sync timeout
+ptp4l[1537.272]: rms 1584 max 1665 freq   +161 +/- 424 delay  1313 +/-   0
+ptp4l[1537.385]: port 2: master sync timeout
+ptp4l[1537.388]: port 1: delay timeout
+ptp4l[1537.388]: delay   filtered       1310   raw       1304
+ptp4l[1537.420]: port 2: delay timeout
+ptp4l[1537.510]: port 2: master sync timeout
+ptp4l[1537.635]: port 2: master sync timeout
+ptp4l[1537.760]: port 2: master sync timeout
+ptp4l[1537.885]: port 2: master sync timeout
+ptp4l[1538.010]: port 2: master tx announce timeout
+ptp4l[1538.010]: port 2: master sync timeout
+ptp4l[1538.135]: port 2: master sync timeout
+ptp4l[1538.260]: port 2: master sync timeout
+ptp4l[1538.273]: rms 1010 max 1328 freq   +734 +/-  34 delay  1310 +/-   0
+ptp4l[1538.385]: port 2: master sync timeout
+ptp4l[1538.388]: port 1: delay timeout
+ptp4l[1538.388]: delay   filtered       1309   raw       1304
+ptp4l[1538.420]: port 2: delay timeout
+ptp4l[1538.510]: port 2: master sync timeout
+ptp4l[1538.635]: port 2: master sync timeout
+ptp4l[1538.760]: port 2: master sync timeout
+ptp4l[1538.885]: port 2: master sync timeout
+ptp4l[1539.010]: port 2: master tx announce timeout
+ptp4l[1539.010]: port 2: master sync timeout
+ptp4l[1539.135]: port 2: master sync timeout
+ptp4l[1539.260]: port 2: master sync timeout
+ptp4l[1539.273]: rms  333 max  549 freq   +439 +/- 118 delay  1309 +/-   0
+ptp4l[1539.386]: port 2: master sync timeout
+ptp4l[1539.388]: port 1: delay timeout
+ptp4l[1539.388]: delay   filtered       1310   raw       1315
+ptp4l[1539.420]: port 2: delay timeout
+ptp4l[1539.511]: port 2: master sync timeout
+ptp4l[1539.636]: port 2: master sync timeout
+ptp4l[1539.761]: port 2: master sync timeout
+ptp4l[1539.886]: port 2: master sync timeout
+ptp4l[1540.010]: port 2: master tx announce timeout
+ptp4l[1540.011]: port 2: master sync timeout
+ptp4l[1540.136]: port 2: master sync timeout
+ptp4l[1540.261]: port 2: master sync timeout
+ptp4l[1540.273]: rms   65 max  112 freq    +76 +/-  81 delay  1310 +/-   0
+ptp4l[1540.386]: port 2: master sync timeout
+ptp4l[1540.388]: port 1: delay timeout
+ptp4l[1540.388]: delay   filtered       1312   raw       1317
+ptp4l[1540.420]: port 2: delay timeout
+ptp4l[1540.511]: port 2: master sync timeout
+ptp4l[1540.636]: port 2: master sync timeout
+ptp4l[1540.761]: port 2: master sync timeout
+ptp4l[1540.886]: port 2: master sync timeout
+ptp4l[1541.010]: port 2: master tx announce timeout
+ptp4l[1541.011]: port 2: master sync timeout
+ptp4l[1541.136]: port 2: master sync timeout
+ptp4l[1541.261]: port 2: master sync timeout
+ptp4l[1541.274]: rms  102 max  114 freq    -97 +/-  24 delay  1312 +/-   0
+ptp4l[1541.386]: port 2: master sync timeout
+ptp4l[1541.388]: port 1: delay timeout
+ptp4l[1541.388]: delay   filtered       1309   raw       1307
+ptp4l[1541.420]: port 2: delay timeout
+ptp4l[1541.511]: port 2: master sync timeout
+ptp4l[1541.636]: port 2: master sync timeout
+ptp4l[1541.761]: port 2: master sync timeout
+ptp4l[1541.886]: port 2: master sync timeout
+ptp4l[1542.010]: port 2: master tx announce timeout
+ptp4l[1542.012]: port 2: master sync timeout
+ptp4l[1542.137]: port 2: master sync timeout
+ptp4l[1542.262]: port 2: master sync timeout
+ptp4l[1542.274]: rms   57 max   81 freq   -117 +/-  11 delay  1309 +/-   0
+ptp4l[1542.387]: port 2: master sync timeout
+ptp4l[1542.388]: port 1: delay timeout
+ptp4l[1542.389]: delay   filtered       1312   raw       1317
+ptp4l[1542.420]: port 2: delay timeout
+ptp4l[1542.512]: port 2: master sync timeout
+ptp4l[1542.637]: port 2: master sync timeout
+ptp4l[1542.762]: port 2: master sync timeout
+ptp4l[1542.887]: port 2: master sync timeout
+ptp4l[1543.010]: port 2: master tx announce timeout
+ptp4l[1543.012]: port 2: master sync timeout
+ptp4l[1543.137]: port 2: master sync timeout
+ptp4l[1543.262]: port 2: master sync timeout
+ptp4l[1543.274]: rms   23 max   34 freq   -109 +/-   8 delay  1312 +/-   0
+ptp4l[1543.387]: port 2: master sync timeout
+ptp4l[1543.388]: port 1: delay timeout
+ptp4l[1543.389]: delay   filtered       1312   raw       1309
+ptp4l[1543.420]: port 2: delay timeout
+ptp4l[1543.512]: port 2: master sync timeout
+ptp4l[1543.637]: port 2: master sync timeout
+ptp4l[1543.762]: port 2: master sync timeout
+ptp4l[1543.887]: port 2: master sync timeout
+ptp4l[1544.010]: port 2: master tx announce timeout
+ptp4l[1544.012]: port 2: master sync timeout
+ptp4l[1544.137]: port 2: master sync timeout
+ptp4l[1544.262]: port 2: master sync timeout
+ptp4l[1544.275]: rms    7 max   11 freq    -87 +/-  10 delay  1312 +/-   0
+ptp4l[1544.387]: port 2: master sync timeout
+ptp4l[1544.388]: port 1: delay timeout
+ptp4l[1544.389]: delay   filtered       1310   raw       1312
+ptp4l[1544.420]: port 2: delay timeout
+ptp4l[1544.513]: port 2: master sync timeout
+ptp4l[1544.638]: port 2: master sync timeout
+ptp4l[1544.763]: port 2: master sync timeout
+ptp4l[1544.888]: port 2: master sync timeout
+ptp4l[1545.010]: port 2: master tx announce timeout
+ptp4l[1545.013]: port 2: master sync timeout
+ptp4l[1545.138]: port 2: master sync timeout
+ptp4l[1545.263]: port 2: master sync timeout
+ptp4l[1545.275]: rms   11 max   18 freq    -70 +/-  10 delay  1310 +/-   0
+ptp4l[1545.388]: port 2: master sync timeout
+ptp4l[1545.388]: port 1: delay timeout
+ptp4l[1545.389]: delay   filtered       1313   raw       1314
+ptp4l[1545.420]: port 2: delay timeout
+ptp4l[1545.513]: port 2: master sync timeout
+ptp4l[1545.638]: port 2: master sync timeout
+ptp4l[1545.763]: port 2: master sync timeout
+ptp4l[1545.888]: port 2: master sync timeout
+ptp4l[1546.010]: port 2: master tx announce timeout
+ptp4l[1546.013]: port 2: master sync timeout
+ptp4l[1546.138]: port 2: master sync timeout
+ptp4l[1546.263]: port 2: master sync timeout
+ptp4l[1546.276]: rms    6 max   15 freq    -76 +/-   8 delay  1313 +/-   0
+ptp4l[1546.388]: port 2: master sync timeout
+ptp4l[1546.388]: port 1: delay timeout
+ptp4l[1546.389]: delay   filtered       1310   raw       1309
+ptp4l[1546.420]: port 2: delay timeout
+ptp4l[1546.513]: port 2: master sync timeout
+ptp4l[1546.638]: port 2: master sync timeout
+ptp4l[1546.763]: port 2: master sync timeout
+ptp4l[1546.888]: port 2: master sync timeout
+ptp4l[1547.010]: port 2: master tx announce timeout
+ptp4l[1547.014]: port 2: master sync timeout
+ptp4l[1547.139]: port 2: master sync timeout
+ptp4l[1547.264]: port 2: master sync timeout
+ptp4l[1547.276]: rms    8 max   13 freq    -66 +/-   8 delay  1310 +/-   0
+ptp4l[1547.388]: port 1: delay timeout
+ptp4l[1547.389]: port 2: master sync timeout
+ptp4l[1547.389]: delay   filtered       1312   raw       1312
+ptp4l[1547.420]: port 2: delay timeout
+ptp4l[1547.514]: port 2: master sync timeout
+ptp4l[1547.639]: port 2: master sync timeout
+ptp4l[1547.764]: port 2: master sync timeout
+ptp4l[1547.889]: port 2: master sync timeout
+ptp4l[1548.010]: port 2: master tx announce timeout
+ptp4l[1548.014]: port 2: master sync timeout
+ptp4l[1548.139]: port 2: master sync timeout
+ptp4l[1548.264]: port 2: master sync timeout
+ptp4l[1548.276]: rms    5 max   11 freq    -71 +/-   7 delay  1312 +/-   0
+ptp4l[1548.388]: port 1: delay timeout
+ptp4l[1548.389]: delay   filtered       1312   raw       1310
+ptp4l[1548.389]: port 2: master sync timeout
+ptp4l[1548.420]: port 2: delay timeout
+ptp4l[1548.514]: port 2: master sync timeout
+ptp4l[1548.639]: port 2: master sync timeout
+ptp4l[1548.764]: port 2: master sync timeout
+ptp4l[1548.889]: port 2: master sync timeout
+ptp4l[1549.010]: port 2: master tx announce timeout
+ptp4l[1549.014]: port 2: master sync timeout
+ptp4l[1549.139]: port 2: master sync timeout
+ptp4l[1549.264]: port 2: master sync timeout
+ptp4l[1549.277]: rms   11 max   19 freq    -82 +/-  13 delay  1312 +/-   0
+ptp4l[1549.388]: port 1: delay timeout
+ptp4l[1549.389]: delay   filtered       1312   raw       1315
+ptp4l[1549.389]: port 2: master sync timeout
+ptp4l[1549.421]: port 2: delay timeout
+ptp4l[1549.514]: port 2: master sync timeout
+ptp4l[1549.640]: port 2: master sync timeout
+ptp4l[1549.765]: port 2: master sync timeout
+ptp4l[1549.890]: port 2: master sync timeout
+ptp4l[1550.010]: port 2: master tx announce timeout
+ptp4l[1550.015]: port 2: master sync timeout
+ptp4l[1550.140]: port 2: master sync timeout
+ptp4l[1550.265]: port 2: master sync timeout
+ptp4l[1550.277]: rms    7 max   14 freq    -87 +/-   7 delay  1312 +/-   0
+ptp4l[1550.389]: port 1: delay timeout
+ptp4l[1550.389]: delay   filtered       1312   raw       1312
+ptp4l[1550.390]: port 2: master sync timeout
+ptp4l[1550.421]: port 2: delay timeout
+ptp4l[1550.421]: port 2: peer port id set to 00049f.fffe.05e2cb-1
+ptp4l[1550.421]: delay   filtered       1322   raw       1322
+ptp4l[1550.515]: port 2: master sync timeout
+ptp4l[1550.640]: port 2: master sync timeout
+ptp4l[1550.765]: port 2: master sync timeout
+ptp4l[1550.890]: port 2: master sync timeout
+ptp4l[1551.010]: port 2: master tx announce timeout
+ptp4l[1551.015]: port 2: master sync timeout
+ptp4l[1551.140]: port 2: master sync timeout
+ptp4l[1551.265]: port 2: master sync timeout
+ptp4l[1551.278]: rms    9 max   16 freq    -71 +/-   9 delay  1312 +/-   0
+ptp4l[1551.389]: port 1: delay timeout
+ptp4l[1551.389]: delay   filtered       1312   raw       1319
+ptp4l[1551.390]: port 2: master sync timeout
+ptp4l[1551.421]: port 2: delay timeout
+ptp4l[1551.421]: delay   filtered       1319   raw       1317
+ptp4l[1551.515]: port 2: master sync timeout
+ptp4l[1551.640]: port 2: master sync timeout
+ptp4l[1551.765]: port 2: master sync timeout
+ptp4l[1551.890]: port 2: master sync timeout
+ptp4l[1552.010]: port 2: master tx announce timeout
+ptp4l[1552.015]: port 2: master sync timeout
+ptp4l[1552.140]: port 2: master sync timeout
+ptp4l[1552.266]: port 2: master sync timeout
+ptp4l[1552.278]: rms    9 max   16 freq    -69 +/-  11 delay  1312 +/-   0
+ptp4l[1552.389]: port 1: delay timeout
+ptp4l[1552.389]: delay   filtered       1312   raw       1312
+ptp4l[1552.391]: port 2: master sync timeout
+ptp4l[1552.421]: port 2: delay timeout
+ptp4l[1552.421]: delay   filtered       1322   raw       1324
+ptp4l[1552.486]: port 2: setting asCapable
+ptp4l[1552.516]: port 2: master sync timeout
+ptp4l[1552.516]: port 2: syfu_relay info:
+ptp4l[1552.516]: port 2:   precise_origin_ts 1552.403445177
+ptp4l[1552.516]: port 2:   correction 112735895
+ptp4l[1552.516]: port 2:   fup_info 0.999999990
+ptp4l[1552.641]: port 2: master sync timeout
+ptp4l[1552.641]: port 2: syfu_relay info:
+ptp4l[1552.641]: port 2:   precise_origin_ts 1552.528496217
+ptp4l[1552.641]: port 2:   correction 112734710
+ptp4l[1552.641]: port 2:   fup_info 0.999999990
+ptp4l[1552.733]: port 2: new foreign master 00049f.fffe.05e2cb-1
+ptp4l[1552.733]: selected best master clock 00049f.fffe.05e0d3
+ptp4l[1552.766]: port 2: master sync timeout
+ptp4l[1552.766]: port 2: syfu_relay info:
+ptp4l[1552.766]: port 2:   precise_origin_ts 1552.653547502
+ptp4l[1552.766]: port 2:   correction 112733025
+ptp4l[1552.766]: port 2:   fup_info 0.999999990
+ptp4l[1552.891]: port 2: master sync timeout
+ptp4l[1552.891]: port 2: syfu_relay info:
+ptp4l[1552.891]: port 2:   precise_origin_ts 1552.778598002
+ptp4l[1552.891]: port 2:   correction 112733935
+ptp4l[1552.891]: port 2:   fup_info 0.999999990
+ptp4l[1553.010]: port 2: master tx announce timeout
+ptp4l[1553.016]: port 2: master sync timeout
+ptp4l[1553.016]: port 2: syfu_relay info:
+ptp4l[1553.016]: port 2:   precise_origin_ts 1552.903648682
+ptp4l[1553.016]: port 2:   correction 112727605
+ptp4l[1553.016]: port 2:   fup_info 0.999999990
+ptp4l[1553.141]: port 2: master sync timeout
+ptp4l[1553.141]: port 2: syfu_relay info:
+ptp4l[1553.141]: port 2:   precise_origin_ts 1553.28699312
+ptp4l[1553.141]: port 2:   correction 112727425
+ptp4l[1553.141]: port 2:   fup_info 0.999999990
+ptp4l[1553.266]: port 2: master sync timeout
+ptp4l[1553.266]: port 2: syfu_relay info:
+ptp4l[1553.266]: port 2:   precise_origin_ts 1553.153753432
+ptp4l[1553.266]: port 2:   correction 112723220
+ptp4l[1553.266]: port 2:   fup_info 0.999999990
+ptp4l[1553.278]: rms    9 max   16 freq    -77 +/-  12 delay  1312 +/-   0
+ptp4l[1553.389]: port 1: delay timeout
+ptp4l[1553.389]: delay   filtered       1312   raw       1312
+ptp4l[1553.391]: port 2: master sync timeout
+ptp4l[1553.391]: port 2: syfu_relay info:
+ptp4l[1553.391]: port 2:   precise_origin_ts 1553.278801812
+ptp4l[1553.391]: port 2:   correction 112715032
+ptp4l[1553.391]: port 2:   fup_info 1.000000007
+ptp4l[1553.421]: port 2: delay timeout
+ptp4l[1553.421]: delay   filtered       1319   raw       1314
+ptp4l[1553.516]: port 2: master sync timeout
+ptp4l[1553.516]: port 2: syfu_relay info:
+ptp4l[1553.516]: port 2:   precise_origin_ts 1553.403852417
+ptp4l[1553.516]: port 2:   correction 112724042
+ptp4l[1553.516]: port 2:   fup_info 1.000000007
+ptp4l[1553.641]: port 2: master sync timeout
+ptp4l[1553.641]: port 2: syfu_relay info:
+ptp4l[1553.641]: port 2:   precise_origin_ts 1553.528903367
+ptp4l[1553.641]: port 2:   correction 112723707
+ptp4l[1553.641]: port 2:   fup_info 1.000000007
+ptp4l[1553.766]: port 2: master sync timeout
+ptp4l[1553.766]: port 2: syfu_relay info:
+ptp4l[1553.766]: port 2:   precise_origin_ts 1553.653954477
+ptp4l[1553.766]: port 2:   correction 112723177
+ptp4l[1553.766]: port 2:   fup_info 1.000000007
+ptp4l[1553.891]: port 2: master sync timeout
+ptp4l[1553.891]: port 2: syfu_relay info:
+ptp4l[1553.891]: port 2:   precise_origin_ts 1553.779005237
+ptp4l[1553.891]: port 2:   correction 112725862
+ptp4l[1553.891]: port 2:   fup_info 1.000000007
+ptp4l[1554.010]: port 2: master tx announce timeout
+ptp4l[1554.016]: port 2: master sync timeout
+ptp4l[1554.016]: port 2: syfu_relay info:
+ptp4l[1554.016]: port 2:   precise_origin_ts 1553.904055667
+ptp4l[1554.016]: port 2:   correction 112718117
+ptp4l[1554.016]: port 2:   fup_info 1.000000007
+ptp4l[1554.141]: port 2: master sync timeout
+ptp4l[1554.141]: port 2: syfu_relay info:
+ptp4l[1554.141]: port 2:   precise_origin_ts 1554.29106302
+ptp4l[1554.141]: port 2:   correction 112717357
+ptp4l[1554.141]: port 2:   fup_info 1.000000007
+ptp4l[1554.266]: port 2: master sync timeout
+ptp4l[1554.266]: port 2: syfu_relay info:
+ptp4l[1554.266]: port 2:   precise_origin_ts 1554.154161367
+ptp4l[1554.266]: port 2:   correction 112712782
+ptp4l[1554.267]: port 2:   fup_info 1.000000007
+ptp4l[1554.279]: rms    8 max   16 freq    -64 +/-   7 delay  1312 +/-   0
+ptp4l[1554.389]: port 1: delay timeout
+ptp4l[1554.389]: delay   filtered       1312   raw       1305
+ptp4l[1554.391]: port 2: master sync timeout
+ptp4l[1554.391]: port 2: syfu_relay info:
+ptp4l[1554.392]: port 2:   precise_origin_ts 1554.279210182
+ptp4l[1554.392]: port 2:   correction 112704502
+ptp4l[1554.392]: port 2:   fup_info 1.000000007
+ptp4l[1554.421]: port 2: delay timeout
+ptp4l[1554.421]: delay   filtered       1317   raw       1317
+ptp4l[1554.516]: port 2: master sync timeout
+ptp4l[1554.517]: port 2: syfu_relay info:
+ptp4l[1554.517]: port 2:   precise_origin_ts 1554.404255572
+ptp4l[1554.517]: port 2:   correction 112709047
+ptp4l[1554.517]: port 2:   fup_info 1.000000007
+ptp4l[1554.641]: port 2: master sync timeout
+ptp4l[1554.642]: port 2: syfu_relay info:
+ptp4l[1554.642]: port 2:   precise_origin_ts 1554.529306697
+ptp4l[1554.642]: port 2:   correction 112706097
+ptp4l[1554.642]: port 2:   fup_info 1.000000007
+ptp4l[1554.767]: port 2: master sync timeout
+ptp4l[1554.767]: port 2: syfu_relay info:
+ptp4l[1554.767]: port 2:   precise_origin_ts 1554.654358582
+ptp4l[1554.767]: port 2:   correction 112703972
+ptp4l[1554.767]: port 2:   fup_info 1.000000007
+ptp4l[1554.892]: port 2: master sync timeout
+ptp4l[1554.892]: port 2: syfu_relay info:
+ptp4l[1554.892]: port 2:   precise_origin_ts 1554.779408807
+ptp4l[1554.892]: port 2:   correction 112705962
+ptp4l[1554.892]: port 2:   fup_info 1.000000007
+ptp4l[1555.010]: port 2: master tx announce timeout
+ptp4l[1555.017]: port 2: master sync timeout
+ptp4l[1555.017]: port 2: syfu_relay info:
+ptp4l[1555.017]: port 2:   precise_origin_ts 1554.904459777
+ptp4l[1555.017]: port 2:   correction 112698592
+ptp4l[1555.017]: port 2:   fup_info 1.000000007
+ptp4l[1555.142]: port 2: master sync timeout
+ptp4l[1555.142]: port 2: syfu_relay info:
+ptp4l[1555.142]: port 2:   precise_origin_ts 1555.29508792
+ptp4l[1555.142]: port 2:   correction 112700257
+ptp4l[1555.142]: port 2:   fup_info 1.000000007
+ptp4l[1555.267]: port 2: master sync timeout
+ptp4l[1555.267]: port 2: syfu_relay info:
+ptp4l[1555.267]: port 2:   precise_origin_ts 1555.154563342
+ptp4l[1555.267]: port 2:   correction 112695437
+ptp4l[1555.267]: port 2:   fup_info 1.000000007
+ptp4l[1555.279]: rms    6 max    9 freq    -76 +/-   6 delay  1312 +/-   0
+ptp4l[1555.389]: port 1: delay timeout
+ptp4l[1555.389]: delay   filtered       1312   raw       1312
+ptp4l[1555.392]: port 2: master sync timeout
+ptp4l[1555.392]: port 2: syfu_relay info:
+ptp4l[1555.392]: port 2:   precise_origin_ts 1555.279608267
+ptp4l[1555.392]: port 2:   correction 112692117
+ptp4l[1555.392]: port 2:   fup_info 1.000000005
+ptp4l[1555.421]: port 2: delay timeout
+ptp4l[1555.421]: delay   filtered       1317   raw       1312
+ptp4l[1555.517]: port 2: master sync timeout
+ptp4l[1555.517]: port 2: syfu_relay info:
+ptp4l[1555.517]: port 2:   precise_origin_ts 1555.404659467
+ptp4l[1555.517]: port 2:   correction 112690532
+ptp4l[1555.517]: port 2:   fup_info 1.000000005
+ptp4l[1555.642]: port 2: master sync timeout
+ptp4l[1555.642]: port 2: syfu_relay info:
+ptp4l[1555.642]: port 2:   precise_origin_ts 1555.529711792
+ptp4l[1555.642]: port 2:   correction 112688587
+ptp4l[1555.642]: port 2:   fup_info 1.000000005
+ptp4l[1555.767]: port 2: master sync timeout
+ptp4l[1555.767]: port 2: syfu_relay info:
+ptp4l[1555.767]: port 2:   precise_origin_ts 1555.654762617
+ptp4l[1555.767]: port 2:   correction 112687497
+ptp4l[1555.767]: port 2:   fup_info 1.000000005
+ptp4l[1555.892]: port 2: master sync timeout
+ptp4l[1555.892]: port 2: syfu_relay info:
+ptp4l[1555.892]: port 2:   precise_origin_ts 1555.779813637
+ptp4l[1555.892]: port 2:   correction 112690597
+ptp4l[1555.892]: port 2:   fup_info 1.000000005
+ptp4l[1556.010]: port 2: master tx announce timeout
+ptp4l[1556.017]: port 2: master sync timeout
+ptp4l[1556.017]: port 2: syfu_relay info:
+ptp4l[1556.017]: port 2:   precise_origin_ts 1555.904863337
+ptp4l[1556.017]: port 2:   correction 112683292
+ptp4l[1556.017]: port 2:   fup_info 1.000000005
+ptp4l[1556.142]: port 2: master sync timeout
+ptp4l[1556.142]: port 2: syfu_relay info:
+ptp4l[1556.142]: port 2:   precise_origin_ts 1556.29914107
+ptp4l[1556.142]: port 2:   correction 112683112
+ptp4l[1556.142]: port 2:   fup_info 1.000000005
+ptp4l[1556.267]: port 2: master sync timeout
+ptp4l[1556.267]: port 2: syfu_relay info:
+ptp4l[1556.267]: port 2:   precise_origin_ts 1556.154968737
+ptp4l[1556.267]: port 2:   correction 112678137
+ptp4l[1556.267]: port 2:   fup_info 1.000000005
+ptp4l[1556.280]: rms   10 max   19 freq    -85 +/-  12 delay  1312 +/-   0
+ptp4l[1556.389]: port 1: delay timeout
+ptp4l[1556.389]: delay   filtered       1312   raw       1312
+ptp4l[1556.392]: port 2: master sync timeout
+ptp4l[1556.392]: port 2: syfu_relay info:
+ptp4l[1556.392]: port 2:   precise_origin_ts 1556.280016862
+ptp4l[1556.392]: port 2:   correction 112671152
+ptp4l[1556.392]: port 2:   fup_info 1.000000005
+ptp4l[1556.421]: port 2: delay timeout
+ptp4l[1556.421]: delay   filtered       1317   raw       1312
+ptp4l[1556.517]: port 2: master sync timeout
+ptp4l[1556.517]: port 2: syfu_relay info:
+ptp4l[1556.517]: port 2:   precise_origin_ts 1556.405067972
+ptp4l[1556.517]: port 2:   correction 112669762
+ptp4l[1556.517]: port 2:   fup_info 1.000000005
+ptp4l[1556.642]: port 2: master sync timeout
+ptp4l[1556.642]: port 2: syfu_relay info:
+ptp4l[1556.642]: port 2:   precise_origin_ts 1556.530121242
+ptp4l[1556.642]: port 2:   correction 112666567
+ptp4l[1556.642]: port 2:   fup_info 1.000000005
+ptp4l[1556.767]: port 2: master sync timeout
+ptp4l[1556.767]: port 2: syfu_relay info:
+ptp4l[1556.767]: port 2:   precise_origin_ts 1556.655170382
+ptp4l[1556.767]: port 2:   correction 112667297
+ptp4l[1556.767]: port 2:   fup_info 1.000000005
+ptp4l[1556.892]: port 2: master sync timeout
+ptp4l[1556.892]: port 2: syfu_relay info:
+ptp4l[1556.892]: port 2:   precise_origin_ts 1556.780221382
+ptp4l[1556.893]: port 2:   correction 112666407
+ptp4l[1556.893]: port 2:   fup_info 1.000000005
+ptp4l[1557.011]: port 2: master tx announce timeout
+ptp4l[1557.017]: port 2: master sync timeout
+ptp4l[1557.018]: port 2: syfu_relay info:
+ptp4l[1557.018]: port 2:   precise_origin_ts 1556.905272427
+ptp4l[1557.018]: port 2:   correction 112659932
+ptp4l[1557.018]: port 2:   fup_info 1.000000005
+ptp4l[1557.142]: port 2: master sync timeout
+ptp4l[1557.143]: port 2: syfu_relay info:
+ptp4l[1557.143]: port 2:   precise_origin_ts 1557.30322772
+ptp4l[1557.143]: port 2:   correction 112659677
+ptp4l[1557.143]: port 2:   fup_info 1.000000005
+ptp4l[1557.267]: port 2: master sync timeout
+ptp4l[1557.268]: port 2: syfu_relay info:
+ptp4l[1557.268]: port 2:   precise_origin_ts 1557.155378482
+ptp4l[1557.268]: port 2:   correction 112661597
+ptp4l[1557.268]: port 2:   fup_info 1.000000005
+ptp4l[1557.280]: rms    8 max   19 freq    -85 +/-  10 delay  1312 +/-   0
+ptp4l[1557.389]: port 1: delay timeout
+ptp4l[1557.389]: delay   filtered       1312   raw       1312
+ptp4l[1557.393]: port 2: master sync timeout
+ptp4l[1557.393]: port 2: syfu_relay info:
+ptp4l[1557.393]: port 2:   precise_origin_ts 1557.280427192
+ptp4l[1557.393]: port 2:   correction 112654561
+ptp4l[1557.393]: port 2:   fup_info 0.999999998
+ptp4l[1557.421]: port 2: delay timeout
+ptp4l[1557.421]: delay   filtered       1315   raw       1312
+ptp4l[1557.518]: port 2: master sync timeout
+ptp4l[1557.518]: port 2: syfu_relay info:
+ptp4l[1557.518]: port 2:   precise_origin_ts 1557.405478547
+ptp4l[1557.518]: port 2:   correction 112652991
+ptp4l[1557.518]: port 2:   fup_info 0.999999998
+ptp4l[1557.643]: port 2: master sync timeout
+ptp4l[1557.643]: port 2: syfu_relay info:
+ptp4l[1557.643]: port 2:   precise_origin_ts 1557.530529412
+ptp4l[1557.643]: port 2:   correction 112652126
+ptp4l[1557.643]: port 2:   fup_info 0.999999998
+ptp4l[1557.768]: port 2: master sync timeout
+ptp4l[1557.768]: port 2: syfu_relay info:
+ptp4l[1557.768]: port 2:   precise_origin_ts 1557.655579942
+ptp4l[1557.768]: port 2:   correction 112651686
+ptp4l[1557.768]: port 2:   fup_info 0.999999998
+ptp4l[1557.893]: port 2: master sync timeout
+ptp4l[1557.893]: port 2: syfu_relay info:
+ptp4l[1557.893]: port 2:   precise_origin_ts 1557.780631272
+ptp4l[1557.893]: port 2:   correction 112655216
+ptp4l[1557.893]: port 2:   fup_info 0.999999998
+ptp4l[1558.011]: port 2: master tx announce timeout
+ptp4l[1558.018]: port 2: master sync timeout
+ptp4l[1558.018]: port 2: syfu_relay info:
+ptp4l[1558.018]: port 2:   precise_origin_ts 1557.905681882
+ptp4l[1558.018]: port 2:   correction 112646211
+ptp4l[1558.018]: port 2:   fup_info 0.999999998
+ptp4l[1558.143]: port 2: master sync timeout
+ptp4l[1558.143]: port 2: syfu_relay info:
+ptp4l[1558.143]: port 2:   precise_origin_ts 1558.30732562
+ptp4l[1558.143]: port 2:   correction 112645631
+ptp4l[1558.143]: port 2:   fup_info 0.999999998
+ptp4l[1558.268]: port 2: master sync timeout
+ptp4l[1558.268]: port 2: syfu_relay info:
+ptp4l[1558.268]: port 2:   precise_origin_ts 1558.155787927
+ptp4l[1558.268]: port 2:   correction 112634611
+ptp4l[1558.268]: port 2:   fup_info 0.999999998
+ptp4l[1558.281]: rms    9 max   16 freq    -73 +/-  10 delay  1312 +/-   0
+ptp4l[1558.389]: port 1: delay timeout
+ptp4l[1558.389]: delay   filtered       1312   raw       1314
+ptp4l[1558.393]: port 2: master sync timeout
+ptp4l[1558.393]: port 2: syfu_relay info:
+ptp4l[1558.393]: port 2:   precise_origin_ts 1558.280836137
+ptp4l[1558.393]: port 2:   correction 112627766
+ptp4l[1558.393]: port 2:   fup_info 0.999999998
+ptp4l[1558.421]: port 2: delay timeout
+ptp4l[1558.421]: delay   filtered       1317   raw       1322
+ptp4l[1558.518]: port 2: master sync timeout
+ptp4l[1558.518]: port 2: syfu_relay info:
+ptp4l[1558.518]: port 2:   precise_origin_ts 1558.405887422
+ptp4l[1558.518]: port 2:   correction 112625766
+ptp4l[1558.518]: port 2:   fup_info 0.999999998
+ptp4l[1558.643]: port 2: master sync timeout
+ptp4l[1558.643]: port 2: syfu_relay info:
+ptp4l[1558.643]: port 2:   precise_origin_ts 1558.530938347
+ptp4l[1558.643]: port 2:   correction 112625366
+ptp4l[1558.643]: port 2:   fup_info 0.999999998
+ptp4l[1558.768]: port 2: master sync timeout
+ptp4l[1558.768]: port 2: syfu_relay info:
+ptp4l[1558.768]: port 2:   precise_origin_ts 1558.655988402
+ptp4l[1558.768]: port 2:   correction 112625071
+ptp4l[1558.768]: port 2:   fup_info 0.999999998
+ptp4l[1558.893]: port 2: master sync timeout
+ptp4l[1558.893]: port 2: syfu_relay info:
+ptp4l[1558.893]: port 2:   precise_origin_ts 1558.781039197
+ptp4l[1558.893]: port 2:   correction 112624816
+ptp4l[1558.893]: port 2:   fup_info 0.999999998
+ptp4l[1559.011]: port 2: master tx announce timeout
+ptp4l[1559.018]: port 2: master sync timeout
+ptp4l[1559.018]: port 2: syfu_relay info:
+ptp4l[1559.018]: port 2:   precise_origin_ts 1558.906089627
+ptp4l[1559.018]: port 2:   correction 112619631
+ptp4l[1559.018]: port 2:   fup_info 0.999999998
+ptp4l[1559.143]: port 2: master sync timeout
+ptp4l[1559.143]: port 2: syfu_relay info:
+ptp4l[1559.143]: port 2:   precise_origin_ts 1559.31140467
+ptp4l[1559.143]: port 2:   correction 112619196
+ptp4l[1559.143]: port 2:   fup_info 0.999999998
+ptp4l[1559.268]: port 2: master sync timeout
+ptp4l[1559.268]: port 2: syfu_relay info:
+ptp4l[1559.268]: port 2:   precise_origin_ts 1559.156195482
+ptp4l[1559.268]: port 2:   correction 112608446
+ptp4l[1559.268]: port 2:   fup_info 0.999999998
+ptp4l[1559.281]: rms    4 max    6 freq    -75 +/-   6 delay  1312 +/-   0
+ptp4l[1559.389]: port 1: delay timeout
+ptp4l[1559.389]: delay   filtered       1312   raw       1315
+ptp4l[1559.393]: port 2: master sync timeout
+ptp4l[1559.393]: port 2: syfu_relay info:
+ptp4l[1559.393]: port 2:   precise_origin_ts 1559.281243597
+ptp4l[1559.393]: port 2:   correction 112601942
+ptp4l[1559.393]: port 2:   fup_info 1.000000002
+ptp4l[1559.421]: port 2: delay timeout
+ptp4l[1559.421]: delay   filtered       1317   raw       1324
+ptp4l[1559.518]: port 2: master sync timeout
+ptp4l[1559.518]: port 2: syfu_relay info:
+ptp4l[1559.518]: port 2:   precise_origin_ts 1559.406294637
+ptp4l[1559.519]: port 2:   correction 112600962
+ptp4l[1559.519]: port 2:   fup_info 1.000000002
+ptp4l[1559.643]: port 2: master sync timeout
+ptp4l[1559.644]: port 2: syfu_relay info:
+ptp4l[1559.644]: port 2:   precise_origin_ts 1559.531345427
+ptp4l[1559.644]: port 2:   correction 112600272
+ptp4l[1559.644]: port 2:   fup_info 1.000000002
+ptp4l[1559.768]: port 2: master sync timeout
+ptp4l[1559.769]: port 2: syfu_relay info:
+ptp4l[1559.769]: port 2:   precise_origin_ts 1559.656396482
+ptp4l[1559.769]: port 2:   correction 112599502
+ptp4l[1559.769]: port 2:   fup_info 1.000000002
+ptp4l[1559.893]: port 2: master sync timeout
+ptp4l[1559.894]: port 2: syfu_relay info:
+ptp4l[1559.894]: port 2:   precise_origin_ts 1559.781447597
+ptp4l[1559.894]: port 2:   correction 112601092
+ptp4l[1559.894]: port 2:   fup_info 1.000000002
+ptp4l[1560.011]: port 2: master tx announce timeout
+ptp4l[1560.019]: port 2: master sync timeout
+ptp4l[1560.019]: port 2: syfu_relay info:
+ptp4l[1560.019]: port 2:   precise_origin_ts 1559.906498287
+ptp4l[1560.019]: port 2:   correction 112593357
+ptp4l[1560.019]: port 2:   fup_info 1.000000002
+ptp4l[1560.144]: port 2: master sync timeout
+ptp4l[1560.144]: port 2: syfu_relay info:
+ptp4l[1560.144]: port 2:   precise_origin_ts 1560.31548722
+ptp4l[1560.144]: port 2:   correction 112592882
+ptp4l[1560.144]: port 2:   fup_info 1.000000002
+ptp4l[1560.269]: port 2: master sync timeout
+ptp4l[1560.269]: port 2: syfu_relay info:
+ptp4l[1560.269]: port 2:   precise_origin_ts 1560.156602027
+ptp4l[1560.269]: port 2:   correction 112584687
+ptp4l[1560.269]: port 2:   fup_info 1.000000002
+ptp4l[1560.281]: rms    6 max    9 freq    -84 +/-   7 delay  1312 +/-   0
+ptp4l[1560.389]: port 1: delay timeout
+ptp4l[1560.389]: delay   filtered       1312   raw       1315
+ptp4l[1560.394]: port 2: master sync timeout
+ptp4l[1560.394]: port 2: syfu_relay info:
+ptp4l[1560.394]: port 2:   precise_origin_ts 1560.281651297
+ptp4l[1560.394]: port 2:   correction 112576997
+ptp4l[1560.394]: port 2:   fup_info 1.000000002
+ptp4l[1560.421]: port 2: delay timeout
+ptp4l[1560.421]: delay   filtered       1315   raw       1312
+ptp4l[1560.519]: port 2: master sync timeout
+ptp4l[1560.519]: port 2: syfu_relay info:
+ptp4l[1560.519]: port 2:   precise_origin_ts 1560.406702607
+ptp4l[1560.519]: port 2:   correction 112575402
+ptp4l[1560.519]: port 2:   fup_info 1.000000002
+ptp4l[1560.644]: port 2: master sync timeout
+ptp4l[1560.644]: port 2: syfu_relay info:
+ptp4l[1560.644]: port 2:   precise_origin_ts 1560.531755987
+ptp4l[1560.644]: port 2:   correction 112572137
+ptp4l[1560.644]: port 2:   fup_info 1.000000002
+ptp4l[1560.769]: port 2: master sync timeout
+ptp4l[1560.769]: port 2: syfu_relay info:
+ptp4l[1560.769]: port 2:   precise_origin_ts 1560.656806892
+ptp4l[1560.769]: port 2:   correction 112568887
+ptp4l[1560.769]: port 2:   fup_info 1.000000002
+ptp4l[1560.894]: port 2: master sync timeout
+ptp4l[1560.894]: port 2: syfu_relay info:
+ptp4l[1560.894]: port 2:   precise_origin_ts 1560.781858057
+ptp4l[1560.894]: port 2:   correction 112569752
+ptp4l[1560.894]: port 2:   fup_info 1.000000002
+ptp4l[1561.011]: port 2: master tx announce timeout
+ptp4l[1561.019]: port 2: master sync timeout
+ptp4l[1561.019]: port 2: syfu_relay info:
+ptp4l[1561.019]: port 2:   precise_origin_ts 1560.906908407
+ptp4l[1561.019]: port 2:   correction 112563742
+ptp4l[1561.019]: port 2:   fup_info 1.000000002
+ptp4l[1561.144]: port 2: master sync timeout
+ptp4l[1561.144]: port 2: syfu_relay info:
+ptp4l[1561.144]: port 2:   precise_origin_ts 1561.31958947
+ptp4l[1561.144]: port 2:   correction 112563537
+ptp4l[1561.144]: port 2:   fup_info 1.000000002
+ptp4l[1561.269]: port 2: master sync timeout
+ptp4l[1561.269]: port 2: syfu_relay info:
+ptp4l[1561.269]: port 2:   precise_origin_ts 1561.157013617
+ptp4l[1561.269]: port 2:   correction 112552962
+ptp4l[1561.269]: port 2:   fup_info 1.000000002
+ptp4l[1561.282]: rms   10 max   19 freq    -95 +/-   8 delay  1312 +/-   0
+ptp4l[1561.389]: port 1: delay timeout
+ptp4l[1561.389]: delay   filtered       1312   raw       1319
+ptp4l[1561.394]: port 2: master sync timeout
+ptp4l[1561.394]: port 2: syfu_relay info:
+ptp4l[1561.394]: port 2:   precise_origin_ts 1561.282063632
+ptp4l[1561.394]: port 2:   correction 112544446
+ptp4l[1561.394]: port 2:   fup_info 0.999999995
+ptp4l[1561.421]: port 2: delay timeout
+ptp4l[1561.421]: delay   filtered       1315   raw       1324
+ptp4l[1561.519]: port 2: master sync timeout
+ptp4l[1561.519]: port 2: syfu_relay info:
+ptp4l[1561.519]: port 2:   precise_origin_ts 1561.407117052
+ptp4l[1561.519]: port 2:   correction 112539886
+ptp4l[1561.519]: port 2:   fup_info 0.999999995
+ptp4l[1561.644]: port 2: master sync timeout
+ptp4l[1561.644]: port 2: syfu_relay info:
+ptp4l[1561.644]: port 2:   precise_origin_ts 1561.532165652
+ptp4l[1561.644]: port 2:   correction 112541896
+ptp4l[1561.644]: port 2:   fup_info 0.999999995
+ptp4l[1561.769]: port 2: master sync timeout
+ptp4l[1561.769]: port 2: syfu_relay info:
+ptp4l[1561.769]: port 2:   precise_origin_ts 1561.657217032
+ptp4l[1561.769]: port 2:   correction 112541271
+ptp4l[1561.769]: port 2:   fup_info 0.999999995
+ptp4l[1561.894]: port 2: master sync timeout
+ptp4l[1561.894]: port 2: syfu_relay info:
+ptp4l[1561.894]: port 2:   precise_origin_ts 1561.782267952
+ptp4l[1561.894]: port 2:   correction 112544231
+ptp4l[1561.894]: port 2:   fup_info 0.999999995
+ptp4l[1562.011]: port 2: master tx announce timeout
+ptp4l[1562.019]: port 2: master sync timeout
+ptp4l[1562.019]: port 2: syfu_relay info:
+ptp4l[1562.019]: port 2:   precise_origin_ts 1561.907317537
+ptp4l[1562.019]: port 2:   correction 112537691
+ptp4l[1562.019]: port 2:   fup_info 0.999999995
+ptp4l[1562.144]: port 2: master sync timeout
+ptp4l[1562.144]: port 2: syfu_relay info:
+ptp4l[1562.144]: port 2:   precise_origin_ts 1562.32368107
+ptp4l[1562.145]: port 2:   correction 112537146
+ptp4l[1562.145]: port 2:   fup_info 0.999999995
+ptp4l[1562.269]: port 2: master sync timeout
+ptp4l[1562.270]: port 2: syfu_relay info:
+ptp4l[1562.270]: port 2:   precise_origin_ts 1562.157422147
+ptp4l[1562.270]: port 2:   correction 112528261
+ptp4l[1562.270]: port 2:   fup_info 0.999999995
+ptp4l[1562.282]: rms   10 max   16 freq    -77 +/-  11 delay  1312 +/-   0
+ptp4l[1562.389]: port 1: delay timeout
+ptp4l[1562.389]: delay   filtered       1313   raw       1317
+ptp4l[1562.394]: port 2: master sync timeout
+ptp4l[1562.395]: port 2: syfu_relay info:
+ptp4l[1562.395]: port 2:   precise_origin_ts 1562.282471322
+ptp4l[1562.395]: port 2:   correction 112520722
+ptp4l[1562.395]: port 2:   fup_info 0.999999995
+ptp4l[1562.421]: port 2: delay timeout
+ptp4l[1562.421]: delay   filtered       1315   raw       1322
+ptp4l[1562.519]: port 2: master sync timeout
+ptp4l[1562.520]: port 2: syfu_relay info:
+ptp4l[1562.520]: port 2:   precise_origin_ts 1562.407523912
+ptp4l[1562.520]: port 2:   correction 112530787
+ptp4l[1562.520]: port 2:   fup_info 0.999999995
+ptp4l[1562.645]: port 2: master sync timeout
+ptp4l[1562.645]: port 2: syfu_relay info:
+ptp4l[1562.645]: port 2:   precise_origin_ts 1562.532573132
+ptp4l[1562.645]: port 2:   correction 112531682
+ptp4l[1562.645]: port 2:   fup_info 0.999999995
+ptp4l[1562.770]: port 2: master sync timeout
+ptp4l[1562.770]: port 2: syfu_relay info:
+ptp4l[1562.770]: port 2:   precise_origin_ts 1562.657624092
+ptp4l[1562.770]: port 2:   correction 112530837
+ptp4l[1562.770]: port 2:   fup_info 0.999999995
+ptp4l[1562.895]: port 2: master sync timeout
+ptp4l[1562.895]: port 2: syfu_relay info:
+ptp4l[1562.895]: port 2:   precise_origin_ts 1562.782675617
+ptp4l[1562.895]: port 2:   correction 112530052
+ptp4l[1562.895]: port 2:   fup_info 0.999999995
+ptp4l[1563.011]: port 2: master tx announce timeout
+ptp4l[1563.020]: port 2: master sync timeout
+ptp4l[1563.020]: port 2: syfu_relay info:
+ptp4l[1563.020]: port 2:   precise_origin_ts 1562.907725877
+ptp4l[1563.020]: port 2:   correction 112523477
+ptp4l[1563.020]: port 2:   fup_info 0.999999995
+ptp4l[1563.145]: port 2: master sync timeout
+ptp4l[1563.145]: port 2: syfu_relay info:
+ptp4l[1563.145]: port 2:   precise_origin_ts 1563.32776767
+ptp4l[1563.145]: port 2:   correction 112522717
+ptp4l[1563.145]: port 2:   fup_info 0.999999995
+ptp4l[1563.270]: port 2: master sync timeout
+ptp4l[1563.270]: port 2: syfu_relay info:
+ptp4l[1563.270]: port 2:   precise_origin_ts 1563.157829417
+ptp4l[1563.270]: port 2:   correction 112514022
+ptp4l[1563.270]: port 2:   fup_info 0.999999995
+ptp4l[1563.283]: rms    6 max   10 freq    -78 +/-   8 delay  1313 +/-   0
+ptp4l[1563.389]: port 1: delay timeout
+ptp4l[1563.390]: delay   filtered       1313   raw       1307
+ptp4l[1563.395]: port 2: master sync timeout
+ptp4l[1563.395]: port 2: syfu_relay info:
+ptp4l[1563.395]: port 2:   precise_origin_ts 1563.282878097
+ptp4l[1563.395]: port 2:   correction 112506973
+ptp4l[1563.395]: port 2:   fup_info 1.000000002
+ptp4l[1563.421]: port 2: delay timeout
+ptp4l[1563.422]: delay   filtered       1318   raw       1320
+ptp4l[1563.520]: port 2: master sync timeout
+ptp4l[1563.520]: port 2: syfu_relay info:
+ptp4l[1563.520]: port 2:   precise_origin_ts 1563.407929432
+ptp4l[1563.520]: port 2:   correction 112505483
+ptp4l[1563.520]: port 2:   fup_info 1.000000002
+ptp4l[1563.645]: port 2: master sync timeout
+ptp4l[1563.645]: port 2: syfu_relay info:
+ptp4l[1563.645]: port 2:   precise_origin_ts 1563.532980142
+ptp4l[1563.645]: port 2:   correction 112504873
+ptp4l[1563.645]: port 2:   fup_info 1.000000002
+ptp4l[1563.770]: port 2: master sync timeout
+ptp4l[1563.770]: port 2: syfu_relay info:
+ptp4l[1563.770]: port 2:   precise_origin_ts 1563.658032217
+ptp4l[1563.770]: port 2:   correction 112502878
+ptp4l[1563.770]: port 2:   fup_info 1.000000002
+ptp4l[1563.895]: port 2: master sync timeout
+ptp4l[1563.895]: port 2: syfu_relay info:
+ptp4l[1563.895]: port 2:   precise_origin_ts 1563.783082307
+ptp4l[1563.895]: port 2:   correction 112507843
+ptp4l[1563.895]: port 2:   fup_info 1.000000002
+ptp4l[1564.011]: port 2: master tx announce timeout
+ptp4l[1564.020]: port 2: master sync timeout
+ptp4l[1564.020]: port 2: syfu_relay info:
+ptp4l[1564.020]: port 2:   precise_origin_ts 1563.908132977
+ptp4l[1564.020]: port 2:   correction 112499138
+ptp4l[1564.020]: port 2:   fup_info 1.000000002
+ptp4l[1564.145]: port 2: master sync timeout
+ptp4l[1564.145]: port 2: syfu_relay info:
+ptp4l[1564.145]: port 2:   precise_origin_ts 1564.33184247
+ptp4l[1564.145]: port 2:   correction 112498198
+ptp4l[1564.145]: port 2:   fup_info 1.000000002
+ptp4l[1564.270]: port 2: master sync timeout
+ptp4l[1564.270]: port 2: syfu_relay info:
+ptp4l[1564.270]: port 2:   precise_origin_ts 1564.158239117
+ptp4l[1564.270]: port 2:   correction 112488023
+ptp4l[1564.270]: port 2:   fup_info 1.000000002
+ptp4l[1564.283]: rms   10 max   20 freq    -91 +/-  12 delay  1313 +/-   0
+ptp4l[1564.389]: port 1: delay timeout
+ptp4l[1564.390]: delay   filtered       1314   raw       1315
+ptp4l[1564.395]: port 2: master sync timeout
+ptp4l[1564.395]: port 2: syfu_relay info:
+ptp4l[1564.395]: port 2:   precise_origin_ts 1564.283287467
+ptp4l[1564.395]: port 2:   correction 112481274
+ptp4l[1564.395]: port 2:   fup_info 1.000000002
+ptp4l[1564.421]: port 2: delay timeout
+ptp4l[1564.422]: delay   filtered       1321   raw       1322
+ptp4l[1564.520]: port 2: master sync timeout
+ptp4l[1564.520]: port 2: syfu_relay info:
+ptp4l[1564.520]: port 2:   precise_origin_ts 1564.408339967
+ptp4l[1564.520]: port 2:   correction 112478899
+ptp4l[1564.520]: port 2:   fup_info 1.000000002
+ptp4l[1564.645]: port 2: master sync timeout
+ptp4l[1564.645]: port 2: syfu_relay info:
+ptp4l[1564.645]: port 2:   precise_origin_ts 1564.533390997
+ptp4l[1564.645]: port 2:   correction 112478189
+ptp4l[1564.645]: port 2:   fup_info 1.000000002
+ptp4l[1564.770]: port 2: master sync timeout
+ptp4l[1564.770]: port 2: syfu_relay info:
+ptp4l[1564.771]: port 2:   precise_origin_ts 1564.658442142
+ptp4l[1564.771]: port 2:   correction 112476644
+ptp4l[1564.771]: port 2:   fup_info 1.000000002
+ptp4l[1564.895]: port 2: master sync timeout
+ptp4l[1564.896]: port 2: syfu_relay info:
+ptp4l[1564.896]: port 2:   precise_origin_ts 1564.783492472
+ptp4l[1564.896]: port 2:   correction 112477374
+ptp4l[1564.896]: port 2:   fup_info 1.000000002
+ptp4l[1565.011]: port 2: master tx announce timeout
+ptp4l[1565.020]: port 2: master sync timeout
+ptp4l[1565.021]: port 2: syfu_relay info:
+ptp4l[1565.021]: port 2:   precise_origin_ts 1564.908543232
+ptp4l[1565.021]: port 2:   correction 112477189
+ptp4l[1565.021]: port 2:   fup_info 1.000000002
+ptp4l[1565.146]: port 2: master sync timeout
+ptp4l[1565.146]: port 2: syfu_relay info:
+ptp4l[1565.146]: port 2:   precise_origin_ts 1565.33593957
+ptp4l[1565.146]: port 2:   correction 112477454
+ptp4l[1565.146]: port 2:   fup_info 1.000000002
+ptp4l[1565.271]: port 2: master sync timeout
+ptp4l[1565.271]: port 2: syfu_relay info:
+ptp4l[1565.271]: port 2:   precise_origin_ts 1565.158648252
+ptp4l[1565.271]: port 2:   correction 112466684
+ptp4l[1565.271]: port 2:   fup_info 1.000000002
+ptp4l[1565.283]: rms   10 max   16 freq    -98 +/-  10 delay  1314 +/-   0
+ptp4l[1565.389]: port 1: delay timeout
+ptp4l[1565.390]: delay   filtered       1314   raw       1312
+ptp4l[1565.396]: port 2: master sync timeout
+ptp4l[1565.396]: port 2: syfu_relay info:
+ptp4l[1565.396]: port 2:   precise_origin_ts 1565.283697212
+ptp4l[1565.396]: port 2:   correction 112459804
+ptp4l[1565.396]: port 2:   fup_info 1.000000000
+ptp4l[1565.421]: port 2: delay timeout
+ptp4l[1565.422]: delay   filtered       1321   raw       1312
+ptp4l[1565.521]: port 2: master sync timeout
+ptp4l[1565.521]: port 2: syfu_relay info:
+ptp4l[1565.521]: port 2:   precise_origin_ts 1565.408747782
+ptp4l[1565.521]: port 2:   correction 112459354
+ptp4l[1565.521]: port 2:   fup_info 1.000000000
+ptp4l[1565.646]: port 2: master sync timeout
+ptp4l[1565.646]: port 2: syfu_relay info:
+ptp4l[1565.646]: port 2:   precise_origin_ts 1565.533801292
+ptp4l[1565.646]: port 2:   correction 112456639
+ptp4l[1565.646]: port 2:   fup_info 1.000000000
+ptp4l[1565.771]: port 2: master sync timeout
+ptp4l[1565.771]: port 2: syfu_relay info:
+ptp4l[1565.771]: port 2:   precise_origin_ts 1565.658851722
+ptp4l[1565.771]: port 2:   correction 112456544
+ptp4l[1565.771]: port 2:   fup_info 1.000000000
+ptp4l[1565.896]: port 2: master sync timeout
+ptp4l[1565.896]: port 2: syfu_relay info:
+ptp4l[1565.896]: port 2:   precise_origin_ts 1565.783902817
+ptp4l[1565.896]: port 2:   correction 112460429
+ptp4l[1565.896]: port 2:   fup_info 1.000000000
+ptp4l[1566.011]: port 2: master tx announce timeout
+ptp4l[1566.021]: port 2: master sync timeout
+ptp4l[1566.021]: port 2: syfu_relay info:
+ptp4l[1566.021]: port 2:   precise_origin_ts 1565.908953347
+ptp4l[1566.021]: port 2:   correction 112453269
+ptp4l[1566.021]: port 2:   fup_info 1.000000000
+ptp4l[1566.146]: port 2: master sync timeout
+ptp4l[1566.146]: port 2: syfu_relay info:
+ptp4l[1566.146]: port 2:   precise_origin_ts 1566.34004167
+ptp4l[1566.146]: port 2:   correction 112453104
+ptp4l[1566.146]: port 2:   fup_info 1.000000000
+ptp4l[1566.271]: port 2: master sync timeout
+ptp4l[1566.271]: port 2: syfu_relay info:
+ptp4l[1566.271]: port 2:   precise_origin_ts 1566.159058772
+ptp4l[1566.271]: port 2:   correction 112441954
+ptp4l[1566.271]: port 2:   fup_info 1.000000000
+ptp4l[1566.284]: rms    7 max   14 freq    -85 +/-   8 delay  1314 +/-   0
+ptp4l[1566.389]: port 1: delay timeout
+ptp4l[1566.390]: delay   filtered       1314   raw       1312
+ptp4l[1566.396]: port 2: master sync timeout
+ptp4l[1566.396]: port 2: syfu_relay info:
+ptp4l[1566.396]: port 2:   precise_origin_ts 1566.284109177
+ptp4l[1566.396]: port 2:   correction 112433344
+ptp4l[1566.396]: port 2:   fup_info 1.000000000
+ptp4l[1566.421]: port 2: delay timeout
+ptp4l[1566.422]: delay   filtered       1321   raw       1317
+ptp4l[1566.521]: port 2: master sync timeout
+ptp4l[1566.521]: port 2: syfu_relay info:
+ptp4l[1566.521]: port 2:   precise_origin_ts 1566.409159807
+ptp4l[1566.521]: port 2:   correction 112432314
+ptp4l[1566.521]: port 2:   fup_info 1.000000000
+ptp4l[1566.646]: port 2: master sync timeout
+ptp4l[1566.646]: port 2: syfu_relay info:
+ptp4l[1566.646]: port 2:   precise_origin_ts 1566.534211897
+ptp4l[1566.646]: port 2:   correction 112431289
+ptp4l[1566.646]: port 2:   fup_info 1.000000000
+ptp4l[1566.771]: port 2: master sync timeout
+ptp4l[1566.771]: port 2: syfu_relay info:
+ptp4l[1566.771]: port 2:   precise_origin_ts 1566.659263117
+ptp4l[1566.771]: port 2:   correction 112430859
+ptp4l[1566.771]: port 2:   fup_info 1.000000000
+ptp4l[1566.896]: port 2: master sync timeout
+ptp4l[1566.896]: port 2: syfu_relay info:
+ptp4l[1566.896]: port 2:   precise_origin_ts 1566.784313492
+ptp4l[1566.896]: port 2:   correction 112431829
+ptp4l[1566.896]: port 2:   fup_info 1.000000000
+ptp4l[1567.011]: port 2: master tx announce timeout
+ptp4l[1567.021]: port 2: master sync timeout
+ptp4l[1567.021]: port 2: syfu_relay info:
+ptp4l[1567.021]: port 2:   precise_origin_ts 1566.909364827
+ptp4l[1567.021]: port 2:   correction 112424914
+ptp4l[1567.021]: port 2:   fup_info 1.000000000
+ptp4l[1567.146]: port 2: master sync timeout
+ptp4l[1567.146]: port 2: syfu_relay info:
+ptp4l[1567.146]: port 2:   precise_origin_ts 1567.34415357
+ptp4l[1567.146]: port 2:   correction 112424694
+ptp4l[1567.146]: port 2:   fup_info 1.000000000
+ptp4l[1567.271]: port 2: master sync timeout
+ptp4l[1567.271]: port 2: syfu_relay info:
+ptp4l[1567.271]: port 2:   precise_origin_ts 1567.159468647
+ptp4l[1567.271]: port 2:   correction 112415179
+ptp4l[1567.272]: port 2:   fup_info 1.000000000
+ptp4l[1567.284]: rms   10 max   14 freq    -77 +/-  10 delay  1314 +/-   0
+ptp4l[1567.389]: port 1: delay timeout
+ptp4l[1567.390]: delay   filtered       1314   raw       1312
+ptp4l[1567.396]: port 2: master sync timeout
+ptp4l[1567.396]: port 2: syfu_relay info:
+ptp4l[1567.397]: port 2:   precise_origin_ts 1567.284517417
+ptp4l[1567.397]: port 2:   correction 112408324
+ptp4l[1567.397]: port 2:   fup_info 1.000000000
+ptp4l[1567.421]: port 2: delay timeout
+ptp4l[1567.422]: delay   filtered       1321   raw       1320
+ptp4l[1567.521]: port 2: master sync timeout
+ptp4l[1567.522]: port 2: syfu_relay info:
+ptp4l[1567.522]: port 2:   precise_origin_ts 1567.409568567
+ptp4l[1567.522]: port 2:   correction 112406249
+ptp4l[1567.522]: port 2:   fup_info 1.000000000
+ptp4l[1567.646]: port 2: master sync timeout
+ptp4l[1567.647]: port 2: syfu_relay info:
+ptp4l[1567.647]: port 2:   precise_origin_ts 1567.534619982
+ptp4l[1567.647]: port 2:   correction 112405129
+ptp4l[1567.647]: port 2:   fup_info 1.000000000
+ptp4l[1567.772]: port 2: master sync timeout
+ptp4l[1567.772]: port 2: syfu_relay info:
+ptp4l[1567.772]: port 2:   precise_origin_ts 1567.659672012
+ptp4l[1567.772]: port 2:   correction 112402909
+ptp4l[1567.772]: port 2:   fup_info 1.000000000
+ptp4l[1567.897]: port 2: master sync timeout
+ptp4l[1567.897]: port 2: syfu_relay info:
+ptp4l[1567.897]: port 2:   precise_origin_ts 1567.784722182
+ptp4l[1567.897]: port 2:   correction 112407454
+ptp4l[1567.897]: port 2:   fup_info 1.000000000
+ptp4l[1568.011]: port 2: master tx announce timeout
+ptp4l[1568.022]: port 2: master sync timeout
+ptp4l[1568.022]: port 2: syfu_relay info:
+ptp4l[1568.022]: port 2:   precise_origin_ts 1567.909773137
+ptp4l[1568.022]: port 2:   correction 112404169
+ptp4l[1568.022]: port 2:   fup_info 1.000000000
+ptp4l[1568.147]: port 2: master sync timeout
+ptp4l[1568.147]: port 2: syfu_relay info:
+ptp4l[1568.147]: port 2:   precise_origin_ts 1568.34824352
+ptp4l[1568.147]: port 2:   correction 112403769
+ptp4l[1568.147]: port 2:   fup_info 1.000000000
+ptp4l[1568.272]: port 2: master sync timeout
+ptp4l[1568.272]: port 2: syfu_relay info:
+ptp4l[1568.272]: port 2:   precise_origin_ts 1568.159879567
+ptp4l[1568.272]: port 2:   correction 112392964
+ptp4l[1568.272]: port 2:   fup_info 1.000000000
+ptp4l[1568.285]: rms   11 max   21 freq    -92 +/-  14 delay  1314 +/-   0
+ptp4l[1568.389]: port 1: delay timeout
+ptp4l[1568.390]: delay   filtered       1313   raw       1310
+ptp4l[1568.397]: port 2: master sync timeout
+ptp4l[1568.397]: port 2: syfu_relay info:
+ptp4l[1568.397]: port 2:   precise_origin_ts 1568.284946597
+ptp4l[1568.397]: port 2:   correction 112367743
+ptp4l[1568.397]: port 2:   fup_info 1.000000000
+ptp4l[1568.421]: port 2: delay timeout
+ptp4l[1568.422]: delay   filtered       1320   raw       1317
+ptp4l[1568.522]: port 2: master sync timeout
+ptp4l[1568.522]: port 2: syfu_relay info:
+ptp4l[1568.522]: port 2:   precise_origin_ts 1568.409997332
+ptp4l[1568.522]: port 2:   correction 112366178
+ptp4l[1568.522]: port 2:   fup_info 1.000000000
+ptp4l[1568.647]: port 2: master sync timeout
+ptp4l[1568.647]: port 2: syfu_relay info:
+ptp4l[1568.647]: port 2:   precise_origin_ts 1568.535048247
+ptp4l[1568.647]: port 2:   correction 112366033
+ptp4l[1568.647]: port 2:   fup_info 1.000000000
+ptp4l[1568.772]: port 2: master sync timeout
+ptp4l[1568.772]: port 2: syfu_relay info:
+ptp4l[1568.772]: port 2:   precise_origin_ts 1568.660099647
+ptp4l[1568.772]: port 2:   correction 112365323
+ptp4l[1568.772]: port 2:   fup_info 1.000000000
+ptp4l[1568.897]: port 2: master sync timeout
+ptp4l[1568.897]: port 2: syfu_relay info:
+ptp4l[1568.897]: port 2:   precise_origin_ts 1568.785150642
+ptp4l[1568.897]: port 2:   correction 112366993
+ptp4l[1568.897]: port 2:   fup_info 1.000000000
+ptp4l[1569.011]: port 2: master tx announce timeout
+ptp4l[1569.022]: port 2: master sync timeout
+ptp4l[1569.022]: port 2: syfu_relay info:
+ptp4l[1569.022]: port 2:   precise_origin_ts 1568.910202292
+ptp4l[1569.022]: port 2:   correction 112358943
+ptp4l[1569.022]: port 2:   fup_info 1.000000000
+ptp4l[1569.147]: port 2: master sync timeout
+ptp4l[1569.147]: port 2: syfu_relay info:
+ptp4l[1569.147]: port 2:   precise_origin_ts 1569.35252607
+ptp4l[1569.147]: port 2:   correction 112359083
+ptp4l[1569.147]: port 2:   fup_info 1.000000000
+ptp4l[1569.272]: port 2: master sync timeout
+ptp4l[1569.272]: port 2: syfu_relay info:
+ptp4l[1569.272]: port 2:   precise_origin_ts 1569.160307102
+ptp4l[1569.272]: port 2:   correction 112348963
+ptp4l[1569.272]: port 2:   fup_info 1.000000000
+ptp4l[1569.285]: rms    6 max   10 freq    -87 +/-   8 delay  1313 +/-   0
+ptp4l[1569.389]: port 1: delay timeout
+ptp4l[1569.390]: delay   filtered       1312   raw       1312
+ptp4l[1569.397]: port 2: master sync timeout
+ptp4l[1569.397]: port 2: syfu_relay info:
+ptp4l[1569.397]: port 2:   precise_origin_ts 1569.285356542
+ptp4l[1569.397]: port 2:   correction 112341551
+ptp4l[1569.397]: port 2:   fup_info 0.999999995
+ptp4l[1569.422]: port 2: delay timeout
+ptp4l[1569.422]: delay   filtered       1319   raw       1319
+ptp4l[1569.522]: port 2: master sync timeout
+ptp4l[1569.522]: port 2: syfu_relay info:
+ptp4l[1569.522]: port 2:   precise_origin_ts 1569.410408312
+ptp4l[1569.522]: port 2:   correction 112339391
+ptp4l[1569.522]: port 2:   fup_info 0.999999995
+ptp4l[1569.647]: port 2: master sync timeout
+ptp4l[1569.647]: port 2: syfu_relay info:
+ptp4l[1569.647]: port 2:   precise_origin_ts 1569.535458937
+ptp4l[1569.647]: port 2:   correction 112339511
+ptp4l[1569.647]: port 2:   fup_info 0.999999995
+ptp4l[1569.772]: port 2: master sync timeout
+ptp4l[1569.772]: port 2: syfu_relay info:
+ptp4l[1569.772]: port 2:   precise_origin_ts 1569.660510037
+ptp4l[1569.772]: port 2:   correction 112338521
+ptp4l[1569.772]: port 2:   fup_info 0.999999995
+ptp4l[1569.897]: port 2: master sync timeout
+ptp4l[1569.897]: port 2: syfu_relay info:
+ptp4l[1569.897]: port 2:   precise_origin_ts 1569.785561702
+ptp4l[1569.898]: port 2:   correction 112340926
+ptp4l[1569.898]: port 2:   fup_info 0.999999995
+ptp4l[1570.011]: port 2: master tx announce timeout
+ptp4l[1570.022]: port 2: master sync timeout
+ptp4l[1570.023]: port 2: syfu_relay info:
+ptp4l[1570.023]: port 2:   precise_origin_ts 1569.910612962
+ptp4l[1570.023]: port 2:   correction 112336221
+ptp4l[1570.023]: port 2:   fup_info 0.999999995
+ptp4l[1570.147]: port 2: master sync timeout
+ptp4l[1570.148]: port 2: syfu_relay info:
+ptp4l[1570.148]: port 2:   precise_origin_ts 1570.35663432
+ptp4l[1570.148]: port 2:   correction 112335781
+ptp4l[1570.148]: port 2:   fup_info 0.999999995
+ptp4l[1570.272]: port 2: master sync timeout
+ptp4l[1570.273]: port 2: syfu_relay info:
+ptp4l[1570.273]: port 2:   precise_origin_ts 1570.160717327
+ptp4l[1570.273]: port 2:   correction 112326116
+ptp4l[1570.273]: port 2:   fup_info 0.999999995
+ptp4l[1570.285]: rms   12 max   21 freq    -73 +/-  14 delay  1312 +/-   0
+ptp4l[1570.390]: port 1: delay timeout
+ptp4l[1570.390]: delay   filtered       1312   raw       1307
+ptp4l[1570.398]: port 2: master sync timeout
+ptp4l[1570.398]: port 2: syfu_relay info:
+ptp4l[1570.398]: port 2:   precise_origin_ts 1570.285766677
+ptp4l[1570.398]: port 2:   correction 112318136
+ptp4l[1570.398]: port 2:   fup_info 0.999999995
+ptp4l[1570.422]: port 2: delay timeout
+ptp4l[1570.422]: delay   filtered       1320   raw       1322
+ptp4l[1570.523]: port 2: master sync timeout
+ptp4l[1570.523]: port 2: syfu_relay info:
+ptp4l[1570.523]: port 2:   precise_origin_ts 1570.410818747
+ptp4l[1570.523]: port 2:   correction 112315886
+ptp4l[1570.523]: port 2:   fup_info 0.999999995
+ptp4l[1570.648]: port 2: master sync timeout
+ptp4l[1570.648]: port 2: syfu_relay info:
+ptp4l[1570.648]: port 2:   precise_origin_ts 1570.535871067
+ptp4l[1570.648]: port 2:   correction 112314296
+ptp4l[1570.648]: port 2:   fup_info 0.999999995
+ptp4l[1570.773]: port 2: master sync timeout
+ptp4l[1570.773]: port 2: syfu_relay info:
+ptp4l[1570.773]: port 2:   precise_origin_ts 1570.660939582
+ptp4l[1570.773]: port 2:   correction 112296831
+ptp4l[1570.773]: port 2:   fup_info 0.999999995
+ptp4l[1570.898]: port 2: master sync timeout
+ptp4l[1570.898]: port 2: syfu_relay info:
+ptp4l[1570.898]: port 2:   precise_origin_ts 1570.785990612
+ptp4l[1570.898]: port 2:   correction 112297431
+ptp4l[1570.898]: port 2:   fup_info 0.999999995
+ptp4l[1571.011]: port 2: master tx announce timeout
+ptp4l[1571.023]: port 2: master sync timeout
+ptp4l[1571.023]: port 2: syfu_relay info:
+ptp4l[1571.023]: port 2:   precise_origin_ts 1570.911042117
+ptp4l[1571.023]: port 2:   correction 112294621
+ptp4l[1571.023]: port 2:   fup_info 0.999999995
+ptp4l[1571.148]: port 2: master sync timeout
+ptp4l[1571.148]: port 2: syfu_relay info:
+ptp4l[1571.148]: port 2:   precise_origin_ts 1571.36093042
+ptp4l[1571.148]: port 2:   correction 112295101
+ptp4l[1571.148]: port 2:   fup_info 0.999999995
+ptp4l[1571.273]: port 2: master sync timeout
+ptp4l[1571.273]: port 2: syfu_relay info:
+ptp4l[1571.273]: port 2:   precise_origin_ts 1571.161147297
+ptp4l[1571.273]: port 2:   correction 112284941
+ptp4l[1571.273]: port 2:   fup_info 0.999999995
+ptp4l[1571.286]: rms    8 max   16 freq    -73 +/-  10 delay  1312 +/-   0
+ptp4l[1571.390]: port 1: delay timeout
+ptp4l[1571.390]: delay   filtered       1312   raw       1302
+ptp4l[1571.398]: port 2: master sync timeout
+ptp4l[1571.398]: port 2: syfu_relay info:
+ptp4l[1571.398]: port 2:   precise_origin_ts 1571.286196117
+ptp4l[1571.398]: port 2:   correction 112277497
+ptp4l[1571.398]: port 2:   fup_info 1.000000005
+ptp4l[1571.422]: port 2: delay timeout
+ptp4l[1571.422]: delay   filtered       1319   raw       1317
+ptp4l[1571.523]: port 2: master sync timeout
+ptp4l[1571.523]: port 2: syfu_relay info:
+ptp4l[1571.523]: port 2:   precise_origin_ts 1571.411247372
+ptp4l[1571.523]: port 2:   correction 112275862
+ptp4l[1571.523]: port 2:   fup_info 1.000000005
+ptp4l[1571.648]: port 2: master sync timeout
+ptp4l[1571.648]: port 2: syfu_relay info:
+ptp4l[1571.648]: port 2:   precise_origin_ts 1571.536299107
+ptp4l[1571.648]: port 2:   correction 112274487
+ptp4l[1571.648]: port 2:   fup_info 1.000000005
+ptp4l[1571.773]: port 2: master sync timeout
+ptp4l[1571.773]: port 2: syfu_relay info:
+ptp4l[1571.773]: port 2:   precise_origin_ts 1571.661350552
+ptp4l[1571.773]: port 2:   correction 112273082
+ptp4l[1571.773]: port 2:   fup_info 1.000000005
+ptp4l[1571.898]: port 2: master sync timeout
+ptp4l[1571.898]: port 2: syfu_relay info:
+ptp4l[1571.898]: port 2:   precise_origin_ts 1571.786401407
+ptp4l[1571.898]: port 2:   correction 112276557
+ptp4l[1571.898]: port 2:   fup_info 1.000000005
+ptp4l[1572.011]: port 2: master tx announce timeout
+ptp4l[1572.023]: port 2: master sync timeout
+ptp4l[1572.023]: port 2: syfu_relay info:
+ptp4l[1572.023]: port 2:   precise_origin_ts 1571.911451932
+ptp4l[1572.023]: port 2:   correction 112273622
+ptp4l[1572.023]: port 2:   fup_info 1.000000005
+ptp4l[1572.148]: port 2: master sync timeout
+ptp4l[1572.148]: port 2: syfu_relay info:
+ptp4l[1572.148]: port 2:   precise_origin_ts 1572.36502842
+ptp4l[1572.148]: port 2:   correction 112273662
+ptp4l[1572.148]: port 2:   fup_info 1.000000005
+ptp4l[1572.273]: port 2: master sync timeout
+ptp4l[1572.273]: port 2: syfu_relay info:
+ptp4l[1572.273]: port 2:   precise_origin_ts 1572.161558247
+ptp4l[1572.273]: port 2:   correction 112262897
+ptp4l[1572.273]: port 2:   fup_info 1.000000005
+ptp4l[1572.286]: rms    6 max   11 freq    -70 +/-   7 delay  1312 +/-   0
+ptp4l[1572.390]: port 1: delay timeout
+ptp4l[1572.390]: delay   filtered       1311   raw       1307
+ptp4l[1572.398]: port 2: master sync timeout
+ptp4l[1572.398]: port 2: syfu_relay info:
+ptp4l[1572.398]: port 2:   precise_origin_ts 1572.286607252
+ptp4l[1572.398]: port 2:   correction 112255506
+ptp4l[1572.398]: port 2:   fup_info 1.000000005
+ptp4l[1572.422]: port 2: delay timeout
+ptp4l[1572.422]: delay   filtered       1319   raw       1320
+ptp4l[1572.523]: port 2: master sync timeout
+ptp4l[1572.523]: port 2: syfu_relay info:
+ptp4l[1572.524]: port 2:   precise_origin_ts 1572.411658102
+ptp4l[1572.524]: port 2:   correction 112254941
+ptp4l[1572.524]: port 2:   fup_info 1.000000005
+ptp4l[1572.648]: port 2: master sync timeout
+ptp4l[1572.649]: port 2: syfu_relay info:
+ptp4l[1572.649]: port 2:   precise_origin_ts 1572.536707152
+ptp4l[1572.649]: port 2:   correction 112256356
+ptp4l[1572.649]: port 2:   fup_info 1.000000005
+ptp4l[1572.773]: port 2: master sync timeout
+ptp4l[1572.774]: port 2: syfu_relay info:
+ptp4l[1572.774]: port 2:   precise_origin_ts 1572.661758712
+ptp4l[1572.774]: port 2:   correction 112254711
+ptp4l[1572.774]: port 2:   fup_info 1.000000005
+ptp4l[1572.899]: port 2: master sync timeout
+ptp4l[1572.899]: port 2: syfu_relay info:
+ptp4l[1572.899]: port 2:   precise_origin_ts 1572.786810007
+ptp4l[1572.899]: port 2:   correction 112256501
+ptp4l[1572.899]: port 2:   fup_info 1.000000005
+ptp4l[1573.011]: port 2: master tx announce timeout
+ptp4l[1573.024]: port 2: master sync timeout
+ptp4l[1573.024]: port 2: syfu_relay info:
+ptp4l[1573.024]: port 2:   precise_origin_ts 1572.911861572
+ptp4l[1573.024]: port 2:   correction 112253141
+ptp4l[1573.024]: port 2:   fup_info 1.000000005
+ptp4l[1573.149]: port 2: master sync timeout
+ptp4l[1573.149]: port 2: syfu_relay info:
+ptp4l[1573.149]: port 2:   precise_origin_ts 1573.36932482
+ptp4l[1573.149]: port 2:   correction 112232811
+ptp4l[1573.149]: port 2:   fup_info 1.000000005
+ptp4l[1573.274]: port 2: master sync timeout
+ptp4l[1573.274]: port 2: syfu_relay info:
+ptp4l[1573.274]: port 2:   precise_origin_ts 1573.161987152
+ptp4l[1573.274]: port 2:   correction 112223071
+ptp4l[1573.274]: port 2:   fup_info 1.000000005
+ptp4l[1573.287]: rms    7 max   12 freq    -65 +/-   8 delay  1311 +/-   0
+ptp4l[1573.390]: port 1: delay timeout
+ptp4l[1573.390]: delay   filtered       1312   raw       1312
+ptp4l[1573.399]: port 2: master sync timeout
+ptp4l[1573.399]: port 2: syfu_relay info:
+ptp4l[1573.399]: port 2:   precise_origin_ts 1573.287035702
+ptp4l[1573.399]: port 2:   correction 112216412
+ptp4l[1573.399]: port 2:   fup_info 1.000000000
+ptp4l[1573.422]: port 2: delay timeout
+ptp4l[1573.422]: delay   filtered       1319   raw       1320
+ptp4l[1573.524]: port 2: master sync timeout
+ptp4l[1573.524]: port 2: syfu_relay info:
+ptp4l[1573.524]: port 2:   precise_origin_ts 1573.412086997
+ptp4l[1573.524]: port 2:   correction 112214267
+ptp4l[1573.524]: port 2:   fup_info 1.000000000
+ptp4l[1573.649]: port 2: master sync timeout
+ptp4l[1573.649]: port 2: syfu_relay info:
+ptp4l[1573.649]: port 2:   precise_origin_ts 1573.537138337
+ptp4l[1573.649]: port 2:   correction 112213432
+ptp4l[1573.649]: port 2:   fup_info 1.000000000
+ptp4l[1573.774]: port 2: master sync timeout
+ptp4l[1573.774]: port 2: syfu_relay info:
+ptp4l[1573.774]: port 2:   precise_origin_ts 1573.662188962
+ptp4l[1573.774]: port 2:   correction 112212747
+ptp4l[1573.774]: port 2:   fup_info 1.000000000
+ptp4l[1573.899]: port 2: master sync timeout
+ptp4l[1573.899]: port 2: syfu_relay info:
+ptp4l[1573.899]: port 2:   precise_origin_ts 1573.787240352
+ptp4l[1573.899]: port 2:   correction 112215322
+ptp4l[1573.899]: port 2:   fup_info 1.000000000
+ptp4l[1574.011]: port 2: master tx announce timeout
+ptp4l[1574.024]: port 2: master sync timeout
+ptp4l[1574.024]: port 2: syfu_relay info:
+ptp4l[1574.024]: port 2:   precise_origin_ts 1573.912291092
+ptp4l[1574.024]: port 2:   correction 112212722
+ptp4l[1574.024]: port 2:   fup_info 1.000000000
+ptp4l[1574.149]: port 2: master sync timeout
+ptp4l[1574.149]: port 2: syfu_relay info:
+ptp4l[1574.149]: port 2:   precise_origin_ts 1574.37341972
+ptp4l[1574.149]: port 2:   correction 112206927
+ptp4l[1574.149]: port 2:   fup_info 1.000000000
+ptp4l[1574.274]: port 2: master sync timeout
+ptp4l[1574.274]: port 2: syfu_relay info:
+ptp4l[1574.274]: port 2:   precise_origin_ts 1574.162396047
+ptp4l[1574.274]: port 2:   correction 112197117
+ptp4l[1574.274]: port 2:   fup_info 1.000000000
+ptp4l[1574.287]: rms    8 max   14 freq    -75 +/-  10 delay  1312 +/-   0
+ptp4l[1574.390]: port 1: delay timeout
+ptp4l[1574.390]: delay   filtered       1312   raw       1317
+ptp4l[1574.399]: port 2: master sync timeout
+ptp4l[1574.399]: port 2: syfu_relay info:
+ptp4l[1574.399]: port 2:   precise_origin_ts 1574.287444752
+ptp4l[1574.399]: port 2:   correction 112191422
+ptp4l[1574.399]: port 2:   fup_info 1.000000000
+ptp4l[1574.422]: port 2: delay timeout
+ptp4l[1574.422]: delay   filtered       1318   raw       1315
+ptp4l[1574.524]: port 2: master sync timeout
+ptp4l[1574.524]: port 2: syfu_relay info:
+ptp4l[1574.524]: port 2:   precise_origin_ts 1574.412496107
+ptp4l[1574.524]: port 2:   correction 112190147
+ptp4l[1574.524]: port 2:   fup_info 1.000000000
+ptp4l[1574.649]: port 2: master sync timeout
+ptp4l[1574.649]: port 2: syfu_relay info:
+ptp4l[1574.649]: port 2:   precise_origin_ts 1574.537547157
+ptp4l[1574.649]: port 2:   correction 112189692
+ptp4l[1574.649]: port 2:   fup_info 1.000000000
+ptp4l[1574.774]: port 2: master sync timeout
+ptp4l[1574.774]: port 2: syfu_relay info:
+ptp4l[1574.774]: port 2:   precise_origin_ts 1574.662597722
+ptp4l[1574.774]: port 2:   correction 112189502
+ptp4l[1574.774]: port 2:   fup_info 1.000000000
+ptp4l[1574.899]: port 2: master sync timeout
+ptp4l[1574.899]: port 2: syfu_relay info:
+ptp4l[1574.899]: port 2:   precise_origin_ts 1574.787648672
+ptp4l[1574.899]: port 2:   correction 112189502
+ptp4l[1574.899]: port 2:   fup_info 1.000000000
+ptp4l[1575.011]: port 2: master tx announce timeout
+ptp4l[1575.024]: port 2: master sync timeout
+ptp4l[1575.024]: port 2: syfu_relay info:
+ptp4l[1575.024]: port 2:   precise_origin_ts 1574.912699462
+ptp4l[1575.024]: port 2:   correction 112187222
+ptp4l[1575.025]: port 2:   fup_info 1.000000000
+ptp4l[1575.149]: port 2: master sync timeout
+ptp4l[1575.150]: port 2: syfu_relay info:
+ptp4l[1575.150]: port 2:   precise_origin_ts 1575.37751122
+ptp4l[1575.150]: port 2:   correction 112186502
+ptp4l[1575.150]: port 2:   fup_info 1.000000000
+ptp4l[1575.274]: port 2: master sync timeout
+ptp4l[1575.275]: port 2: syfu_relay info:
+ptp4l[1575.275]: port 2:   precise_origin_ts 1575.162805162
+ptp4l[1575.275]: port 2:   correction 112176987
+ptp4l[1575.275]: port 2:   fup_info 1.000000000
+ptp4l[1575.288]: rms    7 max   11 freq    -76 +/-   9 delay  1312 +/-   0
+ptp4l[1575.390]: port 1: delay timeout
+ptp4l[1575.390]: delay   filtered       1312   raw       1312
+ptp4l[1575.399]: port 2: master sync timeout
+ptp4l[1575.400]: port 2: syfu_relay info:
+ptp4l[1575.400]: port 2:   precise_origin_ts 1575.287854217
+ptp4l[1575.400]: port 2:   correction 112180931
+ptp4l[1575.400]: port 2:   fup_info 0.999999998
+ptp4l[1575.422]: port 2: delay timeout
+ptp4l[1575.422]: delay   filtered       1318   raw       1317
+ptp4l[1575.525]: port 2: master sync timeout
+ptp4l[1575.525]: port 2: syfu_relay info:
+ptp4l[1575.525]: port 2:   precise_origin_ts 1575.412922852
+ptp4l[1575.525]: port 2:   correction 112161421
+ptp4l[1575.525]: port 2:   fup_info 0.999999998
+ptp4l[1575.650]: port 2: master sync timeout
+ptp4l[1575.650]: port 2: syfu_relay info:
+ptp4l[1575.650]: port 2:   precise_origin_ts 1575.537976852
+ptp4l[1575.650]: port 2:   correction 112157911
+ptp4l[1575.650]: port 2:   fup_info 0.999999998
+ptp4l[1575.775]: port 2: master sync timeout
+ptp4l[1575.775]: port 2: syfu_relay info:
+ptp4l[1575.775]: port 2:   precise_origin_ts 1575.663026137
+ptp4l[1575.775]: port 2:   correction 112159026
+ptp4l[1575.775]: port 2:   fup_info 0.999999998
+ptp4l[1575.900]: port 2: master sync timeout
+ptp4l[1575.900]: port 2: syfu_relay info:
+ptp4l[1575.900]: port 2:   precise_origin_ts 1575.788076672
+ptp4l[1575.900]: port 2:   correction 112162271
+ptp4l[1575.900]: port 2:   fup_info 0.999999998
+ptp4l[1576.011]: port 2: master tx announce timeout
+ptp4l[1576.025]: port 2: master sync timeout
+ptp4l[1576.025]: port 2: syfu_relay info:
+ptp4l[1576.025]: port 2:   precise_origin_ts 1575.913128072
+ptp4l[1576.025]: port 2:   correction 112159991
+ptp4l[1576.025]: port 2:   fup_info 0.999999998
+ptp4l[1576.150]: port 2: master sync timeout
+ptp4l[1576.150]: port 2: syfu_relay info:
+ptp4l[1576.150]: port 2:   precise_origin_ts 1576.38178517
+ptp4l[1576.150]: port 2:   correction 112160481
+ptp4l[1576.150]: port 2:   fup_info 0.999999998
+ptp4l[1576.275]: port 2: master sync timeout
+ptp4l[1576.275]: port 2: syfu_relay info:
+ptp4l[1576.275]: port 2:   precise_origin_ts 1576.163234947
+ptp4l[1576.275]: port 2:   correction 112148971
+ptp4l[1576.275]: port 2:   fup_info 0.999999998
+ptp4l[1576.288]: rms   12 max   24 freq    -89 +/-  13 delay  1312 +/-   0
+ptp4l[1576.390]: port 1: delay timeout
+ptp4l[1576.390]: delay   filtered       1311   raw       1304
+ptp4l[1576.400]: port 2: master sync timeout
+ptp4l[1576.400]: port 2: syfu_relay info:
+ptp4l[1576.400]: port 2:   precise_origin_ts 1576.288282407
+ptp4l[1576.400]: port 2:   correction 112146910
+ptp4l[1576.400]: port 2:   fup_info 0.999999998
+ptp4l[1576.422]: port 2: delay timeout
+ptp4l[1576.422]: delay   filtered       1319   raw       1324
+ptp4l[1576.525]: port 2: master sync timeout
+ptp4l[1576.525]: port 2: syfu_relay info:
+ptp4l[1576.525]: port 2:   precise_origin_ts 1576.413333212
+ptp4l[1576.525]: port 2:   correction 112142815
+ptp4l[1576.525]: port 2:   fup_info 0.999999998
+ptp4l[1576.650]: port 2: master sync timeout
+ptp4l[1576.650]: port 2: syfu_relay info:
+ptp4l[1576.650]: port 2:   precise_origin_ts 1576.538385397
+ptp4l[1576.650]: port 2:   correction 112140875
+ptp4l[1576.650]: port 2:   fup_info 0.999999998
+ptp4l[1576.775]: port 2: master sync timeout
+ptp4l[1576.775]: port 2: syfu_relay info:
+ptp4l[1576.775]: port 2:   precise_origin_ts 1576.663435257
+ptp4l[1576.775]: port 2:   correction 112140850
+ptp4l[1576.775]: port 2:   fup_info 0.999999998
+ptp4l[1576.900]: port 2: master sync timeout
+ptp4l[1576.900]: port 2: syfu_relay info:
+ptp4l[1576.900]: port 2:   precise_origin_ts 1576.788486192
+ptp4l[1576.900]: port 2:   correction 112142205
+ptp4l[1576.900]: port 2:   fup_info 0.999999998
+ptp4l[1577.012]: port 2: master tx announce timeout
+ptp4l[1577.025]: port 2: master sync timeout
+ptp4l[1577.025]: port 2: syfu_relay info:
+ptp4l[1577.025]: port 2:   precise_origin_ts 1576.913537692
+ptp4l[1577.025]: port 2:   correction 112139865
+ptp4l[1577.025]: port 2:   fup_info 0.999999998
+ptp4l[1577.150]: port 2: master sync timeout
+ptp4l[1577.150]: port 2: syfu_relay info:
+ptp4l[1577.150]: port 2:   precise_origin_ts 1577.38588572
+ptp4l[1577.150]: port 2:   correction 112133810
+ptp4l[1577.150]: port 2:   fup_info 0.999999998
+ptp4l[1577.275]: port 2: master sync timeout
+ptp4l[1577.275]: port 2: syfu_relay info:
+ptp4l[1577.275]: port 2:   precise_origin_ts 1577.163643537
+ptp4l[1577.275]: port 2:   correction 112123020
+ptp4l[1577.275]: port 2:   fup_info 0.999999998
+ptp4l[1577.288]: rms    9 max   18 freq    -93 +/-  11 delay  1311 +/-   0
+ptp4l[1577.390]: port 1: delay timeout
+ptp4l[1577.390]: delay   filtered       1311   raw       1317
+ptp4l[1577.400]: port 2: master sync timeout
+ptp4l[1577.400]: port 2: syfu_relay info:
+ptp4l[1577.400]: port 2:   precise_origin_ts 1577.288692522
+ptp4l[1577.400]: port 2:   correction 112121310
+ptp4l[1577.400]: port 2:   fup_info 0.999999998
+ptp4l[1577.422]: port 2: delay timeout
+ptp4l[1577.422]: delay   filtered       1319   raw       1319
+ptp4l[1577.525]: port 2: master sync timeout
+ptp4l[1577.525]: port 2: syfu_relay info:
+ptp4l[1577.525]: port 2:   precise_origin_ts 1577.413743767
+ptp4l[1577.525]: port 2:   correction 112120260
+ptp4l[1577.525]: port 2:   fup_info 0.999999998
+ptp4l[1577.650]: port 2: master sync timeout
+ptp4l[1577.650]: port 2: syfu_relay info:
+ptp4l[1577.651]: port 2:   precise_origin_ts 1577.538794172
+ptp4l[1577.651]: port 2:   correction 112119735
+ptp4l[1577.651]: port 2:   fup_info 0.999999998
+ptp4l[1577.775]: port 2: master sync timeout
+ptp4l[1577.776]: port 2: syfu_relay info:
+ptp4l[1577.776]: port 2:   precise_origin_ts 1577.663844952
+ptp4l[1577.776]: port 2:   correction 112118685
+ptp4l[1577.776]: port 2:   fup_info 0.999999998
+ptp4l[1577.900]: port 2: master sync timeout
+ptp4l[1577.901]: port 2: syfu_relay info:
+ptp4l[1577.901]: port 2:   precise_origin_ts 1577.788914702
+ptp4l[1577.901]: port 2:   correction 112102580
+ptp4l[1577.901]: port 2:   fup_info 0.999999998
+ptp4l[1578.012]: port 2: master tx announce timeout
+ptp4l[1578.026]: port 2: master sync timeout
+ptp4l[1578.026]: port 2: syfu_relay info:
+ptp4l[1578.026]: port 2:   precise_origin_ts 1577.913965452
+ptp4l[1578.026]: port 2:   correction 112099885
+ptp4l[1578.026]: port 2:   fup_info 0.999999998
+ptp4l[1578.151]: port 2: master sync timeout
+ptp4l[1578.151]: port 2: syfu_relay info:
+ptp4l[1578.151]: port 2:   precise_origin_ts 1578.39016052
+ptp4l[1578.151]: port 2:   correction 112099665
+ptp4l[1578.151]: port 2:   fup_info 0.999999998
+ptp4l[1578.276]: port 2: master sync timeout
+ptp4l[1578.276]: port 2: syfu_relay info:
+ptp4l[1578.276]: port 2:   precise_origin_ts 1578.164071077
+ptp4l[1578.276]: port 2:   correction 112089400
+ptp4l[1578.276]: port 2:   fup_info 0.999999998
+ptp4l[1578.289]: rms    7 max   12 freq    -83 +/-   9 delay  1311 +/-   0
+ptp4l[1578.390]: port 1: delay timeout
+ptp4l[1578.390]: delay   filtered       1312   raw       1312
+ptp4l[1578.401]: port 2: master sync timeout
+ptp4l[1578.401]: port 2: syfu_relay info:
+ptp4l[1578.401]: port 2:   precise_origin_ts 1578.289122162
+ptp4l[1578.401]: port 2:   correction 112081581
+ptp4l[1578.401]: port 2:   fup_info 0.999999998
+ptp4l[1578.422]: port 2: delay timeout
+ptp4l[1578.422]: delay   filtered       1319   raw       1322
+ptp4l[1578.526]: port 2: master sync timeout
+ptp4l[1578.526]: port 2: syfu_relay info:
+ptp4l[1578.526]: port 2:   precise_origin_ts 1578.414173232
+ptp4l[1578.526]: port 2:   correction 112080031
+ptp4l[1578.526]: port 2:   fup_info 0.999999998
+ptp4l[1578.651]: port 2: master sync timeout
+ptp4l[1578.651]: port 2: syfu_relay info:
+ptp4l[1578.651]: port 2:   precise_origin_ts 1578.539223852
+ptp4l[1578.651]: port 2:   correction 112079781
+ptp4l[1578.651]: port 2:   fup_info 0.999999998
+ptp4l[1578.776]: port 2: master sync timeout
+ptp4l[1578.776]: port 2: syfu_relay info:
+ptp4l[1578.776]: port 2:   precise_origin_ts 1578.664275577
+ptp4l[1578.776]: port 2:   correction 112077556
+ptp4l[1578.776]: port 2:   fup_info 0.999999998
+ptp4l[1578.901]: port 2: master sync timeout
+ptp4l[1578.901]: port 2: syfu_relay info:
+ptp4l[1578.901]: port 2:   precise_origin_ts 1578.789325152
+ptp4l[1578.901]: port 2:   correction 112079226
+ptp4l[1578.901]: port 2:   fup_info 0.999999998
+ptp4l[1579.012]: port 2: master tx announce timeout
+ptp4l[1579.026]: port 2: master sync timeout
+ptp4l[1579.026]: port 2: syfu_relay info:
+ptp4l[1579.026]: port 2:   precise_origin_ts 1578.914375957
+ptp4l[1579.026]: port 2:   correction 112076936
+ptp4l[1579.026]: port 2:   fup_info 0.999999998
+ptp4l[1579.151]: port 2: master sync timeout
+ptp4l[1579.151]: port 2: syfu_relay info:
+ptp4l[1579.151]: port 2:   precise_origin_ts 1579.39427027
+ptp4l[1579.151]: port 2:   correction 112076526
+ptp4l[1579.151]: port 2:   fup_info 0.999999998
+ptp4l[1579.276]: port 2: master sync timeout
+ptp4l[1579.276]: port 2: syfu_relay info:
+ptp4l[1579.276]: port 2:   precise_origin_ts 1579.164482057
+ptp4l[1579.276]: port 2:   correction 112066461
+ptp4l[1579.276]: port 2:   fup_info 0.999999998
+ptp4l[1579.289]: rms   12 max   21 freq    -66 +/-  10 delay  1312 +/-   0
+ptp4l[1579.390]: port 1: delay timeout
+ptp4l[1579.390]: delay   filtered       1311   raw       1310
+ptp4l[1579.401]: port 2: master sync timeout
+ptp4l[1579.401]: port 2: syfu_relay info:
+ptp4l[1579.401]: port 2:   precise_origin_ts 1579.289530867
+ptp4l[1579.401]: port 2:   correction 112064556
+ptp4l[1579.401]: port 2:   fup_info 1.000000000
+ptp4l[1579.422]: port 2: delay timeout
+ptp4l[1579.422]: delay   filtered       1320   raw       1327
+ptp4l[1579.526]: port 2: master sync timeout
+ptp4l[1579.526]: port 2: syfu_relay info:
+ptp4l[1579.526]: port 2:   precise_origin_ts 1579.414582097
+ptp4l[1579.526]: port 2:   correction 112062786
+ptp4l[1579.526]: port 2:   fup_info 1.000000000
+ptp4l[1579.651]: port 2: master sync timeout
+ptp4l[1579.651]: port 2: syfu_relay info:
+ptp4l[1579.651]: port 2:   precise_origin_ts 1579.539633077
+ptp4l[1579.651]: port 2:   correction 112062056
+ptp4l[1579.651]: port 2:   fup_info 1.000000000
+ptp4l[1579.776]: port 2: master sync timeout
+ptp4l[1579.776]: port 2: syfu_relay info:
+ptp4l[1579.776]: port 2:   precise_origin_ts 1579.664683637
+ptp4l[1579.776]: port 2:   correction 112062341
+ptp4l[1579.776]: port 2:   fup_info 1.000000000
+ptp4l[1579.901]: port 2: master sync timeout
+ptp4l[1579.901]: port 2: syfu_relay info:
+ptp4l[1579.901]: port 2:   precise_origin_ts 1579.789734667
+ptp4l[1579.901]: port 2:   correction 112064351
+ptp4l[1579.901]: port 2:   fup_info 1.000000000
+ptp4l[1580.012]: port 2: master tx announce timeout
+ptp4l[1580.026]: port 2: master sync timeout
+ptp4l[1580.026]: port 2: syfu_relay info:
+ptp4l[1580.026]: port 2:   precise_origin_ts 1579.914785682
+ptp4l[1580.026]: port 2:   correction 112061981
+ptp4l[1580.026]: port 2:   fup_info 1.000000000
+ptp4l[1580.151]: port 2: master sync timeout
+ptp4l[1580.151]: port 2: syfu_relay info:
+ptp4l[1580.151]: port 2:   precise_origin_ts 1580.39836302
+ptp4l[1580.152]: port 2:   correction 112061626
+ptp4l[1580.152]: port 2:   fup_info 1.000000000
+ptp4l[1580.276]: port 2: master sync timeout
+ptp4l[1580.277]: port 2: syfu_relay info:
+ptp4l[1580.277]: port 2:   precise_origin_ts 1580.164901997
+ptp4l[1580.277]: port 2:   correction 112040246
+ptp4l[1580.277]: port 2:   fup_info 1.000000000
+ptp4l[1580.290]: rms    7 max   13 freq    -74 +/-   9 delay  1311 +/-   0
+ptp4l[1580.390]: port 1: delay timeout
+ptp4l[1580.390]: delay   filtered       1312   raw       1312
+ptp4l[1580.401]: port 2: master sync timeout
+ptp4l[1580.402]: port 2: syfu_relay info:
+ptp4l[1580.402]: port 2:   precise_origin_ts 1580.289951482
+ptp4l[1580.402]: port 2:   correction 112038557
+ptp4l[1580.402]: port 2:   fup_info 1.000000000
+ptp4l[1580.422]: port 2: delay timeout
+ptp4l[1580.422]: delay   filtered       1319   raw       1317
+ptp4l[1580.526]: port 2: master sync timeout
+ptp4l[1580.527]: port 2: syfu_relay info:
+ptp4l[1580.527]: port 2:   precise_origin_ts 1580.414997167
+ptp4l[1580.527]: port 2:   correction 112043047
+ptp4l[1580.527]: port 2:   fup_info 1.000000000
+ptp4l[1580.652]: port 2: master sync timeout
+ptp4l[1580.652]: port 2: syfu_relay info:
+ptp4l[1580.652]: port 2:   precise_origin_ts 1580.540050607
+ptp4l[1580.652]: port 2:   correction 112039302
+ptp4l[1580.652]: port 2:   fup_info 1.000000000
+ptp4l[1580.777]: port 2: master sync timeout
+ptp4l[1580.777]: port 2: syfu_relay info:
+ptp4l[1580.777]: port 2:   precise_origin_ts 1580.665100117
+ptp4l[1580.777]: port 2:   correction 112039872
+ptp4l[1580.777]: port 2:   fup_info 1.000000000
+ptp4l[1580.902]: port 2: master sync timeout
+ptp4l[1580.902]: port 2: syfu_relay info:
+ptp4l[1580.902]: port 2:   precise_origin_ts 1580.790150417
+ptp4l[1580.902]: port 2:   correction 112041877
+ptp4l[1580.902]: port 2:   fup_info 1.000000000
+ptp4l[1581.012]: port 2: master tx announce timeout
+ptp4l[1581.027]: port 2: master sync timeout
+ptp4l[1581.027]: port 2: syfu_relay info:
+ptp4l[1581.027]: port 2:   precise_origin_ts 1580.915201842
+ptp4l[1581.027]: port 2:   correction 112037807
+ptp4l[1581.027]: port 2:   fup_info 1.000000000
+ptp4l[1581.152]: port 2: master sync timeout
+ptp4l[1581.152]: port 2: syfu_relay info:
+ptp4l[1581.152]: port 2:   precise_origin_ts 1581.40252437
+ptp4l[1581.152]: port 2:   correction 112037707
+ptp4l[1581.152]: port 2:   fup_info 1.000000000
+ptp4l[1581.277]: port 2: master sync timeout
+ptp4l[1581.277]: port 2: syfu_relay info:
+ptp4l[1581.277]: port 2:   precise_origin_ts 1581.165308882
+ptp4l[1581.277]: port 2:   correction 112026367
+ptp4l[1581.277]: port 2:   fup_info 1.000000000
+ptp4l[1581.290]: rms    5 max    9 freq    -81 +/-   4 delay  1312 +/-   0
+ptp4l[1581.390]: port 1: delay timeout
+ptp4l[1581.390]: delay   filtered       1312   raw       1315
+ptp4l[1581.402]: port 2: master sync timeout
+ptp4l[1581.402]: port 2: syfu_relay info:
+ptp4l[1581.402]: port 2:   precise_origin_ts 1581.290358152
+ptp4l[1581.402]: port 2:   correction 112024917
+ptp4l[1581.402]: port 2:   fup_info 1.000000005
+ptp4l[1581.422]: port 2: delay timeout
+ptp4l[1581.422]: delay   filtered       1319   raw       1317
+ptp4l[1581.527]: port 2: master sync timeout
+ptp4l[1581.527]: port 2: syfu_relay info:
+ptp4l[1581.527]: port 2:   precise_origin_ts 1581.415409282
+ptp4l[1581.527]: port 2:   correction 112023587
+ptp4l[1581.527]: port 2:   fup_info 1.000000005
+ptp4l[1581.652]: port 2: master sync timeout
+ptp4l[1581.652]: port 2: syfu_relay info:
+ptp4l[1581.652]: port 2:   precise_origin_ts 1581.540460102
+ptp4l[1581.652]: port 2:   correction 112022887
+ptp4l[1581.652]: port 2:   fup_info 1.000000005
+ptp4l[1581.777]: port 2: master sync timeout
+ptp4l[1581.777]: port 2: syfu_relay info:
+ptp4l[1581.777]: port 2:   precise_origin_ts 1581.665510547
+ptp4l[1581.777]: port 2:   correction 112022542
+ptp4l[1581.777]: port 2:   fup_info 1.000000005
+ptp4l[1581.902]: port 2: master sync timeout
+ptp4l[1581.902]: port 2: syfu_relay info:
+ptp4l[1581.902]: port 2:   precise_origin_ts 1581.790560947
+ptp4l[1581.902]: port 2:   correction 112025207
+ptp4l[1581.902]: port 2:   fup_info 1.000000005
+ptp4l[1582.012]: port 2: master tx announce timeout
+ptp4l[1582.027]: port 2: master sync timeout
+ptp4l[1582.027]: port 2: syfu_relay info:
+ptp4l[1582.027]: port 2:   precise_origin_ts 1581.915612467
+ptp4l[1582.027]: port 2:   correction 112021822
+ptp4l[1582.027]: port 2:   fup_info 1.000000005
+ptp4l[1582.152]: port 2: master sync timeout
+ptp4l[1582.152]: port 2: syfu_relay info:
+ptp4l[1582.152]: port 2:   precise_origin_ts 1582.40663257
+ptp4l[1582.152]: port 2:   correction 112021217
+ptp4l[1582.152]: port 2:   fup_info 1.000000005
+ptp4l[1582.277]: port 2: master sync timeout
+ptp4l[1582.277]: port 2: syfu_relay info:
+ptp4l[1582.277]: port 2:   precise_origin_ts 1582.165717387
+ptp4l[1582.277]: port 2:   correction 112011332
+ptp4l[1582.277]: port 2:   fup_info 1.000000005
+ptp4l[1582.290]: rms    5 max   11 freq    -76 +/-   7 delay  1312 +/-   0
+ptp4l[1582.390]: port 1: delay timeout
+ptp4l[1582.390]: delay   filtered       1312   raw       1317
+ptp4l[1582.402]: port 2: master sync timeout
+ptp4l[1582.402]: port 2: syfu_relay info:
+ptp4l[1582.402]: port 2:   precise_origin_ts 1582.290767282
+ptp4l[1582.402]: port 2:   correction 112008637
+ptp4l[1582.402]: port 2:   fup_info 1.000000005
+ptp4l[1582.422]: port 2: delay timeout
+ptp4l[1582.422]: delay   filtered       1318   raw       1315
+ptp4l[1582.527]: port 2: master sync timeout
+ptp4l[1582.527]: port 2: syfu_relay info:
+ptp4l[1582.527]: port 2:   precise_origin_ts 1582.415818112
+ptp4l[1582.527]: port 2:   correction 112007432
+ptp4l[1582.527]: port 2:   fup_info 1.000000005
+ptp4l[1582.652]: port 2: master sync timeout
+ptp4l[1582.652]: port 2: syfu_relay info:
+ptp4l[1582.652]: port 2:   precise_origin_ts 1582.540881752
+ptp4l[1582.652]: port 2:   correction 111991682
+ptp4l[1582.653]: port 2:   fup_info 1.000000005
+ptp4l[1582.777]: port 2: master sync timeout
+ptp4l[1582.777]: port 2: syfu_relay info:
+ptp4l[1582.778]: port 2:   precise_origin_ts 1582.665932127
+ptp4l[1582.778]: port 2:   correction 111991512
+ptp4l[1582.778]: port 2:   fup_info 1.000000005
+ptp4l[1582.902]: port 2: master sync timeout
+ptp4l[1582.903]: port 2: syfu_relay info:
+ptp4l[1582.903]: port 2:   precise_origin_ts 1582.790982932
+ptp4l[1582.903]: port 2:   correction 111991972
+ptp4l[1582.903]: port 2:   fup_info 1.000000005
+ptp4l[1583.012]: port 2: master tx announce timeout
+ptp4l[1583.027]: port 2: master sync timeout
+ptp4l[1583.028]: port 2: syfu_relay info:
+ptp4l[1583.028]: port 2:   precise_origin_ts 1582.916033617
+ptp4l[1583.028]: port 2:   correction 112016512
+ptp4l[1583.028]: port 2:   fup_info 1.000000005
+ptp4l[1583.153]: port 2: master sync timeout
+ptp4l[1583.153]: port 2: syfu_relay info:
+ptp4l[1583.153]: port 2:   precise_origin_ts 1583.41084262
+ptp4l[1583.153]: port 2:   correction 111989997
+ptp4l[1583.153]: port 2:   fup_info 1.000000005
+ptp4l[1583.278]: port 2: master sync timeout
+ptp4l[1583.278]: port 2: syfu_relay info:
+ptp4l[1583.278]: port 2:   precise_origin_ts 1583.166139452
+ptp4l[1583.278]: port 2:   correction 111979217
+ptp4l[1583.278]: port 2:   fup_info 1.000000005
+ptp4l[1583.291]: rms   10 max   19 freq    -88 +/-  12 delay  1312 +/-   0
+ptp4l[1583.390]: port 1: delay timeout
+ptp4l[1583.390]: delay   filtered       1312   raw       1312
+ptp4l[1583.403]: port 2: master sync timeout
+ptp4l[1583.403]: port 2: syfu_relay info:
+ptp4l[1583.403]: port 2:   precise_origin_ts 1583.291189387
+ptp4l[1583.403]: port 2:   correction 111976772
+ptp4l[1583.403]: port 2:   fup_info 1.000000000
+ptp4l[1583.422]: port 2: delay timeout
+ptp4l[1583.422]: delay   filtered       1318   raw       1320
+ptp4l[1583.528]: port 2: master sync timeout
+ptp4l[1583.528]: port 2: syfu_relay info:
+ptp4l[1583.528]: port 2:   precise_origin_ts 1583.416240657
+ptp4l[1583.528]: port 2:   correction 111974887
+ptp4l[1583.528]: port 2:   fup_info 1.000000000
+ptp4l[1583.653]: port 2: master sync timeout
+ptp4l[1583.653]: port 2: syfu_relay info:
+ptp4l[1583.653]: port 2:   precise_origin_ts 1583.541290462
+ptp4l[1583.653]: port 2:   correction 111974782
+ptp4l[1583.653]: port 2:   fup_info 1.000000000
+ptp4l[1583.778]: port 2: master sync timeout
+ptp4l[1583.778]: port 2: syfu_relay info:
+ptp4l[1583.778]: port 2:   precise_origin_ts 1583.666340022
+ptp4l[1583.778]: port 2:   correction 111975172
+ptp4l[1583.778]: port 2:   fup_info 1.000000000
+ptp4l[1583.903]: port 2: master sync timeout
+ptp4l[1583.903]: port 2: syfu_relay info:
+ptp4l[1583.903]: port 2:   precise_origin_ts 1583.791391532
+ptp4l[1583.903]: port 2:   correction 111977252
+ptp4l[1583.903]: port 2:   fup_info 1.000000000
+ptp4l[1584.012]: port 2: master tx announce timeout
+ptp4l[1584.028]: port 2: master sync timeout
+ptp4l[1584.028]: port 2: syfu_relay info:
+ptp4l[1584.028]: port 2:   precise_origin_ts 1583.916443817
+ptp4l[1584.028]: port 2:   correction 111973162
+ptp4l[1584.028]: port 2:   fup_info 1.000000000
+ptp4l[1584.153]: port 2: master sync timeout
+ptp4l[1584.153]: port 2: syfu_relay info:
+ptp4l[1584.153]: port 2:   precise_origin_ts 1584.41493702
+ptp4l[1584.153]: port 2:   correction 111974137
+ptp4l[1584.153]: port 2:   fup_info 1.000000000
+ptp4l[1584.278]: port 2: master sync timeout
+ptp4l[1584.278]: port 2: syfu_relay info:
+ptp4l[1584.278]: port 2:   precise_origin_ts 1584.166548142
+ptp4l[1584.278]: port 2:   correction 111964962
+ptp4l[1584.278]: port 2:   fup_info 1.000000000
+ptp4l[1584.291]: rms    9 max   16 freq    -88 +/-  13 delay  1312 +/-   0
+ptp4l[1584.390]: port 1: delay timeout
+ptp4l[1584.391]: delay   filtered       1312   raw       1310
+ptp4l[1584.403]: port 2: master sync timeout
+ptp4l[1584.403]: port 2: syfu_relay info:
+ptp4l[1584.403]: port 2:   precise_origin_ts 1584.291597517
+ptp4l[1584.403]: port 2:   correction 111963737
+ptp4l[1584.403]: port 2:   fup_info 1.000000000
+ptp4l[1584.422]: port 2: delay timeout
+ptp4l[1584.423]: delay   filtered       1319   raw       1327
+ptp4l[1584.528]: port 2: master sync timeout
+ptp4l[1584.528]: port 2: syfu_relay info:
+ptp4l[1584.528]: port 2:   precise_origin_ts 1584.416648682
+ptp4l[1584.528]: port 2:   correction 111962317
+ptp4l[1584.528]: port 2:   fup_info 1.000000000
+ptp4l[1584.653]: port 2: master sync timeout
+ptp4l[1584.653]: port 2: syfu_relay info:
+ptp4l[1584.653]: port 2:   precise_origin_ts 1584.541699432
+ptp4l[1584.653]: port 2:   correction 111961702
+ptp4l[1584.653]: port 2:   fup_info 1.000000000
+ptp4l[1584.778]: port 2: master sync timeout
+ptp4l[1584.778]: port 2: syfu_relay info:
+ptp4l[1584.778]: port 2:   precise_origin_ts 1584.666749477
+ptp4l[1584.778]: port 2:   correction 111961612
+ptp4l[1584.778]: port 2:   fup_info 1.000000000
+ptp4l[1584.903]: port 2: master sync timeout
+ptp4l[1584.903]: port 2: syfu_relay info:
+ptp4l[1584.903]: port 2:   precise_origin_ts 1584.791800532
+ptp4l[1584.903]: port 2:   correction 111963597
+ptp4l[1584.903]: port 2:   fup_info 1.000000000
+ptp4l[1585.012]: port 2: master tx announce timeout
+ptp4l[1585.028]: port 2: master sync timeout
+ptp4l[1585.028]: port 2: syfu_relay info:
+ptp4l[1585.028]: port 2:   precise_origin_ts 1584.916859107
+ptp4l[1585.028]: port 2:   correction 111953732
+ptp4l[1585.028]: port 2:   fup_info 1.000000000
+ptp4l[1585.153]: port 2: master sync timeout
+ptp4l[1585.153]: port 2: syfu_relay info:
+ptp4l[1585.153]: port 2:   precise_origin_ts 1585.41902242
+ptp4l[1585.153]: port 2:   correction 111961037
+ptp4l[1585.153]: port 2:   fup_info 1.000000000
+ptp4l[1585.278]: port 2: master sync timeout
+ptp4l[1585.278]: port 2: syfu_relay info:
+ptp4l[1585.278]: port 2:   precise_origin_ts 1585.166956167
+ptp4l[1585.279]: port 2:   correction 111951767
+ptp4l[1585.279]: port 2:   fup_info 1.000000000
+ptp4l[1585.292]: rms    9 max   16 freq    -71 +/-   6 delay  1312 +/-   0
+ptp4l[1585.390]: port 1: delay timeout
+ptp4l[1585.391]: delay   filtered       1312   raw       1317
+ptp4l[1585.403]: port 2: master sync timeout
+ptp4l[1585.404]: port 2: syfu_relay info:
+ptp4l[1585.404]: port 2:   precise_origin_ts 1585.292005372
+ptp4l[1585.404]: port 2:   correction 111949451
+ptp4l[1585.404]: port 2:   fup_info 0.999999993
+ptp4l[1585.422]: port 2: delay timeout
+ptp4l[1585.423]: delay   filtered       1319   raw       1319
+ptp4l[1585.528]: port 2: master sync timeout
+ptp4l[1585.529]: port 2: syfu_relay info:
+ptp4l[1585.529]: port 2:   precise_origin_ts 1585.417056792
+ptp4l[1585.529]: port 2:   correction 111948931
+ptp4l[1585.529]: port 2:   fup_info 0.999999993
+ptp4l[1585.654]: port 2: master sync timeout
+ptp4l[1585.654]: port 2: syfu_relay info:
+ptp4l[1585.654]: port 2:   precise_origin_ts 1585.542109272
+ptp4l[1585.654]: port 2:   correction 111946611
+ptp4l[1585.654]: port 2:   fup_info 0.999999993
+ptp4l[1585.779]: port 2: master sync timeout
+ptp4l[1585.779]: port 2: syfu_relay info:
+ptp4l[1585.779]: port 2:   precise_origin_ts 1585.667159492
+ptp4l[1585.779]: port 2:   correction 111946421
+ptp4l[1585.779]: port 2:   fup_info 0.999999993
+ptp4l[1585.904]: port 2: master sync timeout
+ptp4l[1585.904]: port 2: syfu_relay info:
+ptp4l[1585.904]: port 2:   precise_origin_ts 1585.792210092
+ptp4l[1585.904]: port 2:   correction 111948101
+ptp4l[1585.904]: port 2:   fup_info 0.999999993
+ptp4l[1586.012]: port 2: master tx announce timeout
+ptp4l[1586.029]: port 2: master sync timeout
+ptp4l[1586.029]: port 2: syfu_relay info:
+ptp4l[1586.029]: port 2:   precise_origin_ts 1585.917260482
+ptp4l[1586.029]: port 2:   correction 111945926
+ptp4l[1586.029]: port 2:   fup_info 0.999999993
+ptp4l[1586.154]: port 2: master sync timeout
+ptp4l[1586.154]: port 2: syfu_relay info:
+ptp4l[1586.154]: port 2:   precise_origin_ts 1586.42311002
+ptp4l[1586.154]: port 2:   correction 111945591
+ptp4l[1586.154]: port 2:   fup_info 0.999999993
+ptp4l[1586.279]: port 2: master sync timeout
+ptp4l[1586.279]: port 2: syfu_relay info:
+ptp4l[1586.279]: port 2:   precise_origin_ts 1586.167365477
+ptp4l[1586.279]: port 2:   correction 111935471
+ptp4l[1586.279]: port 2:   fup_info 0.999999993
+ptp4l[1586.292]: rms    8 max   16 freq    -77 +/-  12 delay  1312 +/-   0
+ptp4l[1586.390]: port 1: delay timeout
+ptp4l[1586.391]: delay   filtered       1312   raw       1312
+ptp4l[1586.404]: port 2: master sync timeout
+ptp4l[1586.404]: port 2: syfu_relay info:
+ptp4l[1586.404]: port 2:   precise_origin_ts 1586.292414667
+ptp4l[1586.404]: port 2:   correction 111934466
+ptp4l[1586.404]: port 2:   fup_info 0.999999993
+ptp4l[1586.422]: port 2: delay timeout
+ptp4l[1586.423]: delay   filtered       1319   raw       1327
+ptp4l[1586.529]: port 2: master sync timeout
+ptp4l[1586.529]: port 2: syfu_relay info:
+ptp4l[1586.529]: port 2:   precise_origin_ts 1586.417466082
+ptp4l[1586.529]: port 2:   correction 111932396
+ptp4l[1586.529]: port 2:   fup_info 0.999999993
+ptp4l[1586.654]: port 2: master sync timeout
+ptp4l[1586.654]: port 2: syfu_relay info:
+ptp4l[1586.654]: port 2:   precise_origin_ts 1586.542518047
+ptp4l[1586.654]: port 2:   correction 111930846
+ptp4l[1586.654]: port 2:   fup_info 0.999999993
+ptp4l[1586.779]: port 2: master sync timeout
+ptp4l[1586.779]: port 2: syfu_relay info:
+ptp4l[1586.779]: port 2:   precise_origin_ts 1586.667568582
+ptp4l[1586.779]: port 2:   correction 111930196
+ptp4l[1586.779]: port 2:   fup_info 0.999999993
+ptp4l[1586.904]: port 2: master sync timeout
+ptp4l[1586.904]: port 2: syfu_relay info:
+ptp4l[1586.904]: port 2:   precise_origin_ts 1586.792619037
+ptp4l[1586.904]: port 2:   correction 111930656
+ptp4l[1586.904]: port 2:   fup_info 0.999999993
+ptp4l[1587.012]: port 2: master tx announce timeout
+ptp4l[1587.029]: port 2: master sync timeout
+ptp4l[1587.029]: port 2: syfu_relay info:
+ptp4l[1587.029]: port 2:   precise_origin_ts 1586.917670397
+ptp4l[1587.029]: port 2:   correction 111927996
+ptp4l[1587.029]: port 2:   fup_info 0.999999993
+ptp4l[1587.154]: port 2: master sync timeout
+ptp4l[1587.154]: port 2: syfu_relay info:
+ptp4l[1587.154]: port 2:   precise_origin_ts 1587.42721592
+ptp4l[1587.154]: port 2:   correction 111927006
+ptp4l[1587.154]: port 2:   fup_info 0.999999993
+ptp4l[1587.279]: port 2: master sync timeout
+ptp4l[1587.279]: port 2: syfu_relay info:
+ptp4l[1587.279]: port 2:   precise_origin_ts 1587.167776957
+ptp4l[1587.279]: port 2:   correction 111921376
+ptp4l[1587.279]: port 2:   fup_info 0.999999993
+ptp4l[1587.293]: rms    8 max   11 freq    -65 +/-   6 delay  1312 +/-   0
+ptp4l[1587.390]: port 1: delay timeout
+ptp4l[1587.391]: delay   filtered       1312   raw       1312
+ptp4l[1587.404]: port 2: master sync timeout
+ptp4l[1587.404]: port 2: syfu_relay info:
+ptp4l[1587.404]: port 2:   precise_origin_ts 1587.292826262
+ptp4l[1587.404]: port 2:   correction 111919632
+ptp4l[1587.404]: port 2:   fup_info 1.000000002
+ptp4l[1587.422]: port 2: delay timeout
+ptp4l[1587.423]: delay   filtered       1319   raw       1317
+ptp4l[1587.529]: port 2: master sync timeout
+ptp4l[1587.529]: port 2: syfu_relay info:
+ptp4l[1587.529]: port 2:   precise_origin_ts 1587.417877507
+ptp4l[1587.529]: port 2:   correction 111917952
+ptp4l[1587.529]: port 2:   fup_info 1.000000002
+ptp4l[1587.654]: port 2: master sync timeout
+ptp4l[1587.654]: port 2: syfu_relay info:
+ptp4l[1587.654]: port 2:   precise_origin_ts 1587.542929232
+ptp4l[1587.654]: port 2:   correction 111916657
+ptp4l[1587.654]: port 2:   fup_info 1.000000002
+ptp4l[1587.779]: port 2: master sync timeout
+ptp4l[1587.779]: port 2: syfu_relay info:
+ptp4l[1587.779]: port 2:   precise_origin_ts 1587.667980222
+ptp4l[1587.780]: port 2:   correction 111915462
+ptp4l[1587.780]: port 2:   fup_info 1.000000002
+ptp4l[1587.904]: port 2: master sync timeout
+ptp4l[1587.905]: port 2: syfu_relay info:
+ptp4l[1587.905]: port 2:   precise_origin_ts 1587.793031327
+ptp4l[1587.905]: port 2:   correction 111917942
+ptp4l[1587.905]: port 2:   fup_info 1.000000002
+ptp4l[1588.012]: port 2: master tx announce timeout
+ptp4l[1588.029]: port 2: master sync timeout
+ptp4l[1588.030]: port 2: syfu_relay info:
+ptp4l[1588.030]: port 2:   precise_origin_ts 1587.918081627
+ptp4l[1588.030]: port 2:   correction 111915962
+ptp4l[1588.030]: port 2:   fup_info 1.000000002
+ptp4l[1588.154]: port 2: master sync timeout
+ptp4l[1588.155]: port 2: syfu_relay info:
+ptp4l[1588.155]: port 2:   precise_origin_ts 1588.43132227
+ptp4l[1588.155]: port 2:   correction 111915557
+ptp4l[1588.155]: port 2:   fup_info 1.000000002
+ptp4l[1588.280]: port 2: master sync timeout
+ptp4l[1588.280]: port 2: syfu_relay info:
+ptp4l[1588.280]: port 2:   precise_origin_ts 1588.168187142
+ptp4l[1588.280]: port 2:   correction 111910687
+ptp4l[1588.280]: port 2:   fup_info 1.000000002
+ptp4l[1588.293]: rms    9 max   14 freq    -76 +/-  12 delay  1312 +/-   0
+ptp4l[1588.390]: port 1: delay timeout
+ptp4l[1588.391]: delay   filtered       1312   raw       1307
+ptp4l[1588.405]: port 2: master sync timeout
+ptp4l[1588.405]: port 2: syfu_relay info:
+ptp4l[1588.405]: port 2:   precise_origin_ts 1588.293237512
+ptp4l[1588.405]: port 2:   correction 111909342
+ptp4l[1588.405]: port 2:   fup_info 1.000000002
+ptp4l[1588.422]: port 2: delay timeout
+ptp4l[1588.423]: delay   filtered       1319   raw       1320
+ptp4l[1588.530]: port 2: master sync timeout
+ptp4l[1588.530]: port 2: syfu_relay info:
+ptp4l[1588.530]: port 2:   precise_origin_ts 1588.418289402
+ptp4l[1588.530]: port 2:   correction 111906982
+ptp4l[1588.530]: port 2:   fup_info 1.000000002
+ptp4l[1588.655]: port 2: master sync timeout
+ptp4l[1588.655]: port 2: syfu_relay info:
+ptp4l[1588.655]: port 2:   precise_origin_ts 1588.543339642
+ptp4l[1588.655]: port 2:   correction 111906467
+ptp4l[1588.655]: port 2:   fup_info 1.000000002
+ptp4l[1588.780]: port 2: master sync timeout
+ptp4l[1588.780]: port 2: syfu_relay info:
+ptp4l[1588.780]: port 2:   precise_origin_ts 1588.668390407
+ptp4l[1588.780]: port 2:   correction 111905742
+ptp4l[1588.780]: port 2:   fup_info 1.000000002
+ptp4l[1588.905]: port 2: master sync timeout
+ptp4l[1588.905]: port 2: syfu_relay info:
+ptp4l[1588.905]: port 2:   precise_origin_ts 1588.793440972
+ptp4l[1588.905]: port 2:   correction 111907957
+ptp4l[1588.905]: port 2:   fup_info 1.000000002
+ptp4l[1589.012]: port 2: master tx announce timeout
+ptp4l[1589.030]: port 2: master sync timeout
+ptp4l[1589.030]: port 2: syfu_relay info:
+ptp4l[1589.030]: port 2:   precise_origin_ts 1588.918490997
+ptp4l[1589.030]: port 2:   correction 111906977
+ptp4l[1589.030]: port 2:   fup_info 1.000000002
+ptp4l[1589.155]: port 2: master sync timeout
+ptp4l[1589.155]: port 2: syfu_relay info:
+ptp4l[1589.155]: port 2:   precise_origin_ts 1589.43542627
+ptp4l[1589.155]: port 2:   correction 111905662
+ptp4l[1589.155]: port 2:   fup_info 1.000000002
+ptp4l[1589.280]: port 2: master sync timeout
+ptp4l[1589.280]: port 2: syfu_relay info:
+ptp4l[1589.280]: port 2:   precise_origin_ts 1589.168597127
+ptp4l[1589.280]: port 2:   correction 111901102
+ptp4l[1589.280]: port 2:   fup_info 1.000000002
+ptp4l[1589.293]: rms    6 max    9 freq    -80 +/-   6 delay  1312 +/-   0
+ptp4l[1589.390]: port 1: delay timeout
+ptp4l[1589.391]: delay   filtered       1312   raw       1312
+ptp4l[1589.405]: port 2: master sync timeout
+ptp4l[1589.405]: port 2: syfu_relay info:
+ptp4l[1589.405]: port 2:   precise_origin_ts 1589.293646877
+ptp4l[1589.405]: port 2:   correction 111899532
+ptp4l[1589.405]: port 2:   fup_info 1.000000005
+ptp4l[1589.422]: port 2: delay timeout
+ptp4l[1589.423]: delay   filtered       1319   raw       1322
+ptp4l[1589.530]: port 2: master sync timeout
+ptp4l[1589.530]: port 2: syfu_relay info:
+ptp4l[1589.530]: port 2:   precise_origin_ts 1589.418697827
+ptp4l[1589.530]: port 2:   correction 111898192
+ptp4l[1589.530]: port 2:   fup_info 1.000000005
+ptp4l[1589.655]: port 2: master sync timeout
+ptp4l[1589.655]: port 2: syfu_relay info:
+ptp4l[1589.655]: port 2:   precise_origin_ts 1589.543748627
+ptp4l[1589.655]: port 2:   correction 111897962
+ptp4l[1589.655]: port 2:   fup_info 1.000000005
+ptp4l[1589.780]: port 2: master sync timeout
+ptp4l[1589.780]: port 2: syfu_relay info:
+ptp4l[1589.780]: port 2:   precise_origin_ts 1589.668800487
+ptp4l[1589.780]: port 2:   correction 111895507
+ptp4l[1589.780]: port 2:   fup_info 1.000000005
+ptp4l[1589.905]: port 2: master sync timeout
+ptp4l[1589.905]: port 2: syfu_relay info:
+ptp4l[1589.905]: port 2:   precise_origin_ts 1589.793851687
+ptp4l[1589.905]: port 2:   correction 111896022
+ptp4l[1589.905]: port 2:   fup_info 1.000000005
+ptp4l[1590.012]: port 2: master tx announce timeout
+ptp4l[1590.030]: port 2: master sync timeout
+ptp4l[1590.030]: port 2: syfu_relay info:
+ptp4l[1590.030]: port 2:   precise_origin_ts 1589.918902852
+ptp4l[1590.030]: port 2:   correction 111892892
+ptp4l[1590.030]: port 2:   fup_info 1.000000005
+ptp4l[1590.155]: port 2: master sync timeout
+ptp4l[1590.155]: port 2: syfu_relay info:
+ptp4l[1590.155]: port 2:   precise_origin_ts 1590.43953932
+ptp4l[1590.155]: port 2:   correction 111892782
+ptp4l[1590.155]: port 2:   fup_info 1.000000005
+ptp4l[1590.280]: port 2: master sync timeout
+ptp4l[1590.280]: port 2: syfu_relay info:
+ptp4l[1590.280]: port 2:   precise_origin_ts 1590.169008602
+ptp4l[1590.281]: port 2:   correction 111888112
+ptp4l[1590.281]: port 2:   fup_info 1.000000005
+ptp4l[1590.294]: rms    5 max    6 freq    -74 +/-   6 delay  1312 +/-   0
+ptp4l[1590.391]: port 1: delay timeout
+ptp4l[1590.391]: delay   filtered       1312   raw       1307
+ptp4l[1590.405]: port 2: master sync timeout
+ptp4l[1590.406]: port 2: syfu_relay info:
+ptp4l[1590.406]: port 2:   precise_origin_ts 1590.294058607
+ptp4l[1590.406]: port 2:   correction 111886342
+ptp4l[1590.406]: port 2:   fup_info 1.000000005
+ptp4l[1590.422]: port 2: delay timeout
+ptp4l[1590.423]: delay   filtered       1319   raw       1319
+ptp4l[1590.530]: port 2: master sync timeout
+ptp4l[1590.531]: port 2: syfu_relay info:
+ptp4l[1590.531]: port 2:   precise_origin_ts 1590.419109687
+ptp4l[1590.531]: port 2:   correction 111884737
+ptp4l[1590.531]: port 2:   fup_info 1.000000005
+ptp4l[1590.655]: port 2: master sync timeout
+ptp4l[1590.656]: port 2: syfu_relay info:
+ptp4l[1590.656]: port 2:   precise_origin_ts 1590.544162882
+ptp4l[1590.656]: port 2:   correction 111893792
+ptp4l[1590.656]: port 2:   fup_info 1.000000005
+ptp4l[1590.781]: port 2: master sync timeout
+ptp4l[1590.781]: port 2: syfu_relay info:
+ptp4l[1590.781]: port 2:   precise_origin_ts 1590.669215552
+ptp4l[1590.781]: port 2:   correction 111891167
+ptp4l[1590.781]: port 2:   fup_info 1.000000005
+ptp4l[1590.906]: port 2: master sync timeout
+ptp4l[1590.906]: port 2: syfu_relay info:
+ptp4l[1590.906]: port 2:   precise_origin_ts 1590.794266557
+ptp4l[1590.906]: port 2:   correction 111889917
+ptp4l[1590.906]: port 2:   fup_info 1.000000005
+ptp4l[1591.012]: port 2: master tx announce timeout
+ptp4l[1591.031]: port 2: master sync timeout
+ptp4l[1591.031]: port 2: syfu_relay info:
+ptp4l[1591.031]: port 2:   precise_origin_ts 1590.919317527
+ptp4l[1591.031]: port 2:   correction 111887952
+ptp4l[1591.031]: port 2:   fup_info 1.000000005
+ptp4l[1591.156]: port 2: master sync timeout
+ptp4l[1591.156]: port 2: syfu_relay info:
+ptp4l[1591.156]: port 2:   precise_origin_ts 1591.44370882
+ptp4l[1591.156]: port 2:   correction 111885157
+ptp4l[1591.156]: port 2:   fup_info 1.000000005
+ptp4l[1591.281]: port 2: master sync timeout
+ptp4l[1591.281]: port 2: syfu_relay info:
+ptp4l[1591.281]: port 2:   precise_origin_ts 1591.169423447
+ptp4l[1591.281]: port 2:   correction 111882912
+ptp4l[1591.281]: port 2:   fup_info 1.000000005
+ptp4l[1591.294]: rms    4 max    6 freq    -79 +/-   5 delay  1312 +/-   0
+ptp4l[1591.391]: port 1: delay timeout
+ptp4l[1591.391]: delay   filtered       1312   raw       1310
+ptp4l[1591.406]: port 2: master sync timeout
+ptp4l[1591.406]: port 2: syfu_relay info:
+ptp4l[1591.406]: port 2:   precise_origin_ts 1591.294473862
+ptp4l[1591.406]: port 2:   correction 111880582
+ptp4l[1591.406]: port 2:   fup_info 1.000000002
+ptp4l[1591.422]: port 2: delay timeout
+ptp4l[1591.423]: delay   filtered       1319   raw       1319
+ptp4l[1591.531]: port 2: master sync timeout
+ptp4l[1591.531]: port 2: syfu_relay info:
+ptp4l[1591.531]: port 2:   precise_origin_ts 1591.419525487
+ptp4l[1591.531]: port 2:   correction 111878297
+ptp4l[1591.531]: port 2:   fup_info 1.000000002
+ptp4l[1591.656]: port 2: master sync timeout
+ptp4l[1591.656]: port 2: syfu_relay info:
+ptp4l[1591.656]: port 2:   precise_origin_ts 1591.544576892
+ptp4l[1591.656]: port 2:   correction 111876897
+ptp4l[1591.656]: port 2:   fup_info 1.000000002
+ptp4l[1591.781]: port 2: master sync timeout
+ptp4l[1591.781]: port 2: syfu_relay info:
+ptp4l[1591.781]: port 2:   precise_origin_ts 1591.669623217
+ptp4l[1591.781]: port 2:   correction 111880702
+ptp4l[1591.781]: port 2:   fup_info 1.000000002
+ptp4l[1591.906]: port 2: master sync timeout
+ptp4l[1591.906]: port 2: syfu_relay info:
+ptp4l[1591.906]: port 2:   precise_origin_ts 1591.794675682
+ptp4l[1591.906]: port 2:   correction 111882017
+ptp4l[1591.906]: port 2:   fup_info 1.000000002
+ptp4l[1592.012]: port 2: master tx announce timeout
+ptp4l[1592.031]: port 2: master sync timeout
+ptp4l[1592.031]: port 2: syfu_relay info:
+ptp4l[1592.031]: port 2:   precise_origin_ts 1591.919726687
+ptp4l[1592.031]: port 2:   correction 111878402
+ptp4l[1592.031]: port 2:   fup_info 1.000000002
+ptp4l[1592.156]: port 2: master sync timeout
+ptp4l[1592.156]: port 2: syfu_relay info:
+ptp4l[1592.156]: port 2:   precise_origin_ts 1592.44777642
+ptp4l[1592.156]: port 2:   correction 111878242
+ptp4l[1592.156]: port 2:   fup_info 1.000000002
+ptp4l[1592.281]: port 2: master sync timeout
+ptp4l[1592.281]: port 2: syfu_relay info:
+ptp4l[1592.281]: port 2:   precise_origin_ts 1592.169832972
+ptp4l[1592.281]: port 2:   correction 111872952
+ptp4l[1592.281]: port 2:   fup_info 1.000000002
+ptp4l[1592.295]: rms    7 max   14 freq    -84 +/-   8 delay  1312 +/-   0
+ptp4l[1592.391]: port 1: delay timeout
+ptp4l[1592.391]: delay   filtered       1312   raw       1320
+ptp4l[1592.406]: port 2: master sync timeout
+ptp4l[1592.406]: port 2: syfu_relay info:
+ptp4l[1592.406]: port 2:   precise_origin_ts 1592.294882862
+ptp4l[1592.406]: port 2:   correction 111871772
+ptp4l[1592.406]: port 2:   fup_info 1.000000002
+ptp4l[1592.423]: port 2: delay timeout
+ptp4l[1592.423]: delay   filtered       1320   raw       1320
+ptp4l[1592.531]: port 2: master sync timeout
+ptp4l[1592.531]: port 2: syfu_relay info:
+ptp4l[1592.531]: port 2:   precise_origin_ts 1592.419934792
+ptp4l[1592.531]: port 2:   correction 111869692
+ptp4l[1592.531]: port 2:   fup_info 1.000000002
+ptp4l[1592.656]: port 2: master sync timeout
+ptp4l[1592.656]: port 2: syfu_relay info:
+ptp4l[1592.656]: port 2:   precise_origin_ts 1592.544986132
+ptp4l[1592.656]: port 2:   correction 111868357
+ptp4l[1592.656]: port 2:   fup_info 1.000000002
+ptp4l[1592.781]: port 2: master sync timeout
+ptp4l[1592.781]: port 2: syfu_relay info:
+ptp4l[1592.781]: port 2:   precise_origin_ts 1592.670037112
+ptp4l[1592.782]: port 2:   correction 111867582
+ptp4l[1592.782]: port 2:   fup_info 1.000000002
+ptp4l[1592.906]: port 2: master sync timeout
+ptp4l[1592.907]: port 2: syfu_relay info:
+ptp4l[1592.907]: port 2:   precise_origin_ts 1592.795088842
+ptp4l[1592.907]: port 2:   correction 111868067
+ptp4l[1592.907]: port 2:   fup_info 1.000000002
+ptp4l[1593.012]: port 2: master tx announce timeout
+ptp4l[1593.031]: port 2: master sync timeout
+ptp4l[1593.032]: port 2: syfu_relay info:
+ptp4l[1593.032]: port 2:   precise_origin_ts 1592.920134967
+ptp4l[1593.032]: port 2:   correction 111870622
+ptp4l[1593.032]: port 2:   fup_info 1.000000002
+ptp4l[1593.157]: port 2: master sync timeout
+ptp4l[1593.157]: port 2: syfu_relay info:
+ptp4l[1593.157]: port 2:   precise_origin_ts 1593.45187602
+ptp4l[1593.157]: port 2:   correction 111868672
+ptp4l[1593.157]: port 2:   fup_info 1.000000002
+ptp4l[1593.282]: port 2: master sync timeout
+ptp4l[1593.282]: port 2: syfu_relay info:
+ptp4l[1593.282]: port 2:   precise_origin_ts 1593.170240377
+ptp4l[1593.282]: port 2:   correction 111865967
+ptp4l[1593.282]: port 2:   fup_info 1.000000002
+ptp4l[1593.295]: rms    7 max   11 freq    -79 +/-   9 delay  1312 +/-   0
+ptp4l[1593.391]: port 1: delay timeout
+ptp4l[1593.391]: delay   filtered       1312   raw       1314
+ptp4l[1593.407]: port 2: master sync timeout
+ptp4l[1593.407]: port 2: syfu_relay info:
+ptp4l[1593.407]: port 2:   precise_origin_ts 1593.295292567
+ptp4l[1593.407]: port 2:   correction 111862200
+ptp4l[1593.407]: port 2:   fup_info 0.999999990
+ptp4l[1593.423]: port 2: delay timeout
+ptp4l[1593.423]: delay   filtered       1319   raw       1310
+ptp4l[1593.532]: port 2: master sync timeout
+ptp4l[1593.532]: port 2: syfu_relay info:
+ptp4l[1593.532]: port 2:   precise_origin_ts 1593.420343117
+ptp4l[1593.532]: port 2:   correction 111855525
+ptp4l[1593.532]: port 2:   fup_info 0.999999990
+ptp4l[1593.657]: port 2: master sync timeout
+ptp4l[1593.657]: port 2: syfu_relay info:
+ptp4l[1593.657]: port 2:   precise_origin_ts 1593.545395077
+ptp4l[1593.657]: port 2:   correction 111854170
+ptp4l[1593.657]: port 2:   fup_info 0.999999990
+ptp4l[1593.782]: port 2: master sync timeout
+ptp4l[1593.782]: port 2: syfu_relay info:
+ptp4l[1593.782]: port 2:   precise_origin_ts 1593.670446152
+ptp4l[1593.782]: port 2:   correction 111852760
+ptp4l[1593.782]: port 2:   fup_info 0.999999990
+ptp4l[1593.907]: port 2: master sync timeout
+ptp4l[1593.907]: port 2: syfu_relay info:
+ptp4l[1593.907]: port 2:   precise_origin_ts 1593.795497282
+ptp4l[1593.907]: port 2:   correction 111853635
+ptp4l[1593.907]: port 2:   fup_info 0.999999990
+ptp4l[1594.012]: port 2: master tx announce timeout
+ptp4l[1594.032]: port 2: master sync timeout
+ptp4l[1594.032]: port 2: syfu_relay info:
+ptp4l[1594.032]: port 2:   precise_origin_ts 1593.920549862
+ptp4l[1594.032]: port 2:   correction 111849060
+ptp4l[1594.032]: port 2:   fup_info 0.999999990
+ptp4l[1594.157]: port 2: master sync timeout
+ptp4l[1594.157]: port 2: syfu_relay info:
+ptp4l[1594.157]: port 2:   precise_origin_ts 1594.45595867
+ptp4l[1594.157]: port 2:   correction 111853435
+ptp4l[1594.157]: port 2:   fup_info 0.999999990
+ptp4l[1594.282]: port 2: master sync timeout
+ptp4l[1594.282]: port 2: syfu_relay info:
+ptp4l[1594.282]: port 2:   precise_origin_ts 1594.170650212
+ptp4l[1594.282]: port 2:   correction 111849190
+ptp4l[1594.282]: port 2:   fup_info 0.999999990
+ptp4l[1594.295]: rms    8 max   14 freq    -81 +/-  12 delay  1312 +/-   0
+ptp4l[1594.391]: port 1: delay timeout
+ptp4l[1594.391]: delay   filtered       1312   raw       1314
+ptp4l[1594.407]: port 2: master sync timeout
+ptp4l[1594.407]: port 2: syfu_relay info:
+ptp4l[1594.407]: port 2:   precise_origin_ts 1594.295700577
+ptp4l[1594.407]: port 2:   correction 111847635
+ptp4l[1594.407]: port 2:   fup_info 0.999999990
+ptp4l[1594.423]: port 2: delay timeout
+ptp4l[1594.423]: delay   filtered       1319   raw       1322
+ptp4l[1594.532]: port 2: master sync timeout
+ptp4l[1594.532]: port 2: syfu_relay info:
+ptp4l[1594.532]: port 2:   precise_origin_ts 1594.420751927
+ptp4l[1594.532]: port 2:   correction 111846215
+ptp4l[1594.532]: port 2:   fup_info 0.999999990
+ptp4l[1594.657]: port 2: master sync timeout
+ptp4l[1594.657]: port 2: syfu_relay info:
+ptp4l[1594.657]: port 2:   precise_origin_ts 1594.545803467
+ptp4l[1594.657]: port 2:   correction 111844835
+ptp4l[1594.657]: port 2:   fup_info 0.999999990
+ptp4l[1594.782]: port 2: master sync timeout
+ptp4l[1594.782]: port 2: syfu_relay info:
+ptp4l[1594.782]: port 2:   precise_origin_ts 1594.670854577
+ptp4l[1594.782]: port 2:   correction 111844570
+ptp4l[1594.782]: port 2:   fup_info 0.999999990
+ptp4l[1594.907]: port 2: master sync timeout
+ptp4l[1594.907]: port 2: syfu_relay info:
+ptp4l[1594.907]: port 2:   precise_origin_ts 1594.795905817
+ptp4l[1594.907]: port 2:   correction 111843095
+ptp4l[1594.907]: port 2:   fup_info 0.999999990
+ptp4l[1595.012]: port 2: master tx announce timeout
+ptp4l[1595.032]: port 2: master sync timeout
+ptp4l[1595.032]: port 2: syfu_relay info:
+ptp4l[1595.032]: port 2:   precise_origin_ts 1594.920957782
+ptp4l[1595.032]: port 2:   correction 111840665
+ptp4l[1595.032]: port 2:   fup_info 0.999999990
+ptp4l[1595.157]: port 2: master sync timeout
+ptp4l[1595.157]: port 2: syfu_relay info:
+ptp4l[1595.157]: port 2:   precise_origin_ts 1595.46008452
+ptp4l[1595.157]: port 2:   correction 111840740
+ptp4l[1595.157]: port 2:   fup_info 0.999999990
+ptp4l[1595.282]: port 2: master sync timeout
+ptp4l[1595.282]: port 2: syfu_relay info:
+ptp4l[1595.282]: port 2:   precise_origin_ts 1595.171062897
+ptp4l[1595.283]: port 2:   correction 111836150
+ptp4l[1595.283]: port 2:   fup_info 0.999999990
+ptp4l[1595.296]: rms    8 max   14 freq    -82 +/-  11 delay  1312 +/-   0
+ptp4l[1595.391]: port 1: delay timeout
+ptp4l[1595.391]: delay   filtered       1312   raw       1317
+ptp4l[1595.407]: port 2: master sync timeout
+ptp4l[1595.408]: port 2: syfu_relay info:
+ptp4l[1595.408]: port 2:   precise_origin_ts 1595.296113657
+ptp4l[1595.408]: port 2:   correction 111833786
+ptp4l[1595.408]: port 2:   fup_info 0.999999998
+ptp4l[1595.423]: port 2: delay timeout
+ptp4l[1595.423]: delay   filtered       1319   raw       1319
+ptp4l[1595.532]: port 2: master sync timeout
+ptp4l[1595.533]: port 2: syfu_relay info:
+ptp4l[1595.533]: port 2:   precise_origin_ts 1595.421165352
+ptp4l[1595.533]: port 2:   correction 111832066
+ptp4l[1595.533]: port 2:   fup_info 0.999999998
+ptp4l[1595.657]: port 2: master sync timeout
+ptp4l[1595.658]: port 2: syfu_relay info:
+ptp4l[1595.658]: port 2:   precise_origin_ts 1595.546219447
+ptp4l[1595.658]: port 2:   correction 111828216
+ptp4l[1595.658]: port 2:   fup_info 0.999999998
+ptp4l[1595.783]: port 2: master sync timeout
+ptp4l[1595.783]: port 2: syfu_relay info:
+ptp4l[1595.783]: port 2:   precise_origin_ts 1595.671268187
+ptp4l[1595.783]: port 2:   correction 111829211
+ptp4l[1595.783]: port 2:   fup_info 0.999999998
+ptp4l[1595.908]: port 2: master sync timeout
+ptp4l[1595.908]: port 2: syfu_relay info:
+ptp4l[1595.908]: port 2:   precise_origin_ts 1595.796318812
+ptp4l[1595.908]: port 2:   correction 111831486
+ptp4l[1595.908]: port 2:   fup_info 0.999999998
+ptp4l[1596.012]: port 2: master tx announce timeout
+ptp4l[1596.033]: port 2: master sync timeout
+ptp4l[1596.033]: port 2: syfu_relay info:
+ptp4l[1596.033]: port 2:   precise_origin_ts 1595.921371352
+ptp4l[1596.033]: port 2:   correction 111826491
+ptp4l[1596.033]: port 2:   fup_info 0.999999998
+ptp4l[1596.158]: port 2: master sync timeout
+ptp4l[1596.158]: port 2: syfu_relay info:
+ptp4l[1596.158]: port 2:   precise_origin_ts 1596.46421022
+ptp4l[1596.158]: port 2:   correction 111826966
+ptp4l[1596.158]: port 2:   fup_info 0.999999998
+ptp4l[1596.283]: port 2: master sync timeout
+ptp4l[1596.283]: port 2: syfu_relay info:
+ptp4l[1596.283]: port 2:   precise_origin_ts 1596.171475917
+ptp4l[1596.283]: port 2:   correction 111822596
+ptp4l[1596.283]: port 2:   fup_info 0.999999998
+ptp4l[1596.296]: rms    9 max   16 freq    -68 +/-   9 delay  1312 +/-   0
+ptp4l[1596.391]: port 1: delay timeout
+ptp4l[1596.391]: delay   filtered       1313   raw       1319
+ptp4l[1596.408]: port 2: master sync timeout
+ptp4l[1596.408]: port 2: syfu_relay info:
+ptp4l[1596.408]: port 2:   precise_origin_ts 1596.296526177
+ptp4l[1596.408]: port 2:   correction 111821777
+ptp4l[1596.408]: port 2:   fup_info 0.999999998
+ptp4l[1596.423]: port 2: delay timeout
+ptp4l[1596.533]: port 2: master sync timeout
+ptp4l[1596.533]: port 2: syfu_relay info:
+ptp4l[1596.533]: port 2:   precise_origin_ts 1596.421577712
+ptp4l[1596.533]: port 2:   correction 111819592
+ptp4l[1596.533]: port 2:   fup_info 0.999999998
+ptp4l[1596.658]: port 2: master sync timeout
+ptp4l[1596.658]: port 2: syfu_relay info:
+ptp4l[1596.658]: port 2:   precise_origin_ts 1596.546628237
+ptp4l[1596.658]: port 2:   correction 111819042
+ptp4l[1596.658]: port 2:   fup_info 0.999999998
+ptp4l[1596.783]: port 2: master sync timeout
+ptp4l[1596.783]: port 2: syfu_relay info:
+ptp4l[1596.783]: port 2:   precise_origin_ts 1596.671679052
+ptp4l[1596.783]: port 2:   correction 111818447
+ptp4l[1596.783]: port 2:   fup_info 0.999999998
+ptp4l[1596.908]: port 2: master sync timeout
+ptp4l[1596.908]: port 2: syfu_relay info:
+ptp4l[1596.908]: port 2:   precise_origin_ts 1596.796729202
+ptp4l[1596.908]: port 2:   correction 111819317
+ptp4l[1596.908]: port 2:   fup_info 0.999999998
+ptp4l[1597.013]: port 2: master tx announce timeout
+ptp4l[1597.033]: port 2: master sync timeout
+ptp4l[1597.033]: port 2: syfu_relay info:
+ptp4l[1597.033]: port 2:   precise_origin_ts 1596.921780262
+ptp4l[1597.033]: port 2:   correction 111816327
+ptp4l[1597.033]: port 2:   fup_info 0.999999998
+ptp4l[1597.158]: port 2: master sync timeout
+ptp4l[1597.158]: port 2: syfu_relay info:
+ptp4l[1597.158]: port 2:   precise_origin_ts 1597.46830932
+ptp4l[1597.158]: port 2:   correction 111816342
+ptp4l[1597.158]: port 2:   fup_info 0.999999998
+ptp4l[1597.283]: port 2: master sync timeout
+ptp4l[1597.283]: port 2: syfu_relay info:
+ptp4l[1597.283]: port 2:   precise_origin_ts 1597.171885107
+ptp4l[1597.283]: port 2:   correction 111812562
+ptp4l[1597.283]: port 2:   fup_info 0.999999998
+ptp4l[1597.297]: rms    7 max   10 freq    -86 +/-   5 delay  1313 +/-   0
+ptp4l[1597.391]: port 1: delay timeout
+ptp4l[1597.391]: delay   filtered       1313   raw       1310
+ptp4l[1597.408]: port 2: master sync timeout
+ptp4l[1597.408]: port 2: syfu_relay info:
+ptp4l[1597.408]: port 2:   precise_origin_ts 1597.296936092
+ptp4l[1597.408]: port 2:   correction 111809964
+ptp4l[1597.408]: port 2:   fup_info 1.000000010
+ptp4l[1597.423]: port 2: delay timeout
+ptp4l[1597.533]: port 2: master sync timeout
+ptp4l[1597.533]: port 2: syfu_relay info:
+ptp4l[1597.533]: port 2:   precise_origin_ts 1597.421987177
+ptp4l[1597.533]: port 2:   correction 111808439
+ptp4l[1597.533]: port 2:   fup_info 1.000000010
+ptp4l[1597.658]: port 2: master sync timeout
+ptp4l[1597.658]: port 2: syfu_relay info:
+ptp4l[1597.658]: port 2:   precise_origin_ts 1597.547038552
+ptp4l[1597.658]: port 2:   correction 111807134
+ptp4l[1597.658]: port 2:   fup_info 1.000000010
+ptp4l[1597.783]: port 2: master sync timeout
+ptp4l[1597.783]: port 2: syfu_relay info:
+ptp4l[1597.783]: port 2:   precise_origin_ts 1597.672089812
+ptp4l[1597.784]: port 2:   correction 111805664
+ptp4l[1597.784]: port 2:   fup_info 1.000000010
+ptp4l[1597.908]: port 2: master sync timeout
+ptp4l[1597.909]: port 2: syfu_relay info:
+ptp4l[1597.909]: port 2:   precise_origin_ts 1597.797140857
+ptp4l[1597.909]: port 2:   correction 111806654
+ptp4l[1597.909]: port 2:   fup_info 1.000000010
+ptp4l[1598.013]: port 2: master tx announce timeout
+ptp4l[1598.033]: port 2: master sync timeout
+ptp4l[1598.034]: port 2: syfu_relay info:
+ptp4l[1598.034]: port 2:   precise_origin_ts 1597.922193327
+ptp4l[1598.034]: port 2:   correction 111802019
+ptp4l[1598.034]: port 2:   fup_info 1.000000010
+ptp4l[1598.158]: port 2: master sync timeout
+ptp4l[1598.159]: port 2: syfu_relay info:
+ptp4l[1598.159]: port 2:   precise_origin_ts 1598.47243102
+ptp4l[1598.159]: port 2:   correction 111802864
+ptp4l[1598.159]: port 2:   fup_info 1.000000010
+ptp4l[1598.284]: port 2: master sync timeout
+ptp4l[1598.284]: port 2: syfu_relay info:
+ptp4l[1598.284]: port 2:   precise_origin_ts 1598.172298212
+ptp4l[1598.284]: port 2:   correction 111798014
+ptp4l[1598.284]: port 2:   fup_info 1.000000010
+ptp4l[1598.297]: rms    8 max   15 freq    -75 +/-  10 delay  1313 +/-   0
+ptp4l[1598.391]: port 1: delay timeout
+ptp4l[1598.391]: delay   filtered       1313   raw       1312
+ptp4l[1598.409]: port 2: master sync timeout
+ptp4l[1598.409]: port 2: syfu_relay info:
+ptp4l[1598.409]: port 2:   precise_origin_ts 1598.297348277
+ptp4l[1598.409]: port 2:   correction 111795879
+ptp4l[1598.409]: port 2:   fup_info 1.000000010
+ptp4l[1598.423]: port 2: delay timeout
+ptp4l[1598.534]: port 2: master sync timeout
+ptp4l[1598.534]: port 2: syfu_relay info:
+ptp4l[1598.534]: port 2:   precise_origin_ts 1598.422399527
+ptp4l[1598.534]: port 2:   correction 111794619
+ptp4l[1598.534]: port 2:   fup_info 1.000000010
+ptp4l[1598.659]: port 2: master sync timeout
+ptp4l[1598.659]: port 2: syfu_relay info:
+ptp4l[1598.659]: port 2:   precise_origin_ts 1598.547450537
+ptp4l[1598.659]: port 2:   correction 111790884
+ptp4l[1598.659]: port 2:   fup_info 1.000000010
+ptp4l[1598.784]: port 2: master sync timeout
+ptp4l[1598.784]: port 2: syfu_relay info:
+ptp4l[1598.784]: port 2:   precise_origin_ts 1598.672501267
+ptp4l[1598.784]: port 2:   correction 111792169
+ptp4l[1598.784]: port 2:   fup_info 1.000000010
+ptp4l[1598.909]: port 2: master sync timeout
+ptp4l[1598.909]: port 2: syfu_relay info:
+ptp4l[1598.909]: port 2:   precise_origin_ts 1598.797552162
+ptp4l[1598.909]: port 2:   correction 111791264
+ptp4l[1598.909]: port 2:   fup_info 1.000000010
+ptp4l[1599.013]: port 2: master tx announce timeout
+ptp4l[1599.034]: port 2: master sync timeout
+ptp4l[1599.034]: port 2: syfu_relay info:
+ptp4l[1599.034]: port 2:   precise_origin_ts 1598.922602747
+ptp4l[1599.034]: port 2:   correction 111789734
+ptp4l[1599.034]: port 2:   fup_info 1.000000010
+ptp4l[1599.159]: port 2: master sync timeout
+ptp4l[1599.159]: port 2: syfu_relay info:
+ptp4l[1599.159]: port 2:   precise_origin_ts 1599.47653317
+ptp4l[1599.159]: port 2:   correction 111790109
+ptp4l[1599.159]: port 2:   fup_info 1.000000010
+ptp4l[1599.284]: port 2: master sync timeout
+ptp4l[1599.284]: port 2: syfu_relay info:
+ptp4l[1599.284]: port 2:   precise_origin_ts 1599.172707087
+ptp4l[1599.284]: port 2:   correction 111786764
+ptp4l[1599.284]: port 2:   fup_info 1.000000010
+ptp4l[1599.297]: rms   10 max   20 freq    -66 +/-  11 delay  1313 +/-   0
+ptp4l[1599.391]: port 1: delay timeout
+ptp4l[1599.391]: delay   filtered       1313   raw       1312
+ptp4l[1599.409]: port 2: master sync timeout
+ptp4l[1599.409]: port 2: syfu_relay info:
+ptp4l[1599.409]: port 2:   precise_origin_ts 1599.297757562
+ptp4l[1599.409]: port 2:   correction 111784777
+ptp4l[1599.409]: port 2:   fup_info 0.999999995
+ptp4l[1599.423]: port 2: delay timeout
+ptp4l[1599.534]: port 2: master sync timeout
+ptp4l[1599.534]: port 2: syfu_relay info:
+ptp4l[1599.534]: port 2:   precise_origin_ts 1599.422808727
+ptp4l[1599.534]: port 2:   correction 111783892
+ptp4l[1599.534]: port 2:   fup_info 0.999999995
+ptp4l[1599.659]: port 2: master sync timeout
+ptp4l[1599.659]: port 2: syfu_relay info:
+ptp4l[1599.659]: port 2:   precise_origin_ts 1599.547860137
+ptp4l[1599.659]: port 2:   correction 111783047
+ptp4l[1599.659]: port 2:   fup_info 0.999999995
+ptp4l[1599.784]: port 2: master sync timeout
+ptp4l[1599.784]: port 2: syfu_relay info:
+ptp4l[1599.784]: port 2:   precise_origin_ts 1599.672911222
+ptp4l[1599.784]: port 2:   correction 111781532
+ptp4l[1599.784]: port 2:   fup_info 0.999999995
+ptp4l[1599.909]: port 2: master sync timeout
+ptp4l[1599.909]: port 2: syfu_relay info:
+ptp4l[1599.909]: port 2:   precise_origin_ts 1599.797962467
+ptp4l[1599.909]: port 2:   correction 111783682
+ptp4l[1599.909]: port 2:   fup_info 0.999999995
+ptp4l[1600.013]: port 2: master tx announce timeout
+ptp4l[1600.034]: port 2: master sync timeout
+ptp4l[1600.034]: port 2: syfu_relay info:
+ptp4l[1600.034]: port 2:   precise_origin_ts 1599.923013387
+ptp4l[1600.034]: port 2:   correction 111779572
+ptp4l[1600.034]: port 2:   fup_info 0.999999995
+ptp4l[1600.159]: port 2: master sync timeout
+ptp4l[1600.159]: port 2: syfu_relay info:
+ptp4l[1600.159]: port 2:   precise_origin_ts 1600.48063922
+ptp4l[1600.159]: port 2:   correction 111779247
+ptp4l[1600.159]: port 2:   fup_info 0.999999995
+ptp4l[1600.284]: port 2: master sync timeout
+ptp4l[1600.284]: port 2: syfu_relay info:
+ptp4l[1600.284]: port 2:   precise_origin_ts 1600.173119272
+ptp4l[1600.285]: port 2:   correction 111774262
+ptp4l[1600.285]: port 2:   fup_info 0.999999995
+ptp4l[1600.298]: rms    7 max   15 freq    -69 +/-   9 delay  1313 +/-   0
+ptp4l[1600.391]: port 1: delay timeout
+ptp4l[1600.391]: delay   filtered       1313   raw       1312
+ptp4l[1600.409]: port 2: master sync timeout
+ptp4l[1600.410]: port 2: syfu_relay info:
+ptp4l[1600.410]: port 2:   precise_origin_ts 1600.298169262
+ptp4l[1600.410]: port 2:   correction 111772047
+ptp4l[1600.410]: port 2:   fup_info 0.999999995
+ptp4l[1600.423]: port 2: delay timeout
+ptp4l[1600.534]: port 2: master sync timeout
+ptp4l[1600.534]: port 2: missed 4 peer delay resp, resetting asCapable
+ptp4l[1600.659]: port 2: master sync timeout
+ptp4l[1600.785]: port 2: master sync timeout
+ptp4l[1600.910]: port 2: master sync timeout
+ptp4l[1601.013]: port 2: master tx announce timeout
+ptp4l[1601.035]: port 2: master sync timeout
+ptp4l[1601.160]: port 2: master sync timeout
+ptp4l[1601.285]: port 2: master sync timeout
+ptp4l[1601.298]: rms    7 max   10 freq    -77 +/-   8 delay  1313 +/-   0
+ptp4l[1601.391]: port 1: delay timeout
+ptp4l[1601.391]: delay   filtered       1314   raw       1317
+ptp4l[1601.410]: port 2: master sync timeout
+ptp4l[1601.423]: port 2: delay timeout
+ptp4l[1601.535]: port 2: master sync timeout
+ptp4l[1601.660]: port 2: master sync timeout
+ptp4l[1601.785]: port 2: master sync timeout
+ptp4l[1601.910]: port 2: master sync timeout
+ptp4l[1602.013]: port 2: master tx announce timeout
+ptp4l[1602.035]: port 2: master sync timeout
+ptp4l[1602.160]: port 2: master sync timeout
+ptp4l[1602.285]: port 2: master sync timeout
+ptp4l[1602.299]: rms    9 max   16 freq    -84 +/-  10 delay  1314 +/-   0
+ptp4l[1602.391]: port 1: delay timeout
+ptp4l[1602.391]: delay   filtered       1313   raw       1312
+ptp4l[1602.410]: port 2: master sync timeout
+ptp4l[1602.423]: port 2: delay timeout
+ptp4l[1602.535]: port 2: master sync timeout
+ptp4l[1602.660]: port 2: master sync timeout
+ptp4l[1602.785]: port 2: master sync timeout
+ptp4l[1602.910]: port 2: master sync timeout
+ptp4l[1603.013]: port 2: master tx announce timeout
+ptp4l[1603.035]: port 2: master sync timeout
+ptp4l[1603.160]: port 2: master sync timeout
+ptp4l[1603.286]: port 2: master sync timeout
+ptp4l[1603.299]: rms   13 max   20 freq   -103 +/-   6 delay  1313 +/-   0
+ptp4l[1603.391]: port 1: delay timeout
+ptp4l[1603.391]: delay   filtered       1312   raw       1312
+ptp4l[1603.411]: port 2: master sync timeout
+ptp4l[1603.423]: port 2: delay timeout
+ptp4l[1603.536]: port 2: master sync timeout
+ptp4l[1603.661]: port 2: master sync timeout
+ptp4l[1603.786]: port 2: master sync timeout
+ptp4l[1603.911]: port 2: master sync timeout
+ptp4l[1604.013]: port 2: master tx announce timeout
+ptp4l[1604.036]: port 2: master sync timeout
+ptp4l[1604.161]: port 2: master sync timeout
+ptp4l[1604.286]: port 2: master sync timeout
+ptp4l[1604.299]: rms    5 max    9 freq   -100 +/-   3 delay  1312 +/-   0
+ptp4l[1604.391]: port 1: delay timeout
+ptp4l[1604.392]: delay   filtered       1312   raw       1310
+ptp4l[1604.411]: port 2: master sync timeout
+ptp4l[1604.423]: port 2: delay timeout
+ptp4l[1604.536]: port 2: master sync timeout
+ptp4l[1604.661]: port 2: master sync timeout
+ptp4l[1604.786]: port 2: master sync timeout
+ptp4l[1604.911]: port 2: master sync timeout
+ptp4l[1605.013]: port 2: master tx announce timeout
+ptp4l[1605.036]: port 2: master sync timeout
+ptp4l[1605.161]: port 2: master sync timeout
+ptp4l[1605.286]: port 2: master sync timeout
+ptp4l[1605.300]: rms    6 max   11 freq    -98 +/-   8 delay  1312 +/-   0
+ptp4l[1605.391]: port 1: delay timeout
+ptp4l[1605.392]: delay   filtered       1312   raw       1309
+ptp4l[1605.411]: port 2: master sync timeout
+ptp4l[1605.423]: port 2: delay timeout
+ptp4l[1605.536]: port 2: master sync timeout
+ptp4l[1605.661]: port 2: master sync timeout
+ptp4l[1605.787]: port 2: master sync timeout
+ptp4l[1605.912]: port 2: master sync timeout
+ptp4l[1606.013]: port 2: master tx announce timeout
+ptp4l[1606.037]: port 2: master sync timeout
+ptp4l[1606.162]: port 2: master sync timeout
+ptp4l[1606.287]: port 2: master sync timeout
+ptp4l[1606.300]: rms    9 max   16 freq    -87 +/-  10 delay  1312 +/-   0
+ptp4l[1606.391]: port 1: delay timeout
+ptp4l[1606.392]: delay   filtered       1312   raw       1307
+ptp4l[1606.412]: port 2: master sync timeout
+ptp4l[1606.423]: port 2: delay timeout
+^Croot@ls1043ardb:~/ptp4l-tab/usr/local/sbin#

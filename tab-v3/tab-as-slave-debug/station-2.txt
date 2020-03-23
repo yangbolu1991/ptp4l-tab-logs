@@ -1,0 +1,317 @@
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# cat gPTP.cfg
+#
+# 802.1AS example configuration containing those attributes which
+# differ from the defaults.  See the file, default.cfg, for the
+# complete list of available options.
+#
+[global]
+gmCapable               1
+priority1               248
+priority2               248
+logAnnounceInterval     0
+logSyncInterval         -3
+syncReceiptTimeout      3
+#neighborPropDelayThresh 800
+min_neighbor_prop_delay -20000000
+assume_two_step         1
+path_trace_enabled      1
+follow_up_info          1
+transportSpecific       0x1
+ptp_dst_mac             01:80:C2:00:00:0E
+network_transport       L2
+delay_mechanism         P2P
+root@ls1043ardb:~/ptp4l-tab/usr/local/sbin# ./ptp4l -i fm1-mac4 -f ./gPTP.cfg -m -l 7
+ptp4l[1658.449]: config item (null).assume_two_step is 1
+ptp4l[1658.450]: config item (null).check_fup_sync is 0
+ptp4l[1658.450]: config item (null).tx_timestamp_timeout is 1
+ptp4l[1658.450]: config item (null).hwts_filter is 0
+ptp4l[1658.450]: config item (null).clock_servo is 0
+ptp4l[1658.450]: config item (null).clock_type is 32768
+ptp4l[1658.450]: config item (null).clock_servo is 0
+ptp4l[1658.450]: config item (null).clockClass is 248
+ptp4l[1658.450]: config item (null).clockAccuracy is 254
+ptp4l[1658.450]: config item (null).offsetScaledLogVariance is 65535
+ptp4l[1658.450]: config item (null).productDescription is ';;'
+ptp4l[1658.450]: config item (null).revisionData is ';;'
+ptp4l[1658.450]: config item (null).userDescription is ''
+ptp4l[1658.450]: config item (null).manufacturerIdentity is '00:00:00'
+ptp4l[1658.450]: config item (null).domainNumber is 0
+ptp4l[1658.450]: config item (null).slaveOnly is 0
+ptp4l[1658.450]: config item (null).gmCapable is 1
+ptp4l[1658.450]: config item (null).gmCapable is 1
+ptp4l[1658.450]: config item (null).G.8275.defaultDS.localPriority is 128
+ptp4l[1658.450]: config item (null).maxStepsRemoved is 255
+ptp4l[1658.450]: config item (null).time_stamping is 1
+ptp4l[1658.450]: config item (null).twoStepFlag is 1
+ptp4l[1658.450]: config item (null).twoStepFlag is 1
+ptp4l[1658.450]: config item (null).time_stamping is 1
+ptp4l[1658.450]: config item (null).priority1 is 248
+ptp4l[1658.450]: config item (null).priority2 is 248
+ptp4l[1658.450]: interface index 5 is up
+ptp4l[1658.450]: config item (null).free_running is 0
+ptp4l[1658.450]: selected /dev/ptp1 as PTP clock
+ptp4l[1658.450]: config item (null).clockIdentity is '000000.0000.000000'
+ptp4l[1658.450]: config item (null).uds_address is '/var/run/ptp4l'
+ptp4l[1658.450]: section item /var/run/ptp4l.announceReceiptTimeout now 0
+ptp4l[1658.451]: section item /var/run/ptp4l.delay_mechanism now 0
+ptp4l[1658.451]: section item /var/run/ptp4l.network_transport now 0
+ptp4l[1658.451]: section item /var/run/ptp4l.delay_filter_length now 1
+ptp4l[1658.451]: config item (null).free_running is 0
+ptp4l[1658.451]: config item (null).freq_est_interval is 1
+ptp4l[1658.451]: config item (null).gmCapable is 1
+ptp4l[1658.451]: config item (null).kernel_leap is 1
+ptp4l[1658.451]: config item (null).utc_offset is 37
+ptp4l[1658.451]: config item (null).timeSource is 160
+ptp4l[1658.451]: config item (null).pi_proportional_const is 0.000000
+ptp4l[1658.451]: config item (null).pi_integral_const is 0.000000
+ptp4l[1658.451]: config item (null).pi_proportional_scale is 0.000000
+ptp4l[1658.451]: config item (null).pi_proportional_exponent is -0.300000
+ptp4l[1658.451]: config item (null).pi_proportional_norm_max is 0.700000
+ptp4l[1658.451]: config item (null).pi_integral_scale is 0.000000
+ptp4l[1658.451]: config item (null).pi_integral_exponent is 0.400000
+ptp4l[1658.451]: config item (null).pi_integral_norm_max is 0.300000
+ptp4l[1658.451]: config item (null).step_threshold is 0.000000
+ptp4l[1658.451]: config item (null).first_step_threshold is 0.000020
+ptp4l[1658.451]: config item (null).max_frequency is 900000000
+ptp4l[1658.451]: config item (null).servo_offset_threshold is 0
+ptp4l[1658.451]: config item (null).servo_num_offset_values is 10
+ptp4l[1658.451]: config item (null).dataset_comparison is 0
+ptp4l[1658.451]: config item (null).tsproc_mode is 0
+ptp4l[1658.451]: config item (null).delay_filter is 1
+ptp4l[1658.451]: config item (null).delay_filter_length is 10
+ptp4l[1658.451]: config item (null).initial_delay is 0
+ptp4l[1658.451]: config item (null).summary_interval is 0
+ptp4l[1658.451]: config item (null).sanity_freq_limit is 200000000
+ptp4l[1658.451]: PI servo: sync interval 1.000 kp 0.700 ki 0.300000
+ptp4l[1658.451]: config item /var/run/ptp4l.boundary_clock_jbod is 0
+ptp4l[1658.451]: config item /var/run/ptp4l.network_transport is 0
+ptp4l[1658.451]: config item /var/run/ptp4l.masterOnly is 0
+ptp4l[1658.451]: config item /var/run/ptp4l.BMCA is 0
+ptp4l[1658.451]: config item /var/run/ptp4l.delayAsymmetry is 0
+ptp4l[1658.451]: config item /var/run/ptp4l.follow_up_info is 1
+ptp4l[1658.784]: config item /var/run/ptp4l.freq_est_interval is 1
+ptp4l[1658.784]: config item /var/run/ptp4l.net_sync_monitor is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.path_trace_enabled is 1
+ptp4l[1658.784]: config item /var/run/ptp4l.tc_spanning_tree is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.ingressLatency is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.egressLatency is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.delay_mechanism is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.asCapable is 1
+ptp4l[1658.784]: config item /var/run/ptp4l.hybrid_e2e is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.fault_badpeernet_interval is 16
+ptp4l[1658.784]: config item /var/run/ptp4l.fault_reset_interval is 4
+ptp4l[1658.784]: config item /var/run/ptp4l.tsproc_mode is 0
+ptp4l[1658.784]: config item /var/run/ptp4l.delay_filter is 1
+ptp4l[1658.784]: config item /var/run/ptp4l.delay_filter_length is 1
+ptp4l[1658.784]: config item fm1-mac4.boundary_clock_jbod is 0
+ptp4l[1658.784]: config item fm1-mac4.network_transport is 3
+ptp4l[1658.784]: config item fm1-mac4.masterOnly is 0
+ptp4l[1658.784]: config item fm1-mac4.BMCA is 0
+ptp4l[1658.784]: config item fm1-mac4.delayAsymmetry is 0
+ptp4l[1658.785]: config item fm1-mac4.follow_up_info is 1
+ptp4l[1658.785]: config item fm1-mac4.freq_est_interval is 1
+ptp4l[1658.785]: config item fm1-mac4.net_sync_monitor is 0
+ptp4l[1658.785]: config item fm1-mac4.path_trace_enabled is 1
+ptp4l[1658.785]: config item fm1-mac4.tc_spanning_tree is 0
+ptp4l[1658.785]: config item fm1-mac4.ingressLatency is 0
+ptp4l[1658.785]: config item fm1-mac4.egressLatency is 0
+ptp4l[1658.785]: config item fm1-mac4.delay_mechanism is 2
+ptp4l[1658.785]: config item fm1-mac4.asCapable is 1
+ptp4l[1658.785]: config item fm1-mac4.unicast_master_table is 0
+ptp4l[1658.785]: config item fm1-mac4.unicast_listen is 0
+ptp4l[1658.785]: config item fm1-mac4.hybrid_e2e is 0
+ptp4l[1658.785]: config item fm1-mac4.fault_badpeernet_interval is 16
+ptp4l[1658.785]: config item fm1-mac4.fault_reset_interval is 4
+ptp4l[1658.785]: config item fm1-mac4.tsproc_mode is 0
+ptp4l[1658.785]: config item fm1-mac4.delay_filter is 1
+ptp4l[1658.785]: config item fm1-mac4.delay_filter_length is 10
+ptp4l[1658.785]: config item fm1-mac4.logMinDelayReqInterval is 0
+ptp4l[1658.785]: config item fm1-mac4.logAnnounceInterval is 0
+ptp4l[1658.785]: config item fm1-mac4.inhibit_announce is 0
+ptp4l[1658.785]: config item fm1-mac4.ignore_source_id is 0
+ptp4l[1658.785]: config item fm1-mac4.announceReceiptTimeout is 3
+ptp4l[1658.785]: config item fm1-mac4.syncReceiptTimeout is 3
+ptp4l[1658.785]: config item fm1-mac4.transportSpecific is 1
+ptp4l[1658.785]: config item fm1-mac4.ignore_transport_specific is 0
+ptp4l[1658.785]: config item fm1-mac4.G.8275.portDS.localPriority is 128
+ptp4l[1658.785]: config item fm1-mac4.logSyncInterval is -3
+ptp4l[1658.785]: config item fm1-mac4.operLogSyncInterval is 0
+ptp4l[1658.785]: config item fm1-mac4.logMinPdelayReqInterval is 0
+ptp4l[1658.785]: config item fm1-mac4.operLogPdelayReqInterval is 0
+ptp4l[1658.785]: config item fm1-mac4.neighborPropDelayThresh is 20000000
+ptp4l[1658.785]: config item fm1-mac4.min_neighbor_prop_delay is -20000000
+ptp4l[1658.785]: config item fm1-mac4.asCapable is 1
+ptp4l[1658.785]: config item fm1-mac4.inhibit_delay_req is 0
+ptp4l[1658.785]: config item fm1-mac4.ptp_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[1658.785]: config item fm1-mac4.p2p_dst_mac is '01:80:C2:00:00:0E'
+ptp4l[1658.785]: config item global.socket_priority is 0
+ptp4l[1658.816]: port 1: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[1658.816]: config item /var/run/ptp4l.logMinDelayReqInterval is 0
+ptp4l[1658.816]: config item /var/run/ptp4l.logAnnounceInterval is 0
+ptp4l[1658.816]: config item /var/run/ptp4l.inhibit_announce is 0
+ptp4l[1658.816]: config item /var/run/ptp4l.ignore_source_id is 0
+ptp4l[1658.816]: config item /var/run/ptp4l.announceReceiptTimeout is 0
+ptp4l[1658.816]: config item /var/run/ptp4l.syncReceiptTimeout is 3
+ptp4l[1658.816]: config item /var/run/ptp4l.transportSpecific is 1
+ptp4l[1658.816]: config item /var/run/ptp4l.ignore_transport_specific is 0
+ptp4l[1659.148]: config item /var/run/ptp4l.G.8275.portDS.localPriority is 128
+ptp4l[1659.148]: config item /var/run/ptp4l.logSyncInterval is -3
+ptp4l[1659.148]: config item /var/run/ptp4l.operLogSyncInterval is 0
+ptp4l[1659.148]: config item /var/run/ptp4l.logMinPdelayReqInterval is 0
+ptp4l[1659.148]: config item /var/run/ptp4l.operLogPdelayReqInterval is 0
+ptp4l[1659.148]: config item /var/run/ptp4l.neighborPropDelayThresh is 20000000
+ptp4l[1659.148]: config item /var/run/ptp4l.min_neighbor_prop_delay is -20000000
+ptp4l[1659.148]: config item /var/run/ptp4l.asCapable is 1
+ptp4l[1659.148]: config item /var/run/ptp4l.inhibit_delay_req is 0
+ptp4l[1659.148]: config item (null).uds_address is '/var/run/ptp4l'
+ptp4l[1659.148]: port 0: INITIALIZING to LISTENING on INIT_COMPLETE
+ptp4l[1659.148]: port 1: received link status notification
+ptp4l[1659.148]: interface index 5 is up
+ptp4l[1659.751]: port 1: peer port id set to 00049f.fffe.05e284-2
+ptp4l[1659.816]: port 1: delay timeout
+ptp4l[1659.816]: delay   filtered       1317   raw       1317
+ptp4l[1660.816]: port 1: delay timeout
+ptp4l[1660.816]: delay   filtered       1319   raw       1322
+ptp4l[1661.816]: port 1: delay timeout
+ptp4l[1661.816]: delay   filtered       1322   raw       1325
+ptp4l[1661.846]: port 1: setting asCapable
+ptp4l[1662.062]: port 1: announce timeout
+ptp4l[1662.062]: port 1: LISTENING to MASTER on ANNOUNCE_RECEIPT_TIMEOUT_EXPIRES
+ptp4l[1662.062]: selected local clock 00049f.fffe.05e2cb as best master
+ptp4l[1662.062]: port 1: assuming the grand master role
+ptp4l[1662.063]: port 1: master tx announce timeout
+ptp4l[1662.187]: port 1: master sync timeout
+ptp4l[1662.312]: port 1: master sync timeout
+ptp4l[1662.340]: port 1: new foreign master 00049f.fffe.05e284-2
+ptp4l[1662.340]: selected best master clock 00049f.fffe.05e0d3
+ptp4l[1662.340]: port 1: MASTER to SLAVE on RS_SLAVE
+ptp4l[1662.346]: PI servo: sync interval 0.125 kp 1.306 ki 0.130583
+ptp4l[1662.816]: port 1: delay timeout
+ptp4l[1662.816]: delay   filtered       1321   raw       1320
+ptp4l[1663.722]: rms 4664 max 6161 freq  -2304 +/- 3199 delay  1321 +/-   0
+ptp4l[1663.816]: port 1: delay timeout
+ptp4l[1663.816]: delay   filtered       1320   raw       1319
+ptp4l[1664.722]: rms  834 max 1255 freq   +425 +/- 1146 delay  1320 +/-   0
+ptp4l[1664.816]: port 1: delay timeout
+ptp4l[1664.816]: delay   filtered       1321   raw       1324
+ptp4l[1665.722]: rms 1396 max 1464 freq  +2995 +/- 389 delay  1321 +/-   0
+ptp4l[1665.816]: port 1: delay timeout
+ptp4l[1665.816]: delay   filtered       1320   raw       1317
+ptp4l[1666.723]: rms  898 max 1190 freq  +3518 +/-  36 delay  1320 +/-   0
+ptp4l[1666.816]: port 1: delay timeout
+ptp4l[1666.816]: delay   filtered       1319   raw       1314
+ptp4l[1667.723]: rms  293 max  482 freq  +3250 +/- 101 delay  1319 +/-   0
+ptp4l[1667.816]: port 1: delay timeout
+ptp4l[1667.816]: delay   filtered       1320   raw       1322
+ptp4l[1668.724]: rms   49 max   80 freq  +2938 +/-  61 delay  1320 +/-   0
+ptp4l[1668.816]: port 1: delay timeout
+ptp4l[1668.816]: delay   filtered       1319   raw       1312
+ptp4l[1669.724]: rms   84 max   94 freq  +2796 +/-  17 delay  1319 +/-   0
+ptp4l[1669.816]: port 1: delay timeout
+ptp4l[1669.817]: delay   filtered       1320   raw       1320
+ptp4l[1670.724]: rms   57 max   70 freq  +2759 +/-  10 delay  1320 +/-   0
+ptp4l[1670.816]: port 1: delay timeout
+ptp4l[1670.817]: delay   filtered       1320   raw       1322
+ptp4l[1671.725]: rms   19 max   29 freq  +2777 +/-  13 delay  1320 +/-   0
+ptp4l[1671.816]: port 1: delay timeout
+ptp4l[1671.817]: delay   filtered       1320   raw       1327
+ptp4l[1672.725]: rms   13 max   20 freq  +2800 +/-  17 delay  1320 +/-   0
+ptp4l[1672.816]: port 1: delay timeout
+ptp4l[1672.817]: delay   filtered       1319   raw       1319
+ptp4l[1673.726]: rms   11 max   15 freq  +2798 +/-  15 delay  1319 +/-   0
+ptp4l[1673.816]: port 1: delay timeout
+ptp4l[1673.817]: delay   filtered       1319   raw       1317
+ptp4l[1674.726]: rms   12 max   19 freq  +2810 +/-  14 delay  1319 +/-   0
+ptp4l[1674.816]: port 1: delay timeout
+ptp4l[1674.817]: delay   filtered       1319   raw       1324
+ptp4l[1675.726]: rms   14 max   24 freq  +2830 +/-   8 delay  1319 +/-   0
+ptp4l[1675.816]: port 1: delay timeout
+ptp4l[1675.817]: delay   filtered       1319   raw       1319
+ptp4l[1676.727]: rms   16 max   19 freq  +2836 +/-  18 delay  1319 +/-   0
+ptp4l[1676.817]: port 1: delay timeout
+ptp4l[1676.817]: delay   filtered       1319   raw       1319
+ptp4l[1677.727]: rms   15 max   30 freq  +2807 +/-  17 delay  1319 +/-   0
+ptp4l[1677.817]: port 1: delay timeout
+ptp4l[1677.817]: delay   filtered       1319   raw       1322
+ptp4l[1678.727]: rms   13 max   30 freq  +2795 +/-  12 delay  1319 +/-   0
+ptp4l[1678.817]: port 1: delay timeout
+ptp4l[1678.817]: delay   filtered       1320   raw       1320
+ptp4l[1679.728]: rms   13 max   26 freq  +2810 +/-  18 delay  1320 +/-   0
+ptp4l[1679.817]: port 1: delay timeout
+ptp4l[1679.817]: delay   filtered       1321   raw       1324
+ptp4l[1680.728]: rms   13 max   20 freq  +2807 +/-  17 delay  1321 +/-   0
+ptp4l[1680.817]: port 1: delay timeout
+ptp4l[1680.817]: delay   filtered       1319   raw       1312
+ptp4l[1681.729]: rms   10 max   21 freq  +2821 +/-  10 delay  1319 +/-   0
+ptp4l[1681.817]: port 1: delay timeout
+ptp4l[1681.817]: delay   filtered       1319   raw       1320
+ptp4l[1682.729]: rms   10 max   17 freq  +2817 +/-  14 delay  1319 +/-   0
+ptp4l[1682.817]: port 1: delay timeout
+ptp4l[1682.817]: delay   filtered       1319   raw       1317
+ptp4l[1683.729]: rms   12 max   21 freq  +2823 +/-  17 delay  1319 +/-   0
+ptp4l[1683.817]: port 1: delay timeout
+ptp4l[1683.817]: delay   filtered       1319   raw       1314
+ptp4l[1684.730]: rms    8 max   14 freq  +2814 +/-  11 delay  1319 +/-   0
+ptp4l[1684.817]: port 1: delay timeout
+ptp4l[1684.817]: delay   filtered       1319   raw       1312
+ptp4l[1685.730]: rms   12 max   23 freq  +2817 +/-  17 delay  1319 +/-   0
+ptp4l[1685.817]: port 1: delay timeout
+ptp4l[1685.817]: delay   filtered       1319   raw       1320
+ptp4l[1686.731]: rms   15 max   32 freq  +2808 +/-  20 delay  1319 +/-   0
+ptp4l[1686.817]: port 1: delay timeout
+ptp4l[1686.817]: delay   filtered       1318   raw       1317
+ptp4l[1687.731]: rms   13 max   21 freq  +2806 +/-  17 delay  1318 +/-   0
+ptp4l[1687.817]: port 1: delay timeout
+ptp4l[1687.817]: delay   filtered       1317   raw       1317
+ptp4l[1688.731]: rms   12 max   19 freq  +2818 +/-  15 delay  1317 +/-   0
+ptp4l[1688.817]: port 1: delay timeout
+ptp4l[1688.817]: delay   filtered       1317   raw       1317
+ptp4l[1689.732]: rms   10 max   21 freq  +2815 +/-  13 delay  1317 +/-   0
+ptp4l[1689.817]: port 1: delay timeout
+ptp4l[1689.817]: delay   filtered       1317   raw       1317
+ptp4l[1690.732]: rms    5 max    8 freq  +2820 +/-   6 delay  1317 +/-   0
+ptp4l[1690.817]: port 1: delay timeout
+ptp4l[1690.818]: delay   filtered       1317   raw       1319
+ptp4l[1691.733]: rms    7 max   12 freq  +2817 +/-  10 delay  1317 +/-   0
+ptp4l[1691.817]: port 1: delay timeout
+ptp4l[1691.818]: delay   filtered       1317   raw       1320
+ptp4l[1692.733]: rms   13 max   27 freq  +2806 +/-  17 delay  1317 +/-   0
+ptp4l[1692.817]: port 1: delay timeout
+ptp4l[1692.818]: delay   filtered       1317   raw       1325
+ptp4l[1693.733]: rms    6 max    8 freq  +2809 +/-   8 delay  1317 +/-   0
+ptp4l[1693.817]: port 1: delay timeout
+ptp4l[1693.818]: delay   filtered       1318   raw       1322
+ptp4l[1694.734]: rms    7 max   12 freq  +2809 +/-  10 delay  1318 +/-   0
+ptp4l[1694.817]: port 1: delay timeout
+ptp4l[1694.818]: delay   filtered       1319   raw       1320
+ptp4l[1695.734]: rms   14 max   23 freq  +2784 +/-   8 delay  1319 +/-   0
+ptp4l[1695.817]: port 1: delay timeout
+ptp4l[1695.818]: delay   filtered       1318   raw       1317
+ptp4l[1696.735]: rms   12 max   28 freq  +2804 +/-  15 delay  1318 +/-   0
+ptp4l[1696.817]: port 1: delay timeout
+ptp4l[1696.818]: delay   filtered       1318   raw       1317
+ptp4l[1697.735]: rms   10 max   22 freq  +2811 +/-  12 delay  1318 +/-   0
+ptp4l[1697.818]: port 1: delay timeout
+ptp4l[1697.818]: delay   filtered       1319   raw       1327
+ptp4l[1698.735]: rms    8 max   11 freq  +2805 +/-  11 delay  1319 +/-   0
+ptp4l[1698.818]: port 1: delay timeout
+ptp4l[1698.818]: delay   filtered       1320   raw       1329
+ptp4l[1699.736]: rms    8 max   15 freq  +2811 +/-  10 delay  1320 +/-   0
+ptp4l[1699.818]: port 1: delay timeout
+ptp4l[1699.818]: delay   filtered       1320   raw       1317
+ptp4l[1700.736]: rms    8 max   15 freq  +2802 +/-  10 delay  1320 +/-   0
+ptp4l[1700.818]: port 1: delay timeout
+ptp4l[1700.818]: delay   filtered       1320   raw       1320
+ptp4l[1701.737]: rms    9 max   15 freq  +2794 +/-   9 delay  1320 +/-   0
+ptp4l[1701.818]: port 1: delay timeout
+ptp4l[1701.818]: delay   filtered       1321   raw       1324
+ptp4l[1702.737]: rms   10 max   19 freq  +2803 +/-  14 delay  1321 +/-   0
+ptp4l[1702.818]: port 1: delay timeout
+ptp4l[1702.818]: delay   filtered       1321   raw       1324
+ptp4l[1703.737]: rms   11 max   16 freq  +2798 +/-  14 delay  1321 +/-   0
+ptp4l[1703.818]: port 1: delay timeout
+ptp4l[1703.818]: delay   filtered       1321   raw       1322
+ptp4l[1704.738]: rms    9 max   14 freq  +2788 +/-  10 delay  1321 +/-   0
+ptp4l[1704.818]: port 1: delay timeout
+ptp4l[1704.818]: delay   filtered       1321   raw       1320
+^Croot@ls1043ardb:~/ptp4l-tab/usr/local/sbin#
